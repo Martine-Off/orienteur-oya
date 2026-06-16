@@ -1,0 +1,77 @@
+Métier,Bloc,Statut,Niveau_MIN,Background_min,Localisation,Situation,Relation_vivant,Type_activite,Competences_cles,Poids_Q1,Poids_Q2,Poids_Q3,Poids_Q4,Poids_Q5,Poids_Q6,Poids_Q7,Poids_Q8
+Chargé·e de projet agroécologie & AU,Production agricole,Émergent,6,Master,Flexible,Capital,Management,Piloter,Transition écologique - impact systémique - coordination,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Conseiller·ère technique agroécologie,Production agricole,Émergent,5,BTSA,Flexible,Terrain,Plantes,Former,Expertise technique - autonomie des agriculteurs - innovation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable logistique céréales / chef de silo,Production agricole,Émergent,5,BTSA,Campagne,Capital,Tech,Piloter,Souveraineté alimentaire - responsabilité - organisation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chargé·e de parcours volontariat agricole,Production agricole,Émergent,5,BTSA,Urbain,Zéro,Plantes,Former,Communauté - accueil - apprentissage - inclusion,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Ouvrier agricole,Production agricole,Tension,3,CAP,Campagne,Terrain,Plantes/Animaux,Produire,Autonomie - relation au vivant - stabilité financière,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Maraîcher / maraîcher bio,Production agricole,Tension,3,CAP,Campagne/Flexible,Terrain/Capital,Plantes,Produire,Autonomie - circuits courts - impact local - santé,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Éleveur,Production agricole,Tension,3,CAP,Campagne,Terrain/Capital,Animaux,Produire,Relation aux animaux - autonomie - pénibilité acceptée,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Technicien agricole,Production agricole,Tension,5,BTSA,Campagne,Terrain,Plantes/Tech,Piloter,Expertise technique - coopération - stabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Technicien agroécologie,Production agricole,Émergent,5,BTSA,Campagne/Flexible,Terrain,Plantes,Piloter,Transition écologique - expertise - autonomie,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Technicien agriculture de précision,Production agricole,Émergent,5,BTSA,Campagne,Capital,Tech,Piloter,Innovation - technologie - efficacité - durabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chef de culture,Production agricole,Tension,4,BTSA,Campagne,Capital,Plantes,Piloter,Leadership - responsabilité - organisation - rendement,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable d'exploitation agricole,Production agricole,Émergent,4,BTSA,Campagne,Capital,Plantes/Tech,Piloter,Autonomie - responsabilité - business - transition,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Tractoriste / conducteur d'engins,Production agricole,Tension,3,CAP,Campagne,Terrain,Tech,Produire,Compétence technique - autonomie - stabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Agriculteur urbain / fermier urbain,Production agricole,Autre,3,CAP,Urbain,Zéro/Capital,Plantes,Produire,Autonomie - innovation - communauté - impact local,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Animateur agriculture urbaine,Production agricole,Émergent,4,BTSA,Urbain,Zéro,Plantes,Former,Communauté - pédagogie - inclusion - transformation sociale,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable tiers-lieu agricole,Production agricole,Émergent,5,BTSA,Urbain/Flexible,Capital,Management/Plantes,Piloter,Innovation - communauté - leadership - impact territorial,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable transition durable IAA,Transformation agroalimentaire,Émergent,6,Master,Flexible,Capital,Management,Piloter,Transition écologique - innovation - responsabilité - impact systémique,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Opérateur de production agroalimentaire,Transformation agroalimentaire,Tension,3,CAP,Flexible,Zéro,Tech,Produire,Stabilité - compétence technique - qualité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Conducteur de ligne,Transformation agroalimentaire,Tension,4,BTSA,Flexible,Zéro,Tech,Produire,Responsabilité - qualité - stabilité - rigueur,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Maintenance industrielle agro,Transformation agroalimentaire,Tension,5,BTSA,Flexible,Capital,Tech,Piloter,Expertise technique - responsabilité - stabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Data analyst agro/agri,Transformation agroalimentaire,Émergent,6,Master,Flexible,Capital,Tech,Analyser,Innovation - impact données - autonomie - stratégie,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Technicien agroalimentaire,Transformation agroalimentaire,Tension,5,BTSA,Flexible,Capital,Tech/Plantes,Piloter,Expertise technique - qualité - innovation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable qualité / QHSE,Transformation agroalimentaire,Tension,5,BTSA,Flexible,Capital,Tech,Analyser,Responsabilité - excellence - conformité - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable production agroalimentaire,Transformation agroalimentaire,Tension,6,Master,Flexible,Capital,Management,Piloter,Leadership - responsabilité - innovation - excellence,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable décarbonation site,Transformation agroalimentaire,Émergent,6,Master,Flexible,Capital,Tech,Piloter,Urgence climatique - innovation - leadership - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable sécurité alimentaire,Transformation agroalimentaire,Tension,5,BTSA,Flexible,Capital,Tech,Analyser,Responsabilité - rigueur - excellence - santé publique,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chargé ACV,Transformation agroalimentaire,Émergent,6,Master,Flexible,Capital,Tech,Analyser,Impact environnemental - rigueur - innovation - stratégie,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Ingénieur agroalimentaire,Transformation agroalimentaire,Autre,7,Master,Flexible,Capital,Tech,Piloter,Innovation - excellence - responsabilité - leadership,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable atelier transformation local,Transformation agroalimentaire,Autre,4,BTSA,Urbain/Campagne,Capital,Plantes/Tech,Transformer,Autonomie - relocalisation - innovation - impact local,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable RSE agroalimentaire,Transformation agroalimentaire,Émergent,6,Master,Flexible,Capital,Management,Piloter,Transition écologique - impact social - leadership,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chef·fe de projet circuits courts,Logistique distribution,Émergent,6,Master,Urbain/Flexible,Capital,Management,Piloter,Stratégie - coordination - impact local - résilience,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Logisticien / agent logistique,Logistique distribution,Tension,3,CAP,Flexible,Zéro,Tech,Produire,Compétence technique - stabilité - organisation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Préparateur de commandes,Logistique distribution,Tension,3,CAP,Flexible,Zéro,Tech,Produire,Compétence - stabilité - organisation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Logisticien (bac+2),Logistique distribution,Tension,4,BTSA,Flexible,Capital,Tech,Piloter,Leadership - organisation - responsabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chauffeur / livreur,Logistique distribution,Tension,3,CAP,Flexible,Zéro,Tech,Produire,Autonomie - fiabilité - relation client,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable entrepôt,Logistique distribution,Tension,5,BTSA,Flexible,Capital,Tech,Piloter,Leadership - organisation - rigueur,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable supply chain,Logistique distribution,Autre,6,Master,Flexible,Capital,Management,Piloter,Stratégie - coordination - impact systémique,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Gestionnaire de flux,Logistique distribution,Tension,4,BTSA,Flexible,Capital,Tech,Piloter,Organisation - rigueur - responsabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable distribution,Logistique distribution,Autre,5,BTSA,Flexible,Capital,Management,Piloter,Leadership - stratégie - responsabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable logistique circuits courts,Logistique distribution,Émergent,5,BTSA,Urbain/Campagne,Capital,Tech,Piloter,Innovation - relocalisation - impact local,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chargé logistique bas carbone,Logistique distribution,Émergent,6,Master,Flexible,Capital,Tech,Analyser,Urgence climatique - innovation - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable supply chain durable,Logistique distribution,Émergent,6,Master,Flexible,Capital,Management,Piloter,Impact environnemental - stratégie - responsabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Coordinateur plateforme alimentaire territoriale,Logistique distribution,Émergent,5,BTSA,Urbain/Campagne,Capital,Management,Piloter,Coordination - impact territorial - innovation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable drive fermier,Logistique distribution,Autre,4,BTSA,Urbain,Capital,Tech,Transformer,Numérique - relocalisation - innovation - client,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Gestionnaire flux alimentaires locaux,Logistique distribution,Émergent,4,BTSA,Urbain/Campagne,Capital,Tech,Piloter,Coordination - organisation - impact local,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Coordinateur circuits courts,Logistique distribution,Émergent,5,BTSA,Urbain/Campagne,Capital,Management,Piloter,Coordination - réseau - impact local - ESS,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable restauration collective durable,Restauration,Émergent,5,BTSA,Urbain,Capital,Management,Transformer,Durabilité - responsabilité - qualité - impact social,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable achats durables,Restauration,Émergent,6,Master,Urbain,Capital,Management,Piloter,Impact - responsabilité - stratégie - relation fournisseurs,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable anti-gaspillage,Restauration,Émergent,4,BTSA,Urbain,Capital,Tech,Analyser,Impact - innovation - économies - environnement,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Cuisinier / chef cuisinier,Restauration,Tension,3,CAP,Urbain,Zéro,Plantes,Transformer,Passion culinaire - créativité - stabilité financière,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable restauration collective,Restauration,Tension,5,BTSA,Urbain,Capital,Management,Piloter,Leadership - responsabilité - qualité - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Aide cuisine,Restauration,Tension,3,CAP,Urbain,Zéro,Plantes,Produire,Compétence - stabilité - équipe,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Serveur,Restauration,Tension,3,CAP,Urbain,Zéro,Management,Produire,Compétence - relation client - stabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Boulanger,Restauration,Tension,3,CAP,Urbain/Campagne,Terrain,Plantes,Transformer,Compétence artisanale - autonomie - excellence,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Boucher,Restauration,Tension,3,CAP,Urbain/Campagne,Terrain,Animaux,Transformer,Compétence artisanale - qualité - autonomie,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chef de projet alimentation durable,Restauration,Émergent,6,Master,Urbain,Capital,Management,Piloter,Stratégie - impact social - coordination,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Artisan métiers de bouche,Restauration,Autre,3,CAP,Urbain/Campagne,Capital,Plantes/Tech,Transformer,Autonomie - créativité - excellence - transmission,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Restaurateur engagé,Restauration,Autre,4,BTSA,Urbain,Capital,Management,Transformer,Autonomie - créativité - impact social - business,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chargé·e de projet agroécologie collective,Transversal,Émergent,6,Master,Flexible,Capital,Management,Piloter,Impact systémique - coordination - pédagogie,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable politique publique alimentaire,Transversal,Émergent,7,Master,Urbain,Capital,Management,Piloter,Influence - stratégie - impact systémique,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chef de projet territorial,Transversal,Autre,6,Master,Urbain/Campagne,Capital,Management,Piloter,Leadership - coordination - impact local,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chargé·e d'expérimentation / transfert,Transversal,Émergent,6,Master,Flexible,Capital,Tech,Piloter,Innovation - liaison recherche - terrain - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Community manager / chargé·e com',Transversal,Autre,5,BTSA,Urbain,Capital,Tech,Former,Transparence - impact image - engagement,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Référent·e bas-carbone,Transversal,Émergent,6,Master,Flexible,Capital,Tech,Analyser,Urgence climatique - innovation - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Coordinateur centre formation,Transversal,Émergent,5,BTSA,Flexible,Capital,Management,Former,Pédagogie - coordination - impact formation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Chef·fe de projet conventions public-privé,Transversal,Émergent,6,Master,Urbain,Capital,Management,Piloter,Stratégie - collaboration - innovation - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable RSE,Transversal,Émergent,6,Master,Urbain,Capital,Management,Piloter,Impact social - environnemental - stratégie - responsabilité,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Diagnostic territorial,Transversal,Émergent,6,Master,Flexible,Capital,Tech,Analyser,Analyse systémique - impact - compréhension locale,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Formateur transition alimentaire,Transversal,Émergent,5,Master,Flexible,Capital,Management,Former,Pédagogie - expertise - transformation - impact,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Facilitateur transition,Transversal,Émergent,5,BTSA,Urbain/Campagne,Capital,Management,Piloter,Dialogue - inclusion - transformation - collectif,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Coordinateur ESS,Transversal,Émergent,5,BTSA,Urbain/Campagne,Capital,Management,Piloter,Solidarité - impact - réseau - innovation,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Conseiller accompagnement agricole,Transversal,Émergent,5,BTSA,Campagne/Flexible,Terrain,Management,Former,Expertise - accompagnement humain - confiance,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Accompagnateur reconversion,Transversal,Émergent,5,BTSA,Urbain,Capital,Management,Former,Empathie - guidance - transformation personnelle,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Consultant transition alimentaire,Transversal,Émergent,6,Master,Flexible,Capital,Management,Piloter,Expertise - stratégie - impact systémique,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Référent technique innovation,Transversal,Émergent,6,Master,Flexible,Capital,Tech,Piloter,Innovation - expertise - transmission,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8
+Responsable collecte données,Transversal,Émergent,5,Master,Flexible,Capital,Tech,Analyser,Rigueur - impact données - transparence,0.8,0.6,0.7,0.9,0.5,0,0.6,0.8

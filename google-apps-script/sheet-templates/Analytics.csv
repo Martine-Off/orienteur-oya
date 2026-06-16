@@ -1,0 +1,18 @@
+TCD 1 : Nombre de diagnostics par région (colonne R = région)
+Région,Nombre
+Île-de-France,"=COUNTIF(Réponses!R:R,""Île-de-France"")"
+Auvergne-Rhône-Alpes,"=COUNTIF(Réponses!R:R,""Auvergne-Rhône-Alpes"")"
+...,(dupliquer la ligne pour chaque région utile)
+
+TCD 2 : Top métiers recommandés (top_1)
+Métier,Nombre
+"=UNIQUE(FILTER(Réponses!L:L, Réponses!L:L<>""""))","=COUNTIF(Réponses!L:L, A9)"
+
+TCD 3 : Distribution par bloc
+Bloc,Nombre
+Production agricole,"=COUNTIF(Réponses!S:S,""Production agricole"")"
+Transformation agroalimentaire,"=COUNTIF(Réponses!S:S,""Transformation agroalimentaire"")"
+Logistique distribution,"=COUNTIF(Réponses!S:S,""Logistique distribution"")"
+Restauration,"=COUNTIF(Réponses!S:S,""Restauration"")"
+
+TCD 4 (bonus) : Budget moyen par région — à construire avec un tableau croisé dynamique natif Google Sheets (Données > Tableau croisé dynamique) sur la feuille Réponses

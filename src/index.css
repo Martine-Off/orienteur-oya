@@ -1,0 +1,70 @@
+:root {
+  /* Charte OYA (couleurs extraites du logo, à affiner si charte officielle fournie) */
+  --oya-vert-fonce: #1f4a3b;
+  --oya-vert: #3b8870;
+  --oya-olive: #b5c757;
+  --oya-corail: #d9633b; /* corail du logo (#f5855c) foncé pour respecter le contraste texte */
+  --oya-jaune: #b97a0f; /* jaune du logo (#f9ab19) foncé pour respecter le contraste texte */
+
+  --text: #20242a;
+  --text-muted: #4b5159;
+  --bg: #fdfdfb;
+  --border: #d8dcd6;
+
+  --sans: "Segoe UI", system-ui, Roboto, sans-serif;
+
+  font: 18px/145% var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--oya-vert-fonce);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+a {
+  color: var(--oya-vert-fonce);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--oya-jaune);
+  outline-offset: 2px;
+}

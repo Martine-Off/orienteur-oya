@@ -1,0 +1,315 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 20px 48px;
+}
+
+/* ---------- Landing ---------- */
+.page-landing {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.landing-logo {
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.landing-pitch {
+  max-width: 520px;
+  color: var(--text-muted);
+}
+
+.landing-points {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-muted);
+}
+
+/* ---------- Boutons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--oya-vert-fonce);
+  color: #ffffff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--oya-vert);
+}
+
+.btn-primary:disabled {
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--oya-vert-fonce);
+  border-color: var(--oya-vert-fonce);
+}
+
+.btn-secondary:disabled {
+  color: var(--text-muted);
+  border-color: var(--border);
+  cursor: not-allowed;
+}
+
+/* ---------- Quiz ---------- */
+.progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar-track {
+  flex: 1;
+  height: 10px;
+  background: var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--oya-olive);
+  transition: width 0.2s ease;
+}
+
+.progress-bar-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.question fieldset,
+.question {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.question legend {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--oya-vert-fonce);
+  padding: 0;
+}
+
+.select-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+select {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.options-inline {
+  flex-direction: row;
+}
+
+.option-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  min-height: 44px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.option-pill.selected {
+  border-color: var(--oya-vert-fonce);
+  background: rgba(31, 74, 59, 0.08);
+  font-weight: 600;
+}
+
+.options-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 64px;
+  padding: 12px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.option-card.selected {
+  border-color: var(--oya-vert-fonce);
+  background: rgba(31, 74, 59, 0.08);
+  font-weight: 600;
+}
+
+.option-pill input,
+.option-card input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- Résultats ---------- */
+.page-results h1 {
+  text-align: center;
+}
+
+.metier-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.metier-card {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.metier-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.metier-card-rang {
+  font-weight: 700;
+  color: var(--oya-corail);
+}
+
+.metier-card-score {
+  font-weight: 700;
+  background: var(--oya-olive);
+  color: #1f2328;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.metier-card-bloc {
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.metier-card-competences {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+/* ---------- Formulaire email/RGPD ---------- */
+.email-capture-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.email-capture-form label {
+  font-weight: 600;
+}
+
+.email-capture-form input[type="email"] {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.checkbox-label input {
+  margin-top: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+.field-error {
+  color: #a3221b;
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 768px) {
+  .page {
+    padding: 40px 32px 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #root {
+    max-width: 880px;
+  }
+}
