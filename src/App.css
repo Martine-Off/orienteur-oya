@@ -276,6 +276,30 @@ select {
   gap: 12px;
 }
 
+/* ---- Layout fix: form fills available height, nav pinned to bottom ---- */
+/* Sans ce fix, le form s'effondre sur son contenu et la nav colle
+   immédiatement sous la question (visible sur Q5 oui/non, Q8, etc.). */
+.page-quiz form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-quiz .quiz-actions {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+@media (max-width: 599px) {
+  .page-quiz .quiz-actions {
+    flex-direction: column;
+  }
+  .page-quiz .quiz-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
