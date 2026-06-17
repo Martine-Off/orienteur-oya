@@ -8,6 +8,8 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
   const [touched, setTouched] = useState(false);
 
   const emailValid = isValidEmail(email);
+  // RGPD requis (art. 7 RGPD) : le bouton est désactivé tant que le consentement
+  // n'est pas coché. Double protection : le handleSubmit vérifie aussi canSubmit.
   const canSubmit = emailValid && rgpd && !submitting;
 
   function handleSubmit(e) {

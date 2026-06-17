@@ -64,7 +64,8 @@ function includesAny(list, value) {
 /** Q1 : secteur d'origine vs Type activité du métier */
 function matchQ1(reponse, metier) {
   const secteur = SECTEURS_ORIGINE.find((s) => s.value === reponse);
-  if (!secteur || !secteur.typeActivite) return 0.5; // "Autre" = neutre
+  // "Autre" n'a pas de typeActivite → score neutre (pas de pénalité, pas de bonus).
+  if (!secteur || !secteur.typeActivite) return 0.5;
   return secteur.typeActivite === metier.typeActivite ? 1 : 0.5;
 }
 
@@ -98,7 +99,8 @@ function matchQ4(reponse, metier) {
 function matchQ5(reponse, metier) {
   const aDesContraintes = reponse === "Oui";
   const metierPhysique = ACTIVITES_PHYSIQUES.includes(metier.typeActivite);
-  if (!aDesContraintes) return 1; // pas de contrainte = compatible avec tout
+  if (!aDesContraintes) return 1;
+  // Contrainte physique + métier physique = incompatibilité (0), sinon compatible (1).
   return metierPhysique ? 0 : 1;
 }
 
@@ -137,12 +139,16 @@ export function scoreMetier(reponses, metier) {
 
   for (const [question, matcher] of Object.entries(MATCHERS)) {
     const reponse = reponses[question];
+    // poids vient du JSON métier (public/metiers.json), lui-même généré depuis le Sheet.
+    // Boris peut ajuster ces valeurs dans le Sheet sans toucher au code — cf. BORIS-GUIDE.md.
     const poids = metier.poids?.[question] ?? 0;
+    // Ignorer les questions sans réponse et les questions non-scorées (poids = 0, ex: Q6).
     if (reponse === undefined || reponse === null || poids === 0) continue;
     sommePonderee += matcher(reponse, metier) * poids;
     sommePoids += poids;
   }
 
+  // Garde-fou : si aucune question scorée n'a de réponse, le score est 0.
   if (sommePoids === 0) return 0;
   return Math.round((sommePonderee / sommePoids) * 100);
 }

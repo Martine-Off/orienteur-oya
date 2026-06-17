@@ -18,6 +18,9 @@ const BREVO_SENDER_NAME = "OYA L'Orienteur";
 
 function doPost(e) {
   try {
+    // React envoie le POST en mode "no-cors" avec Content-Type "text/plain" pour éviter
+    // le préflight CORS qu'Apps Script ne sait pas gérer. Le corps est quand même du JSON
+    // valide — on le parse ici manuellement.
     const data = JSON.parse(e.postData.contents);
 
     if (!data.email || !data.top_3_métiers || !data.scores) {
@@ -64,6 +67,8 @@ function appendReponse(data) {
 }
 
 function sendEmailBrevo(email, métiers, scores) {
+  // Clé stockée dans Script Properties, jamais en dur dans le code.
+  // Apps Script editor → Project Settings (⚙️) → Script properties → BREVO_API_KEY.
   const brevoKey = PropertiesService.getScriptProperties().getProperty("BREVO_API_KEY");
   if (!brevoKey) {
     const msg = "BREVO_API_KEY manquante dans Project Settings > Script properties";
