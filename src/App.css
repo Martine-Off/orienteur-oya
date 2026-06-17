@@ -48,12 +48,12 @@
 }
 
 .btn-primary {
-  background: var(--oya-vert-fonce);
+  background: var(--color-primary);
   color: #ffffff;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: var(--oya-vert);
+  background: var(--color-primary-dark);
 }
 
 .btn-primary:disabled {
@@ -64,8 +64,8 @@
 
 .btn-secondary {
   background: transparent;
-  color: var(--oya-vert-fonce);
-  border-color: var(--oya-vert-fonce);
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
 }
 
 .btn-secondary:disabled {
@@ -91,7 +91,7 @@
 
 .progress-bar-fill {
   height: 100%;
-  background: var(--oya-olive);
+  background: var(--color-secondary);
   transition: width 0.2s ease;
 }
 
@@ -114,7 +114,7 @@
 .question legend {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--oya-vert-fonce);
+  color: var(--color-secondary);
   padding: 0;
 }
 
@@ -153,8 +153,8 @@ select {
 }
 
 .option-pill.selected {
-  border-color: var(--oya-vert-fonce);
-  background: rgba(31, 74, 59, 0.08);
+  border-color: var(--color-primary);
+  background: rgba(239, 141, 17, 0.08);
   font-weight: 600;
 }
 
@@ -177,8 +177,8 @@ select {
 }
 
 .option-card.selected {
-  border-color: var(--oya-vert-fonce);
-  background: rgba(31, 74, 59, 0.08);
+  border-color: var(--color-primary);
+  background: rgba(239, 141, 17, 0.08);
   font-weight: 600;
 }
 
@@ -221,6 +221,23 @@ select {
   text-align: center;
 }
 
+.metier-groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metier-groupe-titre {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 4px;
+  margin: 0;
+}
+
 .metier-cards {
   display: flex;
   flex-direction: column;
@@ -242,13 +259,13 @@ select {
 
 .metier-card-rang {
   font-weight: 700;
-  color: var(--oya-corail);
+  color: var(--color-primary);
 }
 
 .metier-card-score {
   font-weight: 700;
-  background: var(--oya-olive);
-  color: #1f2328;
+  background: var(--color-secondary);
+  color: #ffffff;
   padding: 4px 10px;
   border-radius: 999px;
 }
@@ -258,9 +275,59 @@ select {
   margin-bottom: 8px;
 }
 
+.metier-card-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 2px 0 8px;
+}
+
+.metier-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.metier-card-meta-item {
+  display: flex;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.metier-card-meta-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.metier-card-statut {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--border);
+  color: var(--text-muted);
+}
+
+.metier-card-statut--émergent {
+  background: rgba(239, 141, 17, 0.15);
+  color: var(--color-primary-dark);
+}
+
+.metier-card-statut--tension {
+  background: rgba(56, 170, 63, 0.15);
+  color: #1e7a24;
+}
+
+.metier-card-formation {
+  font-size: 0.9rem;
+  margin: 4px 0 6px;
+}
+
 .metier-card-competences {
   margin: 8px 0 0;
   padding-left: 20px;
+  font-size: 0.9rem;
 }
 
 /* ---------- Formulaire email/RGPD ---------- */

@@ -21,7 +21,7 @@ export const QUESTIONS = [
   },
   {
     id: "Q2",
-    type: "select",
+    type: "chips",
     titre: "Quel est votre niveau d'études actuel ?",
     options: NIVEAU_ETUDES.map((n) => ({ value: n.value, label: n.label })),
   },
@@ -44,13 +44,13 @@ export const QUESTIONS = [
   },
   {
     id: "Q6",
-    type: "select",
+    type: "chips",
     titre: "Combien de temps pouvez-vous consacrer à votre reconversion ?",
     options: TEMPS_DISPONIBLE.map((t) => ({ value: t, label: t })),
   },
   {
     id: "Q7",
-    type: "select",
+    type: "chips",
     titre: "Quel budget pouvez-vous consacrer à votre reconversion ?",
     options: BUDGETS.map((b) => ({ value: b.value, label: b.value })),
   },

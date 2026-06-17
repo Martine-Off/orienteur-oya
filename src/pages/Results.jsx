@@ -35,6 +35,14 @@ export default function Results() {
 
   const top3 = getTopMetiers(reponses, metiers, 3);
 
+  const top3WithRank = top3.map((item, i) => ({ ...item, rang: i + 1 }));
+  const grouped = top3WithRank.reduce((acc, item) => {
+    const bloc = item.metier.bloc || "Autre";
+    if (!acc[bloc]) acc[bloc] = [];
+    acc[bloc].push(item);
+    return acc;
+  }, {});
+
   async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
     setSubmitState("submitting");
     try {
@@ -77,11 +85,16 @@ export default function Results() {
   return (
     <main className="page page-results">
       <h1>Votre top 3 métiers</h1>
-      <div className="metier-cards">
-        {top3.map(({ metier, score }, i) => (
-          <MetierCard key={metier.id} rang={i + 1} metier={metier} score={score} />
-        ))}
-      </div>
+      {Object.entries(grouped).map(([bloc, items]) => (
+        <section key={bloc} className="metier-groupe">
+          <h2 className="metier-groupe-titre">{bloc}</h2>
+          <div className="metier-cards">
+            {items.map(({ metier, score, rang }) => (
+              <MetierCard key={metier.id} rang={rang} metier={metier} score={score} />
+            ))}
+          </div>
+        </section>
+      ))}
 
       {!showEmailForm && (
         <button type="button" className="btn btn-primary" onClick={() => setShowEmailForm(true)}>

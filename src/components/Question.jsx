@@ -9,6 +9,31 @@ import { REGIONS_FRANCE } from "../data/questions";
 export default function Question({ question, value, onChange }) {
   const name = question.id;
 
+  if (question.type === "chips") {
+    return (
+      <fieldset className="question">
+        <legend>{question.titre}</legend>
+        <div className="options options-chips">
+          {question.options.map((opt) => (
+            <label
+              key={opt.value}
+              className={`option-pill ${value === opt.value ? "selected" : ""}`}
+            >
+              <input
+                type="radio"
+                name={name}
+                value={opt.value}
+                checked={value === opt.value}
+                onChange={() => onChange(opt.value)}
+              />
+              {opt.label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+    );
+  }
+
   if (question.type === "select") {
     return (
       <fieldset className="question">

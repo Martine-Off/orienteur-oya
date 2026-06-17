@@ -1,12 +1,18 @@
 :root {
-  /* Charte OYA (couleurs extraites du logo, à affiner si charte officielle fournie) */
+  /* Charte OYA officielle (ClaudieUX J2) */
+  --color-primary: #EF8D11;         /* orange OYA — boutons, sélection, accents */
+  --color-primary-dark: #C8750A;    /* orange foncé — hover boutons, liens */
+  --color-secondary: #38AA3F;       /* vert OYA — progress, badges, headings */
+  --color-text: #424242;            /* texte principal */
+
+  /* Ancienne palette conservée pour les éléments non encore migrés */
   --oya-vert-fonce: #1f4a3b;
   --oya-vert: #3b8870;
   --oya-olive: #b5c757;
-  --oya-corail: #d9633b; /* corail du logo (#f5855c) foncé pour respecter le contraste texte */
-  --oya-jaune: #b97a0f; /* jaune du logo (#f9ab19) foncé pour respecter le contraste texte */
+  --oya-corail: #d9633b;
+  --oya-jaune: #b97a0f;
 
-  --text: #20242a;
+  --text: var(--color-text);
   --text-muted: #4b5159;
   --bg: #fdfdfb;
   --border: #d8dcd6;
@@ -42,7 +48,7 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--oya-vert-fonce);
+  color: var(--color-secondary);
   font-weight: 700;
 }
 
@@ -55,7 +61,7 @@ h2 {
 }
 
 a {
-  color: var(--oya-vert-fonce);
+  color: var(--color-primary-dark);
 }
 
 button,
@@ -65,6 +71,6 @@ select {
 }
 
 :focus-visible {
-  outline: 3px solid var(--oya-jaune);
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }
