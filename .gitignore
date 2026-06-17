@@ -41,3 +41,6 @@ desktop.ini
 
 # Google Drive shortcuts
 *.gsheet
+
+# Archives locales (non versionnées)
+ARCHIVES/
