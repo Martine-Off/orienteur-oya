@@ -38,3 +38,6 @@ cypress/downloads
 # Windows / Claude Code local config (pas pertinents pour le repo public)
 desktop.ini
 .claude/
+
+# Google Drive shortcuts
+*.gsheet
