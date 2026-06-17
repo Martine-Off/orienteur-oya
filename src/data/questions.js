@@ -20,10 +20,15 @@ export const PEURS = [
   { key: "marche", label: "Marché local faible" },
 ];
 
-/**
- * 10 questions fermées du quiz.
- * Q9 (peurs) et Q10 (région) sont informatifs — analytics uniquement, sans poids de scoring.
- */
+const ATTRAIT_ICONS = {
+  "Produire / cultiver": "/icons/produire.svg",
+  "Transformer / créer": "/icons/transformer.svg",
+  "Piloter / organiser": "/icons/piloter.svg",
+  "Conseiller / former": "/icons/conseiller.svg",
+  "Analyser / optimiser": "/icons/analyser.svg",
+  "Prendre soin des animaux": "/icons/animaux.svg",
+};
+
 export const QUESTIONS = [
   {
     id: "Q1",
@@ -39,15 +44,21 @@ export const QUESTIONS = [
   },
   {
     id: "Q3",
-    type: "choix",
+    type: "cartes",
     titre: "Dans quel cadre de vie souhaitez-vous exercer votre futur métier ?",
-    options: CADRES_DE_VIE,
+    options: CADRES_DE_VIE.map((v) => ({
+      value: v,
+      icon: `/icons/${v.toLowerCase()}.svg`,
+    })),
   },
   {
     id: "Q4",
     type: "cartes",
     titre: "Qu'est-ce qui vous attire le plus dans un métier ?",
-    options: ATTRAITS.map((a) => a.value),
+    options: ATTRAITS.map((a) => ({
+      value: a.value,
+      icon: ATTRAIT_ICONS[a.value],
+    })),
   },
   {
     id: "Q5",

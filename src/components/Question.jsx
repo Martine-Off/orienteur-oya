@@ -1,13 +1,5 @@
 import { REGIONS_FRANCE } from "../data/questions";
 
-
-
-/**
- * Composant générique de question fermée. Le `type` choisit le rendu mais
- * tous les types reposent sur des <input type="radio"> natifs pour garantir
- * la navigation clavier (Tab/Espace/flèches) et la compatibilité lecteurs
- * d'écran sans JS additionnel.
- */
 export default function Question({ question, value, onChange }) {
   const name = question.id;
 
@@ -17,10 +9,12 @@ export default function Question({ question, value, onChange }) {
       <fieldset className="question">
         <legend>{question.titre}</legend>
         {question.hint && <p className="question-hint">{question.hint}</p>}
-        <div className="question-divider" aria-hidden="true" />
-        <div className="options-checkboxes">
+        <div className="options-blocs options-blocs--multi">
           {question.options.map((opt) => (
-            <label key={opt.key} className="checkbox-option">
+            <label
+              key={opt.key}
+              className={`bloc-option ${checked[opt.key] ? "selected" : ""}`}
+            >
               <input
                 type="checkbox"
                 name={name}
@@ -40,11 +34,11 @@ export default function Question({ question, value, onChange }) {
     return (
       <fieldset className="question">
         <legend>{question.titre}</legend>
-        <div className="options options-chips">
+        <div className="options-blocs">
           {question.options.map((opt) => (
             <label
               key={opt.value}
-              className={`option-pill ${value === opt.value ? "selected" : ""}`}
+              className={`bloc-option ${value === opt.value ? "selected" : ""}`}
             >
               <input
                 type="radio"
@@ -61,26 +55,47 @@ export default function Question({ question, value, onChange }) {
     );
   }
 
+  if (question.type === "cartes") {
+    const hasImages = question.options.length > 0 && typeof question.options[0] === "object" && question.options[0].icon;
+    return (
+      <fieldset className="question">
+        <legend>{question.titre}</legend>
+        <div className={`options-blocs options-blocs--grid${hasImages ? " options-blocs--image" : ""}`}>
+          {question.options.map((opt) => {
+            const optValue = typeof opt === "string" ? opt : opt.value;
+            const optIcon = typeof opt === "object" ? opt.icon : null;
+            const optLabel = typeof opt === "string" ? opt : opt.label ?? opt.value;
+            return (
+              <label
+                key={optValue}
+                className={`bloc-option${optIcon ? " bloc-option--with-image" : ""} ${value === optValue ? "selected" : ""}`}
+              >
+                <input
+                  type="radio"
+                  name={name}
+                  value={optValue}
+                  checked={value === optValue}
+                  onChange={() => onChange(optValue)}
+                />
+                {optIcon && <img src={optIcon} alt="" className="bloc-option__icon" aria-hidden="true" />}
+                <span>{optLabel}</span>
+              </label>
+            );
+          })}
+        </div>
+      </fieldset>
+    );
+  }
+
   if (question.type === "select") {
     return (
       <fieldset className="question">
         <legend>{question.titre}</legend>
-        <label className="select-label" htmlFor={name}>
-          Choisissez une réponse
-        </label>
-        <select
-          id={name}
-          name={name}
-          value={value ?? ""}
-          onChange={(e) => onChange(e.target.value)}
-        >
-          <option value="" disabled>
-            -- Sélectionner --
-          </option>
+        <label className="select-label" htmlFor={name}>Choisissez une réponse</label>
+        <select id={name} name={name} value={value ?? ""} onChange={(e) => onChange(e.target.value)}>
+          <option value="" disabled>-- Sélectionner --</option>
           {question.options.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
+            <option key={opt.value} value={opt.value}>{opt.label}</option>
           ))}
         </select>
       </fieldset>
@@ -91,22 +106,11 @@ export default function Question({ question, value, onChange }) {
     return (
       <fieldset className="question">
         <legend>{question.titre}</legend>
-        <label className="select-label" htmlFor={name}>
-          Région
-        </label>
-        <select
-          id={name}
-          name={name}
-          value={value ?? ""}
-          onChange={(e) => onChange(e.target.value)}
-        >
-          <option value="" disabled>
-            -- Sélectionner --
-          </option>
+        <label className="select-label" htmlFor={name}>Région</label>
+        <select id={name} name={name} value={value ?? ""} onChange={(e) => onChange(e.target.value)}>
+          <option value="" disabled>-- Sélectionner --</option>
           {REGIONS_FRANCE.map((region) => (
-            <option key={region} value={region}>
-              {region}
-            </option>
+            <option key={region} value={region}>{region}</option>
           ))}
         </select>
       </fieldset>
@@ -117,9 +121,9 @@ export default function Question({ question, value, onChange }) {
     return (
       <fieldset className="question">
         <legend>{question.titre}</legend>
-        <div className="options options-inline">
+        <div className="options-blocs options-blocs--inline">
           {["Oui", "Non"].map((opt) => (
-            <label key={opt} className={`option-pill ${value === opt ? "selected" : ""}`}>
+            <label key={opt} className={`bloc-option ${value === opt ? "selected" : ""}`}>
               <input
                 type="radio"
                 name={name}
@@ -135,45 +139,27 @@ export default function Question({ question, value, onChange }) {
     );
   }
 
-  if (question.type === "cartes") {
-    return (
-      <fieldset className="question">
-        <legend>{question.titre}</legend>
-        <div className="options options-cards">
-          {question.options.map((opt) => (
-            <label key={opt} className={`option-card ${value === opt ? "selected" : ""}`}>
-              <input
-                type="radio"
-                name={name}
-                value={opt}
-                checked={value === opt}
-                onChange={() => onChange(opt)}
-              />
-              <span>{opt}</span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
-    );
-  }
-
-  // type === "choix" : boutons radio standards
+  // type === "choix"
   return (
     <fieldset className="question">
       <legend>{question.titre}</legend>
-      <div className="options">
-        {question.options.map((opt) => (
-          <label key={opt} className={`option-pill ${value === opt ? "selected" : ""}`}>
-            <input
-              type="radio"
-              name={name}
-              value={opt}
-              checked={value === opt}
-              onChange={() => onChange(opt)}
-            />
-            {opt}
-          </label>
-        ))}
+      <div className="options-blocs">
+        {question.options.map((opt) => {
+          const optValue = typeof opt === "string" ? opt : opt.value;
+          const optLabel = typeof opt === "string" ? opt : opt.label ?? opt.value;
+          return (
+            <label key={optValue} className={`bloc-option ${value === optValue ? "selected" : ""}`}>
+              <input
+                type="radio"
+                name={name}
+                value={optValue}
+                checked={value === optValue}
+                onChange={() => onChange(optValue)}
+              />
+              {optLabel}
+            </label>
+          );
+        })}
       </div>
     </fieldset>
   );

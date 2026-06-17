@@ -138,6 +138,139 @@ select {
   gap: 10px;
 }
 
+/* ===== BLOCS CLIQUABLES (ux/final-complete) ===== */
+
+.options-blocs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 600px) {
+  .options-blocs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .options-blocs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.options-blocs--inline {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 320px;
+}
+
+.options-blocs--grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 900px) {
+  .options-blocs--grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.options-blocs--image {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 900px) {
+  .options-blocs--image {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bloc-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px 16px;
+  min-height: 52px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #424242;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.bloc-option input[type="radio"],
+.bloc-option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.bloc-option:hover {
+  border-color: var(--color-primary);
+  background: rgba(239, 141, 17, 0.06);
+}
+
+.bloc-option:focus-within {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.bloc-option.selected {
+  border-color: var(--color-primary);
+  background: rgba(239, 141, 17, 0.09);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.bloc-option.selected::after {
+  content: "✓";
+  position: absolute;
+  top: 5px;
+  right: 9px;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bloc-option--with-image {
+  flex-direction: column;
+  gap: 10px;
+  min-height: 140px;
+  padding: 16px 12px;
+}
+
+.bloc-option__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 599px) {
+  .options-blocs--inline {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .bloc-option--with-image {
+    min-height: 120px;
+    padding: 12px 10px;
+  }
+
+  .bloc-option__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .question-hint {
   font-size: 0.85rem;
   color: var(--text-muted);
