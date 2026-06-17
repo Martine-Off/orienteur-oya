@@ -59,7 +59,7 @@ export default function Quiz() {
           <div className="modal">
             <p>Voulez-vous vraiment quitter le quiz ? Vos réponses seront perdues.</p>
             <div className="quiz-actions">
-              <button type="button" className="btn btn-secondary" onClick={() => setConfirmQuit(false)}>
+              <button type="button" className="btn btn-secondary" onClick={() => setConfirmQuit(false)} autoFocus>
                 Annuler
               </button>
               <button type="button" className="btn btn-primary" onClick={() => navigate("/")}>

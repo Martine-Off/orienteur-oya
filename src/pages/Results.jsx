@@ -6,12 +6,40 @@ import MetierCard from "../components/MetierCard";
 import EmailCaptureForm from "../components/EmailCaptureForm";
 import { submitLead } from "../utils/api";
 
+function SuccessMessage({ email }) {
+  return (
+    <main className="page page-results page-confirmation">
+      <div className="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle className="success-circle" cx="26" cy="26" r="24" stroke="currentColor" strokeWidth="2.5" />
+          <path className="success-check" d="M14 27l8 8 16-16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+      <h1>Merci&nbsp;!</h1>
+      <p>
+        Votre diagnostic a été envoyé à <strong>{email}</strong>.
+        <br />
+        Vérifiez votre boîte mail dans les prochaines minutes.
+      </p>
+      <div className="confirmation-actions">
+        <Link to="/" className="btn btn-primary">
+          Retour à l'accueil
+        </Link>
+        <Link to="/quiz" className="btn btn-secondary">
+          Refaire le quiz
+        </Link>
+      </div>
+    </main>
+  );
+}
+
 export default function Results() {
   const location = useLocation();
   const reponses = location.state?.reponses;
   const { metiers, loading, error } = useMetiers();
   const [showEmailForm, setShowEmailForm] = useState(false);
-  const [submitState, setSubmitState] = useState("idle"); // idle | submitting | done | error
+  const [submitState, setSubmitState] = useState("idle");
+  const [confirmedEmail, setConfirmedEmail] = useState("");
 
   if (!reponses) {
     return <Navigate to="/quiz" replace />;
@@ -20,7 +48,7 @@ export default function Results() {
   if (loading) {
     return (
       <main className="page page-results">
-        <p>Calcul de votre diagnostic en cours...</p>
+        <p>Calcul de votre diagnostic en cours…</p>
       </main>
     );
   }
@@ -34,7 +62,6 @@ export default function Results() {
   }
 
   const top3 = getTopMetiers(reponses, metiers, 3);
-
   const top3WithRank = top3.map((item, i) => ({ ...item, rang: i + 1 }));
   const grouped = top3WithRank.reduce((acc, item) => {
     const bloc = item.metier.bloc || "Autre";
@@ -64,6 +91,7 @@ export default function Results() {
         être_tenu_au_courant: etreTenuAuCourant,
         rgpd_accepte: rgpd,
       });
+      setConfirmedEmail(email);
       setSubmitState("done");
     } catch {
       setSubmitState("error");
@@ -71,20 +99,13 @@ export default function Results() {
   }
 
   if (submitState === "done") {
-    return (
-      <main className="page page-results">
-        <h1>Merci !</h1>
-        <p>Votre diagnostic a été envoyé. Vérifiez votre boîte mail dans les prochaines minutes.</p>
-        <Link to="/" className="btn btn-primary">
-          Retour à l'accueil
-        </Link>
-      </main>
-    );
+    return <SuccessMessage email={confirmedEmail} />;
   }
 
   return (
     <main className="page page-results">
       <h1>Votre top 3 métiers</h1>
+
       {Object.entries(grouped).map(([bloc, items]) => (
         <section key={bloc} className="metier-groupe">
           <h2 className="metier-groupe-titre">{bloc}</h2>
@@ -97,18 +118,27 @@ export default function Results() {
       ))}
 
       {!showEmailForm && (
-        <button type="button" className="btn btn-primary" onClick={() => setShowEmailForm(true)}>
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => setShowEmailForm(true)}
+        >
           Recevoir mon diagnostic par email
         </button>
       )}
 
       {showEmailForm && (
-        <EmailCaptureForm onSubmit={handleEmailSubmit} submitting={submitState === "submitting"} />
+        <div className="email-form-reveal">
+          <EmailCaptureForm
+            onSubmit={handleEmailSubmit}
+            submitting={submitState === "submitting"}
+          />
+        </div>
       )}
 
       {submitState === "error" && (
         <p role="alert" className="field-error">
-          L'envoi a échoué. Vérifiez votre connexion et réessayez.
+          Erreur lors de l'envoi. Vérifiez votre connexion et réessayez.
         </p>
       )}
     </main>

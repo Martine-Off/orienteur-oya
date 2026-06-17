@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 24px 20px 48px;
+  animation: fadeIn 0.25s ease both;
 }
 
 /* ---------- Landing ---------- */
@@ -150,6 +151,12 @@ select {
   border: 2px solid var(--border);
   border-radius: 999px;
   cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option-pill:focus-within {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .option-pill.selected {
@@ -174,6 +181,12 @@ select {
   border: 2px solid var(--border);
   border-radius: 12px;
   cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option-card:focus-within {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .option-card.selected {
@@ -330,6 +343,43 @@ select {
   font-size: 0.9rem;
 }
 
+/* ---------- Confirmation ---------- */
+.page-confirmation {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  color: var(--color-secondary);
+}
+
+.success-circle {
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: drawCircle 0.5s ease 0.1s forwards;
+}
+
+.success-check {
+  stroke-dasharray: 55;
+  stroke-dashoffset: 55;
+  animation: drawCheck 0.35s ease 0.55s forwards;
+}
+
+.confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.email-form-reveal {
+  animation: fadeIn 0.3s ease both;
+}
+
 /* ---------- Formulaire email/RGPD ---------- */
 .email-capture-form {
   display: flex;
@@ -366,6 +416,7 @@ select {
 .field-error {
   color: #a3221b;
   font-size: 0.9rem;
+  animation: fadeIn 0.2s ease both;
 }
 
 /* ---------- Responsive ---------- */

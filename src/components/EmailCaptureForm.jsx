@@ -37,7 +37,7 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
       />
       {touched && !emailValid && (
         <p id="email-error" className="field-error" role="alert">
-          Merci de saisir une adresse email valide.
+          Format email incorrect (ex&nbsp;: user@example.com)
         </p>
       )}
 
@@ -65,7 +65,7 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
       </label>
       {touched && !rgpd && (
         <p id="rgpd-error" className="field-error" role="alert">
-          Le consentement RGPD est requis pour recevoir votre diagnostic.
+          Vous devez accepter le RGPD pour continuer.
         </p>
       )}
 
