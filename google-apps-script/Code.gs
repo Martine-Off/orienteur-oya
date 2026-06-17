@@ -13,7 +13,7 @@
  */
 
 const SHEET_NAME_REPONSES = "Réponses";
-const BREVO_SENDER_EMAIL = "hello@oya.fr";
+const BREVO_SENDER_EMAIL = "martine.desmaroux@gmail.com";
 const BREVO_SENDER_NAME = "OYA L'Orienteur";
 
 function doPost(e) {
