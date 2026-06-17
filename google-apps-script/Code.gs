@@ -1,36 +1,34 @@
 /**
- * Backend POC L'Orienteur OYA — Google Apps Script
+ * Backend POC L'Orienteur OYA -- Google Apps Script
  *
- * Reçoit le POST JSON envoyé par React (src/utils/api.js), insère une ligne
- * dans l'onglet "Réponses" du Google Sheet, puis envoie un email Brevo
+ * Recoit le POST JSON envoye par React (src/utils/api.js), insere une ligne
+ * dans l'onglet "Reponses" du Google Sheet, puis envoie un email Brevo
  * au candidat avec son diagnostic.
  *
- * IMPORTANT — CORS : React envoie ce POST en mode "no-cors" avec
- * Content-Type "text/plain" car Apps Script ne gère pas le préflight CORS.
- * Le corps reste un JSON classique, parsé ici via JSON.parse().
+ * IMPORTANT -- CORS : React envoie ce POST en mode "no-cors" avec
+ * Content-Type "text/plain" car Apps Script ne gere pas le preflight CORS.
+ * Le corps reste un JSON classique, parse ici via JSON.parse().
  *
- * Installation : voir README-TECHNIQUE.md, section "Déployer le backend".
+ * Installation : voir README-TECHNIQUE.md, section "Deployer le backend".
  */
 
-const SHEET_NAME_REPONSES = "Réponses";
+const SHEET_NAME_REPONSES = "Reponses";
 const BREVO_SENDER_EMAIL = "martine.desmaroux3@gmail.com";
 const BREVO_SENDER_NAME = "OYA L'Orienteur";
 
 function doPost(e) {
   try {
-    // React envoie le POST en mode "no-cors" avec Content-Type "text/plain" pour éviter
-    // le préflight CORS qu'Apps Script ne sait pas gérer. Le corps est quand même du JSON
-    // valide — on le parse ici manuellement.
+    // React envoie en no-cors / text-plain -- le corps est quand meme du JSON valide.
     const data = JSON.parse(e.postData.contents);
 
-    if (!data.email || !data.top_3_métiers || !data.scores) {
+    if (!data.email) {
       return ContentService.createTextOutput("Invalid data").setMimeType(
-        ContentService.MimeType.TEXT,
+        ContentService.MimeType.TEXT
       );
     }
 
     appendReponse(data);
-    const emailResult = sendEmailBrevo(data.email, data.top_3_métiers, data.scores);
+    const emailResult = sendEmailBrevo(data.email, data);
 
     const status = emailResult.ok ? "OK" : ("EMAIL_ERROR:" + emailResult.error);
     return ContentService.createTextOutput(status).setMimeType(ContentService.MimeType.TEXT);
@@ -53,28 +51,66 @@ function appendReponse(data) {
     data.Q6,
     data.Q7,
     data.Q8,
-    data.Q9_peurs || "",       // col K — peurs et préoccupations (CSV des clés cochées)
-    data.Q10_region || "",     // col L — région (ex-Q9)
-    data.top_3_métiers[0] || "",
-    data.top_3_métiers[1] || "",
-    data.top_3_métiers[2] || "",
-    data.scores[0] || "",
-    data.scores[1] || "",
-    data.scores[2] || "",
-    data.région,
-    data.bloc,
-    data.être_tenu_au_courant === true,
+    data.Q9_peurs || "",          // col K -- peurs et preoccupations (CSV des cles cochees)
+    data.Q10_region || "",        // col L -- region
+    (data.top_3_thematiques || [])[0] || "",
+    (data.top_3_thematiques || [])[1] || "",
+    (data.top_3_thematiques || [])[2] || "",
+    (data.scores_thematiques || [])[0] || "",
+    (data.scores_thematiques || [])[1] || "",
+    (data.scores_thematiques || [])[2] || "",
+    data.region || "",
+    data.bloc || "",
+    data.etre_tenu_au_courant === true,
   ]);
 }
 
-function sendEmailBrevo(email, métiers, scores) {
-  // Clé stockée dans Script Properties, jamais en dur dans le code.
-  // Apps Script editor → Project Settings (⚙️) → Script properties → BREVO_API_KEY.
+function sendEmailBrevo(email, data) {
+  // Cle stockee dans Script Properties, jamais en dur dans le code.
+  // Apps Script editor -> Project Settings -> Script properties -> BREVO_API_KEY.
   const brevoKey = PropertiesService.getScriptProperties().getProperty("BREVO_API_KEY");
   if (!brevoKey) {
     const msg = "BREVO_API_KEY manquante dans Project Settings > Script properties";
     Logger.log(msg);
     return { ok: false, error: msg };
+  }
+
+  const thematiques = data.top_3_thematiques || [];
+  const scoresThematiques = data.scores_thematiques || [];
+  const metiers = data.top_3_metiers || data["top_3_métiers"] || [];
+  const scores = data.scores || [];
+
+  var htmlDiagnostic = "";
+  if (thematiques.length > 0) {
+    htmlDiagnostic =
+      "<h3 style='color:#38AA3F;margin-bottom:12px;'>Vos 3 thematiques prioritaires</h3>" +
+      thematiques.map(function(t, i) {
+        var score = scoresThematiques[i] ? scoresThematiques[i] + "/100" : "";
+        var metier = metiers[i]
+          ? "<br><small style='color:#888;'>Ex : " + metiers[i] + "</small>"
+          : "";
+        var style = i === 0
+          ? "padding:12px 16px;margin-bottom:10px;border-left:4px solid #EF8D11;background:#FFFBF8;border-radius:4px;"
+          : "padding:12px 16px;margin-bottom:10px;border-left:4px solid #E8E8E8;border-radius:4px;";
+        var badge = i === 0
+          ? "<div style='font-size:0.72em;font-weight:700;text-transform:uppercase;color:#EF8D11;margin-bottom:4px;'>Meilleure correspondance</div>"
+          : "";
+        return "<div style='" + style + "'>" +
+          badge +
+          "<strong>" + t + "</strong>" +
+          (score
+            ? " <span style='background:#38AA3F;color:#fff;border-radius:12px;padding:2px 8px;font-size:0.8em;'>" + score + "</span>"
+            : "") +
+          metier +
+          "</div>";
+      }).join("");
+  } else {
+    htmlDiagnostic =
+      "<ol>" +
+      "<li><strong>" + (metiers[0] || "") + "</strong> " + (scores[0] || "") + "/100</li>" +
+      "<li><strong>" + (metiers[1] || "") + "</strong> " + (scores[1] || "") + "/100</li>" +
+      "<li><strong>" + (metiers[2] || "") + "</strong> " + (scores[2] || "") + "/100</li>" +
+      "</ol>";
   }
 
   const brevoUrl = "https://api.brevo.com/v3/smtp/email";
@@ -84,17 +120,16 @@ function sendEmailBrevo(email, métiers, scores) {
     sender: { email: BREVO_SENDER_EMAIL, name: BREVO_SENDER_NAME },
     subject: "Votre diagnostic L'Orienteur OYA",
     htmlContent:
-      "<h2>Votre diagnostic d'orientation</h2>" +
-      "<p>Voici les 3 métiers correspondant à votre profil :</p>" +
-      "<ol>" +
-      "<li><strong>" + métiers[0] + "</strong> — Score : " + scores[0] + "/100</li>" +
-      "<li><strong>" + métiers[1] + "</strong> — Score : " + scores[1] + "/100</li>" +
-      "<li><strong>" + métiers[2] + "</strong> — Score : " + scores[2] + "/100</li>" +
-      "</ol>" +
-      "<p>Découvrez les formations correspondantes sur <a href=\"https://oya.fr\">oya.fr</a></p>" +
-      "<p>À bientôt !</p>" +
-      "<p><small>Vous recevez cet email car vous avez accepté de recevoir votre diagnostic et " +
-      "que vos réponses soient utilisées à titre statistique (RGPD).</small></p>",
+      "<div style='font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px;'>" +
+      "<h2 style='color:#38AA3F;'>Votre diagnostic d'orientation</h2>" +
+      "<p>Voici vos thematiques de reconversion correspondant a votre profil :</p>" +
+      htmlDiagnostic +
+      "<p style='margin-top:24px;'>Decouvrez les formations correspondantes sur " +
+      "<a href='https://oya.fr' style='color:#EF8D11;'>oya.fr</a></p>" +
+      "<p>A bientot !</p>" +
+      "<p><small style='color:#888;'>Vous recevez cet email car vous avez accepte de recevoir " +
+      "votre diagnostic et que vos reponses soient utilisees a titre statistique (RGPD).</small></p>" +
+      "</div>",
   };
 
   const options = {

@@ -39,8 +39,9 @@ describe("Quiz d'orientation OYA", () => {
     cy.visit("/");
     repondreAuQuiz();
 
-    cy.contains("Votre top 3 métiers").should("be.visible");
-    cy.get(".metier-card").should("have.length", 3);
+    cy.contains("Vos thématiques de reconversion").should("be.visible");
+    cy.get(".thematic-card").should("have.length", 3);
+    cy.get(".thematic-card--top").should("have.length", 1);
 
     cy.contains("Recevoir mon diagnostic par email").click();
     cy.get("#email").type("test@example.com");

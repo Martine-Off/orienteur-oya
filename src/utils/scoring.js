@@ -160,3 +160,29 @@ export function getTopMetiers(reponses, metiers, topN = 3) {
     .sort((a, b) => b.score - a.score)
     .slice(0, topN);
 }
+
+/**
+ * Groupe tous les métiers par thematiqueFormation, calcule le score moyen
+ * des top 3 métiers de chaque groupe, retourne les N meilleures thématiques.
+ *
+ * Retourne : [{ thematique, avgScore, metiers: [{metier, score}] }]
+ */
+export function groupByThematique(reponses, metiers, topN = 3) {
+  const scored = metiers.map((metier) => ({ metier, score: scoreMetier(reponses, metier) }));
+
+  const groups = {};
+  for (const { metier, score } of scored) {
+    const key = metier.thematiqueFormation || "Autre";
+    if (!groups[key]) groups[key] = [];
+    groups[key].push({ metier, score });
+  }
+
+  return Object.entries(groups)
+    .map(([thematique, items]) => {
+      const top3 = items.sort((a, b) => b.score - a.score).slice(0, 3);
+      const avgScore = Math.round(top3.reduce((sum, { score }) => sum + score, 0) / top3.length);
+      return { thematique, avgScore, metiers: top3 };
+    })
+    .sort((a, b) => b.avgScore - a.avgScore)
+    .slice(0, topN);
+}

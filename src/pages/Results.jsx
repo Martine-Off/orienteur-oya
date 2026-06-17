@@ -1,8 +1,8 @@
 import { useLocation, Navigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { useMetiers } from "../hooks/useMetiers";
-import { getTopMetiers } from "../utils/scoring";
-import MetierCard from "../components/MetierCard";
+import { groupByThematique } from "../utils/scoring";
+import ThematicCard from "../components/ThematicCard";
 import EmailCaptureForm from "../components/EmailCaptureForm";
 import { submitLead } from "../utils/api";
 
@@ -61,18 +61,10 @@ export default function Results() {
     );
   }
 
-  const top3 = getTopMetiers(reponses, metiers, 3);
-  const top3WithRank = top3.map((item, i) => ({ ...item, rang: i + 1 }));
-  const grouped = top3WithRank.reduce((acc, item) => {
-    const bloc = item.metier.bloc || "Autre";
-    if (!acc[bloc]) acc[bloc] = [];
-    acc[bloc].push(item);
-    return acc;
-  }, {});
+  const thematiques = groupByThematique(reponses, metiers, 3);
 
   async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
     setSubmitState("submitting");
-    // Convertir l'objet checkboxes {chomage: true, budget: false, ...} en texte CSV pour le Sheet.
     const peursTexte = Object.entries(reponses.Q9 || {})
       .filter(([, v]) => v === true)
       .map(([k]) => k)
@@ -90,10 +82,13 @@ export default function Results() {
         Q8: reponses.Q8,
         Q9_peurs: peursTexte,
         Q10_region: reponses.Q10,
-        top_3_métiers: top3.map((t) => t.metier.metier),
-        scores: top3.map((t) => t.score),
+        top_3_thematiques: thematiques.map((t) => t.thematique),
+        scores_thematiques: thematiques.map((t) => t.avgScore),
+        // Backward compat avec le Sheet : meilleur métier de chaque thématique
+        top_3_métiers: thematiques.map((t) => t.metiers[0]?.metier.metier),
+        scores: thematiques.map((t) => t.metiers[0]?.score),
         région: reponses.Q10,
-        bloc: top3[0]?.metier.bloc,
+        bloc: thematiques[0]?.thematique,
         être_tenu_au_courant: etreTenuAuCourant,
         rgpd_accepte: rgpd,
       });
@@ -110,18 +105,19 @@ export default function Results() {
 
   return (
     <main className="page page-results">
-      <h1>Votre top 3 métiers</h1>
+      <h1>Vos thématiques de reconversion</h1>
 
-      {Object.entries(grouped).map(([bloc, items]) => (
-        <section key={bloc} className="metier-groupe">
-          <h2 className="metier-groupe-titre">{bloc}</h2>
-          <div className="metier-cards">
-            {items.map(({ metier, score, rang }) => (
-              <MetierCard key={metier.id} rang={rang} metier={metier} score={score} />
-            ))}
-          </div>
-        </section>
-      ))}
+      <div className="thematic-list">
+        {thematiques.map((t, i) => (
+          <ThematicCard
+            key={t.thematique}
+            thematique={t.thematique}
+            avgScore={t.avgScore}
+            metiers={t.metiers}
+            isTop={i === 0}
+          />
+        ))}
+      </div>
 
       {!showEmailForm && (
         <button
