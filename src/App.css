@@ -163,6 +163,10 @@ select {
   max-width: 320px;
 }
 
+.options-blocs--multi {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .options-blocs--grid {
   grid-template-columns: repeat(2, 1fr);
 }
