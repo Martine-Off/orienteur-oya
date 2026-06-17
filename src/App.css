@@ -164,8 +164,9 @@ select {
 }
 
 .checkbox-option:has(input:checked) {
-  border-color: var(--color-primary);
-  background: rgba(239, 141, 17, 0.08);
+  /* design system : checked = vert #38AA3F, pas orange */
+  border-color: var(--color-secondary);
+  background: rgba(56, 170, 63, 0.08);
   font-weight: 600;
 }
 
@@ -175,17 +176,33 @@ select {
 }
 
 .checkbox-option input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
-  accent-color: var(--color-primary);
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  /* checkmark blanc sur fond vert — design system OYA */
+  accent-color: var(--color-secondary);
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
+/* Mobile (375px) : 1 colonne — tablet+ : 2 colonnes (défaut) */
+@media (max-width: 767px) {
   .options-checkboxes {
     grid-template-columns: 1fr;
   }
+}
+
+/* Page Peurs : fond salmon doux */
+.page-quiz--peurs {
+  background: var(--color-salmon, #FFFBF8);
+}
+
+/* Trait orange séparateur avant la grille de checkboxes */
+.question-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  margin: 0 0 4px;
 }
 
 .options-inline {

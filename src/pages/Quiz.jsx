@@ -36,7 +36,10 @@ export default function Quiz() {
   }
 
   return (
-    <main className="page page-quiz" onKeyDown={handleKeyDown}>
+    <main
+      className={`page page-quiz${question.type === "checkboxes" ? " page-quiz--peurs" : ""}`}
+      onKeyDown={handleKeyDown}
+    >
       <ProgressBar current={currentIndex + 1} total={total} />
       <form onSubmit={handleSubmit}>
         <Question

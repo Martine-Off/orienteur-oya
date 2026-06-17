@@ -17,6 +17,7 @@ export default function Question({ question, value, onChange }) {
       <fieldset className="question">
         <legend>{question.titre}</legend>
         {question.hint && <p className="question-hint">{question.hint}</p>}
+        <div className="question-divider" aria-hidden="true" />
         <div className="options-checkboxes">
           {question.options.map((opt) => (
             <label key={opt.key} className="checkbox-option">

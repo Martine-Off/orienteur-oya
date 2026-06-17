@@ -1,9 +1,21 @@
 :root {
   /* Charte OYA officielle (ClaudieUX J2) */
-  --color-primary: #EF8D11;         /* orange OYA — boutons, sélection, accents */
-  --color-primary-dark: #C8750A;    /* orange foncé — hover boutons, liens */
-  --color-secondary: #38AA3F;       /* vert OYA — progress, badges, headings */
+  --color-primary: #EF8D11;         /* orange OYA — boutons, hover, focus */
+  --color-primary-dark: #D67C0A;    /* orange foncé — hover boutons, liens */
+  --color-secondary: #38AA3F;       /* vert OYA — checkboxes checked, validation, success */
+  --color-salmon: #FFFBF8;          /* fond doux — page Peurs, cards soft */
   --color-text: #424242;            /* texte principal */
+  --color-text-muted: #888888;      /* texte secondaire / captions */
+  --color-border: #E8E8E8;          /* bordures inputs, cards */
+
+  --font-sans: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', serif;  /* Aller Display fallback */
+
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 48px;
 
   /* Ancienne palette conservée pour les éléments non encore migrés */
   --oya-vert-fonce: #1f4a3b;
@@ -17,9 +29,9 @@
   --bg: #fdfdfb;
   --border: #d8dcd6;
 
-  --sans: "Segoe UI", system-ui, Roboto, sans-serif;
+  --sans: var(--font-sans);
 
-  font: 18px/145% var(--sans);
+  font: 16px/1.6 var(--font-sans);
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
