@@ -53,7 +53,8 @@ function appendReponse(data) {
     data.Q6,
     data.Q7,
     data.Q8,
-    data.Q9_region,
+    data.Q9_peurs || "",       // col K — peurs et préoccupations (CSV des clés cochées)
+    data.Q10_region || "",     // col L — région (ex-Q9)
     data.top_3_métiers[0] || "",
     data.top_3_métiers[1] || "",
     data.top_3_métiers[2] || "",

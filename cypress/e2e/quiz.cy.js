@@ -26,7 +26,12 @@ describe("Quiz d'orientation OYA", () => {
     cy.contains("label", "Oui").click();
     cy.contains("button", "Suivant").click();
 
-    cy.get("#Q9").select("Île-de-France");
+    // Q9 — peurs (checkboxes, multi-select obligatoire)
+    cy.contains("label", "Chômage").click();
+    cy.contains("button", "Suivant").click();
+
+    // Q10 — région
+    cy.get("#Q10").select("Île-de-France");
     cy.contains("button", "Voir mes résultats").click();
   }
 
@@ -54,10 +59,10 @@ describe("Quiz d'orientation OYA", () => {
 
   it("affiche une barre de progression cohérente", () => {
     cy.visit("/quiz");
-    cy.contains("1/9").should("be.visible");
+    cy.contains("1/10").should("be.visible");
     cy.contains("label", "Management/Encadrement").click();
     cy.contains("button", "Suivant").click();
-    cy.contains("2/9").should("be.visible");
+    cy.contains("2/10").should("be.visible");
   });
 
   it("requiert le consentement RGPD avant l'envoi", () => {
@@ -84,7 +89,7 @@ describe("Quiz d'orientation OYA", () => {
     cy.contains("label", "Management/Encadrement").click();
     cy.contains("button", "Suivant").click();
     cy.contains("button", "Précédent").click();
-    cy.contains("1/9").should("be.visible");
+    cy.contains("1/10").should("be.visible");
   });
 
   it("expose des options accessibles au clavier (radios natifs, focusables)", () => {

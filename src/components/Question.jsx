@@ -1,5 +1,7 @@
 import { REGIONS_FRANCE } from "../data/questions";
 
+
+
 /**
  * Composant générique de question fermée. Le `type` choisit le rendu mais
  * tous les types reposent sur des <input type="radio"> natifs pour garantir
@@ -8,6 +10,30 @@ import { REGIONS_FRANCE } from "../data/questions";
  */
 export default function Question({ question, value, onChange }) {
   const name = question.id;
+
+  if (question.type === "checkboxes") {
+    const checked = value || {};
+    return (
+      <fieldset className="question">
+        <legend>{question.titre}</legend>
+        {question.hint && <p className="question-hint">{question.hint}</p>}
+        <div className="options-checkboxes">
+          {question.options.map((opt) => (
+            <label key={opt.key} className="checkbox-option">
+              <input
+                type="checkbox"
+                name={name}
+                value={opt.key}
+                checked={!!checked[opt.key]}
+                onChange={(e) => onChange({ ...checked, [opt.key]: e.target.checked })}
+              />
+              {opt.label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+    );
+  }
 
   if (question.type === "chips") {
     return (

@@ -7,10 +7,22 @@ import {
   BUDGETS,
 } from "../utils/scoring";
 
+export const PEURS = [
+  { key: "chomage", label: "Chômage" },
+  { key: "budget", label: "Budget insuffisant" },
+  { key: "competences", label: "Manque de compétences" },
+  { key: "physique", label: "Charge de travail physique" },
+  { key: "concurrence", label: "Concurrence marché" },
+  { key: "isolement", label: "Isolement professionnel" },
+  { key: "meteo", label: "Conditions météo / intempéries" },
+  { key: "administratif", label: "Difficultés administratives" },
+  { key: "terre", label: "Accès à la terre" },
+  { key: "marche", label: "Marché local faible" },
+];
+
 /**
- * 9 questions fermées du quiz. `type` détermine le composant de saisie :
- * "cartes" (cartes visuelles), "choix" (boutons radio), "select", "oui-non".
- * Q9 (région) est purement informatif (analytics), sans poids de scoring.
+ * 10 questions fermées du quiz.
+ * Q9 (peurs) et Q10 (région) sont informatifs — analytics uniquement, sans poids de scoring.
  */
 export const QUESTIONS = [
   {
@@ -61,6 +73,13 @@ export const QUESTIONS = [
   },
   {
     id: "Q9",
+    type: "checkboxes",
+    titre: "Quelles sont vos principales préoccupations ?",
+    hint: "Plusieurs réponses possibles — au moins une requise",
+    options: PEURS,
+  },
+  {
+    id: "Q10",
     type: "region",
     titre: "Dans quelle région habitez-vous ?",
   },

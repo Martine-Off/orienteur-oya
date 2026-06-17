@@ -72,6 +72,11 @@ export default function Results() {
 
   async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
     setSubmitState("submitting");
+    // Convertir l'objet checkboxes {chomage: true, budget: false, ...} en texte CSV pour le Sheet.
+    const peursTexte = Object.entries(reponses.Q9 || {})
+      .filter(([, v]) => v === true)
+      .map(([k]) => k)
+      .join(", ");
     try {
       await submitLead({
         email,
@@ -83,10 +88,11 @@ export default function Results() {
         Q6: reponses.Q6,
         Q7: reponses.Q7,
         Q8: reponses.Q8,
-        Q9_region: reponses.Q9,
+        Q9_peurs: peursTexte,
+        Q10_region: reponses.Q10,
         top_3_métiers: top3.map((t) => t.metier.metier),
         scores: top3.map((t) => t.score),
-        région: reponses.Q9,
+        région: reponses.Q10,
         bloc: top3[0]?.metier.bloc,
         être_tenu_au_courant: etreTenuAuCourant,
         rgpd_accepte: rgpd,

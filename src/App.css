@@ -138,6 +138,56 @@ select {
   gap: 10px;
 }
 
+.question-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: -8px 0 4px;
+}
+
+.options-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  font-size: 0.9rem;
+}
+
+.checkbox-option:has(input:checked) {
+  border-color: var(--color-primary);
+  background: rgba(239, 141, 17, 0.08);
+  font-weight: 600;
+}
+
+.checkbox-option:focus-within {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.checkbox-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .options-checkboxes {
+    grid-template-columns: 1fr;
+  }
+}
+
 .options-inline {
   flex-direction: row;
 }
