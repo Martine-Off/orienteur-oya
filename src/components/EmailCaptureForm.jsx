@@ -69,7 +69,7 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
         </p>
       )}
 
-      <button type="submit" className="btn btn-primary" disabled={submitting}>
+      <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
         {submitting ? "Envoi en cours..." : "Envoyer"}
       </button>
     </form>

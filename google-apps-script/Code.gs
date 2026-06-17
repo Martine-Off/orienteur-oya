@@ -27,9 +27,10 @@ function doPost(e) {
     }
 
     appendReponse(data);
-    sendEmailBrevo(data.email, data.top_3_métiers, data.scores);
+    const emailResult = sendEmailBrevo(data.email, data.top_3_métiers, data.scores);
 
-    return ContentService.createTextOutput("OK").setMimeType(ContentService.MimeType.TEXT);
+    const status = emailResult.ok ? "OK" : ("EMAIL_ERROR:" + emailResult.error);
+    return ContentService.createTextOutput(status).setMimeType(ContentService.MimeType.TEXT);
   } catch (error) {
     Logger.log("Error: " + error.toString());
     return ContentService.createTextOutput("Error").setMimeType(ContentService.MimeType.TEXT);
@@ -65,8 +66,9 @@ function appendReponse(data) {
 function sendEmailBrevo(email, métiers, scores) {
   const brevoKey = PropertiesService.getScriptProperties().getProperty("BREVO_API_KEY");
   if (!brevoKey) {
-    Logger.log("BREVO_API_KEY manquante dans Project Settings > Script properties");
-    return;
+    const msg = "BREVO_API_KEY manquante dans Project Settings > Script properties";
+    Logger.log(msg);
+    return { ok: false, error: msg };
   }
 
   const brevoUrl = "https://api.brevo.com/v3/smtp/email";
@@ -75,19 +77,18 @@ function sendEmailBrevo(email, métiers, scores) {
     to: [{ email: email }],
     sender: { email: BREVO_SENDER_EMAIL, name: BREVO_SENDER_NAME },
     subject: "Votre diagnostic L'Orienteur OYA",
-    htmlContent: `
-      <h2>Votre diagnostic d'orientation</h2>
-      <p>Voici les 3 métiers correspondant à votre profil :</p>
-      <ol>
-        <li><strong>${métiers[0]}</strong> — Score : ${scores[0]}/100</li>
-        <li><strong>${métiers[1]}</strong> — Score : ${scores[1]}/100</li>
-        <li><strong>${métiers[2]}</strong> — Score : ${scores[2]}/100</li>
-      </ol>
-      <p>Découvrez les formations correspondantes sur <a href="https://oya.fr">oya.fr</a></p>
-      <p>À bientôt !</p>
-      <p><small>Vous recevez cet email car vous avez accepté de recevoir votre diagnostic et
-      que vos réponses soient utilisées à titre statistique (RGPD).</small></p>
-    `,
+    htmlContent:
+      "<h2>Votre diagnostic d'orientation</h2>" +
+      "<p>Voici les 3 métiers correspondant à votre profil :</p>" +
+      "<ol>" +
+      "<li><strong>" + métiers[0] + "</strong> — Score : " + scores[0] + "/100</li>" +
+      "<li><strong>" + métiers[1] + "</strong> — Score : " + scores[1] + "/100</li>" +
+      "<li><strong>" + métiers[2] + "</strong> — Score : " + scores[2] + "/100</li>" +
+      "</ol>" +
+      "<p>Découvrez les formations correspondantes sur <a href=\"https://oya.fr\">oya.fr</a></p>" +
+      "<p>À bientôt !</p>" +
+      "<p><small>Vous recevez cet email car vous avez accepté de recevoir votre diagnostic et " +
+      "que vos réponses soient utilisées à titre statistique (RGPD).</small></p>",
   };
 
   const options = {
@@ -101,7 +102,11 @@ function sendEmailBrevo(email, métiers, scores) {
   };
 
   const response = UrlFetchApp.fetch(brevoUrl, options);
-  if (response.getResponseCode() !== 201) {
-    Logger.log("Brevo error: " + response.getResponseCode() + " - " + response.getContentText());
+  const code = response.getResponseCode();
+  if (code !== 201) {
+    const detail = code + " - " + response.getContentText();
+    Logger.log("Brevo error: " + detail);
+    return { ok: false, error: detail };
   }
+  return { ok: true };
 }
