@@ -162,6 +162,53 @@ export function getTopMetiers(reponses, metiers, topN = 3) {
 }
 
 /**
+ * Convertit les réponses brutes du quiz en valeurs normalisées 0-1.
+ * Utilisé par computeScore() quand les données métier viennent du Sheet
+ * (sans les attributs complets nécessaires aux matchQx individuels).
+ */
+export function normalizeAnswers(reponses) {
+  const Q1_COMPAT = {
+    "Management/Encadrement": 0.5,
+    "Production/Technique": 0.9,
+    "Conseil/Formation": 0.7,
+    "Analyse/Gestion": 0.5,
+    "Industrie/Artisanat": 0.7,
+    "Autre": 0.5,
+  };
+  const Q3_COMPAT = { Flexible: 1.0, Campagne: 0.8, Urbain: 0.4 };
+  const Q7_COMPAT = { "0-5k": 0.2, "5-15k": 0.5, "15k et plus": 1.0 };
+
+  return {
+    Q1: Q1_COMPAT[reponses.Q1] ?? 0.5,
+    Q2: reponses.Q2 != null ? Number(reponses.Q2) / 7 : 0,
+    Q3: Q3_COMPAT[reponses.Q3] ?? 0.5,
+    Q4: reponses.Q4 != null ? 0.8 : 0,   // toute attraction = bonne intention
+    Q5: reponses.Q5 === "Oui" ? 0.2 : 1.0,
+    Q6: 0,
+    Q7: Q7_COMPAT[reponses.Q7] ?? 0.5,
+    Q8: reponses.Q8 === "Oui" ? 1.0 : 0.4,
+  };
+}
+
+/**
+ * Score simplifié pour données Sheet (poids only, sans attributs métier complets).
+ * Formule : Σ(réponse_normalisée_i × poids_i) / Σ(poids_i) × 100
+ */
+export function computeScore(normalizedAnswers, poids) {
+  let sommePonderee = 0;
+  let sommePoids = 0;
+  for (let i = 1; i <= 8; i++) {
+    const q = `Q${i}`;
+    const p = poids[q] ?? 0;
+    if (p === 0) continue;
+    sommePonderee += (normalizedAnswers[q] ?? 0) * p;
+    sommePoids += p;
+  }
+  if (sommePoids === 0) return 0;
+  return Math.round((sommePonderee / sommePoids) * 100);
+}
+
+/**
  * Groupe tous les métiers par thematiqueFormation, calcule le score moyen
  * des top 3 métiers de chaque groupe, retourne les N meilleures thématiques.
  *

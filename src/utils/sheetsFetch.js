@@ -22,11 +22,18 @@ export async function fetchFromSheet() {
   return json.values; // [header, row1, row2, ...]
 }
 
+// Mapping colonne P (Niveau) → niveauMin numérique attendu par scoreMetier
+const NIVEAU_TO_MIN = {
+  "CAP/BEP": 3, "Bac": 4, "BTS/BTSA": 5, "Licence": 6, "Master": 7,
+};
+
 export function parseMetiers(values) {
   const [, ...rows] = values; // on ignore le header (ligne 0)
 
-  // Colonnes : A=Métier B=Bloc C-J=Poids_Q1-Q8 K=Secteur L=Autonomie
-  //            M=Pénurie N=Évolution O=Compétences P=Niveau
+  // Colonnes A-P :
+  // A=Métier  B=Bloc  C-J=Poids_Q1-Q8
+  // K=Secteur  L=Autonomie(=typeActivite)  M=Pénurie  N=Évolution
+  // O=Compétences  P=Niveau
   return rows
     .filter(row => row[0])
     .map((row, idx) => ({
@@ -43,6 +50,16 @@ export function parseMetiers(values) {
         Q7: parseFloat(row[8]) || 0,
         Q8: parseFloat(row[9]) || 0,
       },
+      // Champs dérivés pour compatibilité avec scoreMetier()
+      typeActivite: row[11] || "",                      // col L = typeActivite brut
+      niveauMin: NIVEAU_TO_MIN[row[15]] ?? 4,           // col P → entier
+      statut: row[12] === "En tension" ? "Tension"      // col M Pénurie
+            : row[13] === "Émergent"   ? "Émergent"     // col N Évolution
+            : "",
+      localisation: ["Flexible"],                       // absent du Sheet → neutre
+      situation: [],                                    // absent du Sheet → neutre (0.5 via matchQ7)
+      relationVivant: [],                               // absent du Sheet → partial match Q4
+      // Champs display
       secteur: row[10] || "",
       autonomie: row[11] || "",
       penurie: row[12] || "",
