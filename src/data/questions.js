@@ -27,6 +27,8 @@ const ATTRAIT_ICONS = {
   "Conseiller / former": "/icons/conseiller.svg",
   "Analyser / optimiser": "/icons/analyser.svg",
   "Prendre soin des animaux": "/icons/animaux.svg",
+  "Cuisinier / Servir": "/icons/restauration.svg",
+  "Partager / Vendre": "/icons/marche.svg",
 };
 
 export const QUESTIONS = [
@@ -57,12 +59,14 @@ export const QUESTIONS = [
     type: "cartes",
     titre: "Qu'est-ce qui vous attire le plus dans un métier ?",
     options: [
-      { value: "Produire / cultiver",       icon: "/images/Image4Produire.jpg",    label: "Produire" },
-      { value: "Transformer / créer",       icon: "/images/Image5Transformer.jpg", label: "Transformer" },
-      { value: "Piloter / organiser",       icon: "/images/Image6Piloter.jpg",     label: "Piloter" },
-      { value: "Conseiller / former",       icon: "/images/Image7Conseiller.jpg",  label: "Conseiller" },
-      { value: "Analyser / optimiser",      icon: "/images/Image8Analyser.jpg",    label: "Analyser" },
-      { value: "Prendre soin des animaux",  icon: "/images/Image9Animaux.jpg",     label: "Animaux" },
+      { value: "Produire / cultiver",       icon: "/images/Image4Produire.jpg",       label: "Produire / cultiver" },
+      { value: "Transformer / créer",       icon: "/images/Image5Transformer.jpg",    label: "Transformer / créer" },
+      { value: "Piloter / organiser",       icon: "/images/Image6Piloter.jpg",        label: "Piloter / organiser" },
+      { value: "Conseiller / former",       icon: "/images/Image7Conseiller.jpg",     label: "Conseiller / former" },
+      { value: "Analyser / optimiser",      icon: "/images/Image8Analyser.jpg",       label: "Analyser / optimiser" },
+      { value: "Prendre soin des animaux",  icon: "/images/Image9Animaux.jpg",        label: "Prendre soin des animaux" },
+      { value: "Cuisinier / Servir",        icon: "/images/image10restauration.jpg",  label: "Cuisinier / Servir" },
+      { value: "Partager / Vendre",         icon: "/images/image11marche.jpg",        label: "Partager / Vendre" },
     ],
   },
   {

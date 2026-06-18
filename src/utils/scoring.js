@@ -42,6 +42,8 @@ export const ATTRAITS = [
   { value: "Conseiller / former", typeActivite: "Former", relationVivant: null },
   { value: "Analyser / optimiser", typeActivite: "Analyser", relationVivant: "Tech" },
   { value: "Prendre soin des animaux", typeActivite: null, relationVivant: "Animaux" },
+  { value: "Cuisinier / Servir", typeActivite: "Transformer", relationVivant: null },
+  { value: "Partager / Vendre", typeActivite: "Piloter", relationVivant: null },
 ];
 
 export const CADRES_DE_VIE = ["Urbain", "Campagne", "Flexible"];
