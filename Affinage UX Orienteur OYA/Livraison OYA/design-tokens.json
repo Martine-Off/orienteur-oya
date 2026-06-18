@@ -1,0 +1,33 @@
+{
+  "color": {
+    "cta":        { "value": "#A85D08", "usage": "boutons primaires (blanc dessus, 4.8:1)" },
+    "ctaHover":   { "value": "#8F4E06" },
+    "accent":     { "value": "#EF8D11", "usage": "bordures, focus, séparateurs, barre rank 1 — pas de texte" },
+    "title":      { "value": "#2E7D33", "usage": "H2 / legend questions (4.5:1)" },
+    "green":      { "value": "#38AA3F", "usage": "cases cochées, badges, icônes — non-texte (3:1)" },
+    "text":       { "value": "#424242" },
+    "textMuted":  { "value": "#888888" },
+    "bg":         { "value": "#FFFFFF" },
+    "bgApp":      { "value": "#F4F3F0" },
+    "bgHelper":   { "value": "#F0FFF4" },
+    "bgPeurs":    { "value": "#FFFBF8" },
+    "bgSelected": { "value": "#FFF5E6" },
+    "track":      { "value": "#F0EFEC" },
+    "barRank1":   { "value": "#EF8D11" },
+    "barRank2":   { "value": "#38AA3F" },
+    "barRank3":   { "value": "#E8D4C8", "usage": "4.2:1, à valider à l'œil" },
+    "border":     { "value": "#E8E8E8" },
+    "error":      { "value": "#B5241B" },
+    "errorBg":    { "value": "#FCEEEC" }
+  },
+  "font": { "family": "Poppins, system-ui, sans-serif" },
+  "fontSize": {
+    "h1": "28px", "h2": "20px", "metier": "16px", "score": "18px",
+    "body": "14px", "button": "14px", "helper": "12px"
+  },
+  "fontWeight": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 },
+  "space": { "xs": "8px", "s": "16px", "m": "24px", "l": "32px", "xl": "48px", "gapBlocs": "12px" },
+  "radius": { "base": "8px", "card": "14px" },
+  "focus": { "outline": "2px solid #EF8D11", "offset": "2px" },
+  "breakpoints": { "mobile": "375px", "tablet": "768px", "desktop": "1440px" }
+}

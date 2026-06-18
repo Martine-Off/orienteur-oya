@@ -42,5 +42,8 @@ desktop.ini
 # Google Drive shortcuts
 *.gsheet
 
-# Archives locales (non versionnées)
+# Archives locales (non versionnï¿½es)
 ARCHIVES/
+
+# Local Netlify folder
+.netlify
