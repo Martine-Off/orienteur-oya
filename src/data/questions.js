@@ -45,10 +45,12 @@ export const QUESTIONS = [
   {
     id: "Q3",
     type: "cartes",
+    imageLayout: "left",
     titre: "Dans quel cadre de vie souhaitez-vous exercer votre futur métier ?",
     options: CADRES_DE_VIE.map((v) => ({
       value: v,
       icon: `/icons/${v.toLowerCase()}.svg`,
+      label: v,
     })),
   },
   {

@@ -2,53 +2,64 @@ describe("Quiz d'orientation OYA", () => {
   function repondreAuQuiz() {
     cy.contains("Démarrer le quiz").click();
 
+    // Q1 — secteur (choix)
     cy.contains("label", "Management/Encadrement").click();
     cy.contains("button", "Suivant").click();
 
-    cy.get("#Q2").select("BTS / BTSA");
+    // Q2 — niveau études (chips)
+    cy.contains("label", "BTS / BTSA").click();
     cy.contains("button", "Suivant").click();
 
+    // Q3 — cadre de vie (cartes, icon gauche)
     cy.contains("label", "Urbain").click();
     cy.contains("button", "Suivant").click();
 
+    // Q4 — attraits (cartes)
     cy.contains("label", "Produire / cultiver").click();
     cy.contains("button", "Suivant").click();
 
+    // Q5 — contraintes physiques (oui/non)
     cy.contains("label", "Non").click();
     cy.contains("button", "Suivant").click();
 
-    cy.get("#Q6").select("6-12 mois");
+    // Q6 — temps disponible (chips)
+    cy.contains("label", "6-12 mois").click();
     cy.contains("button", "Suivant").click();
 
-    cy.get("#Q7").select("5-15k");
+    // Q7 — budget (chips)
+    cy.contains("label", "5-15k").click();
     cy.contains("button", "Suivant").click();
 
+    // Q8 — expérience agriculture (oui/non)
     cy.contains("label", "Oui").click();
     cy.contains("button", "Suivant").click();
 
-    // Q9 — peurs (checkboxes, multi-select obligatoire)
+    // Q9 — peurs (checkboxes vertes)
     cy.contains("label", "Chômage").click();
     cy.contains("button", "Suivant").click();
 
-    // Q10 — région
+    // Q10 — région (select)
     cy.get("#Q10").select("Île-de-France");
     cy.contains("button", "Voir mes résultats").click();
   }
 
-  it("complète le parcours quiz -> résultats -> email -> confirmation", () => {
+  it("complète le parcours quiz -> résultats -> email modal -> confirmation", () => {
     cy.visit("/");
     repondreAuQuiz();
 
-    cy.contains("Vos thématiques de reconversion").should("be.visible");
-    cy.get(".thematic-card").should("have.length", 3);
-    cy.get(".thematic-card--top").should("have.length", 1);
+    // Page résultats — 3 cartes de résultats
+    cy.contains("Votre diagnostic personnalisé").should("be.visible");
+    cy.get(".result-card").should("have.length", 3);
+    cy.get(".result-card--rank1").should("have.length", 1);
 
+    // Ouvrir le modal email
     cy.contains("Recevoir mon diagnostic par email").click();
-    cy.get("#email").type("test@example.com");
-    cy.get("#rgpd").check();
-    cy.contains("button", "Envoyer").click();
+    cy.get("#modal-email").type("test@example.com");
+    cy.get("#modal-rgpd").check();
+    cy.contains("button", "Envoyer mon diagnostic").click();
 
-    cy.contains("Merci !").should("be.visible");
+    // Confirmation inline (dans la page résultats)
+    cy.contains("Diagnostic envoyé à test@example.com").should("be.visible");
   });
 
   it("empêche d'avancer sans répondre à une question (validation côté client)", () => {
@@ -66,23 +77,24 @@ describe("Quiz d'orientation OYA", () => {
     cy.contains("2/10").should("be.visible");
   });
 
-  it("requiert le consentement RGPD avant l'envoi", () => {
+  it("requiert le consentement RGPD avant l'envoi (bouton désactivé)", () => {
     cy.visit("/");
     repondreAuQuiz();
     cy.contains("Recevoir mon diagnostic par email").click();
-    cy.get("#email").type("test@example.com");
-    cy.contains("button", "Envoyer").click();
-    cy.contains("Le consentement RGPD est requis").should("be.visible");
+    cy.get("#modal-email").type("test@example.com");
+    // Sans cocher RGPD, le bouton doit être désactivé
+    cy.contains("button", "Envoyer mon diagnostic").should("be.disabled");
   });
 
-  it("rejette un email mal formé", () => {
+  it("requiert un email valide (message d'erreur après submit)", () => {
     cy.visit("/");
     repondreAuQuiz();
     cy.contains("Recevoir mon diagnostic par email").click();
-    cy.get("#email").type("pas-un-email");
-    cy.get("#rgpd").check();
-    cy.contains("button", "Envoyer").click();
-    cy.contains("Merci de saisir une adresse email valide").should("be.visible");
+    cy.get("#modal-email").type("pas-un-email");
+    cy.get("#modal-rgpd").check();
+    // Bouton activé (RGPD coché) mais email invalide → clic déclenche l'erreur
+    cy.contains("button", "Envoyer mon diagnostic").should("not.be.disabled").click();
+    cy.contains("Format email incorrect").should("be.visible");
   });
 
   it("permet de revenir en arrière dans le quiz (bouton Précédent)", () => {
@@ -106,5 +118,50 @@ describe("Quiz d'orientation OYA", () => {
     cy.get("body").then(($body) => {
       expect($body[0].scrollWidth).to.be.at.most(375);
     });
+  });
+
+  it("Q9 rend des checkboxes vertes (cases .checkbox-option)", () => {
+    cy.visit("/quiz");
+    // Avancer jusqu'à Q9
+    cy.contains("label", "Management/Encadrement").click();
+    cy.contains("button", "Suivant").click();
+    cy.contains("label", "BTS / BTSA").click();
+    cy.contains("button", "Suivant").click();
+    cy.contains("label", "Urbain").click();
+    cy.contains("button", "Suivant").click();
+    cy.contains("label", "Produire / cultiver").click();
+    cy.contains("button", "Suivant").click();
+    cy.contains("label", "Non").click();
+    cy.contains("button", "Suivant").click();
+    cy.contains("label", "6-12 mois").click();
+    cy.contains("button", "Suivant").click();
+    cy.contains("label", "5-15k").click();
+    cy.contains("button", "Suivant").click();
+    cy.contains("label", "Oui").click();
+    cy.contains("button", "Suivant").click();
+
+    // Q9 — doit afficher des .checkbox-option (pas des .bloc-option)
+    cy.get(".checkbox-option").should("have.length.at.least", 2);
+    cy.get(".options-checkboxes").should("exist");
+
+    // Sélectionner une peur — la case doit être cochée en vert
+    cy.contains("label", "Chômage").click();
+    cy.contains("label", "Chômage").find('input[type="checkbox"]').should("be.checked");
+  });
+
+  it("affiche le bloc peurs dans les résultats quand Q9 est rempli", () => {
+    cy.visit("/");
+    repondreAuQuiz();
+    cy.get(".peurs-block").should("be.visible");
+    cy.get(".peurs-list li").should("have.length.at.least", 1);
+  });
+
+  it("le modal email se ferme en cliquant sur l'overlay", () => {
+    cy.visit("/");
+    repondreAuQuiz();
+    cy.contains("Recevoir mon diagnostic par email").click();
+    cy.get(".email-modal").should("be.visible");
+    cy.get(".email-modal-overlay").click({ force: true });
+    cy.get(".email-modal").should("not.exist");
   });
 });
