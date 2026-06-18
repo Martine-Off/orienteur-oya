@@ -1,0 +1,77 @@
+﻿Métier,Bloc,Poids_Q1,Poids_Q2,Poids_Q3,Poids_Q4,Poids_Q5,Poids_Q6,Poids_Q7,Poids_Q8,Secteur,Autonomie,Pénurie,Évolution,Compétences,Niveau
+Chargé·e de projet agroécologie & AU,Production agricole,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.8,Chef de projet agroécologie,Piloter,Normal,Émergent,"Transition écologique, impact systémique, coordination",Licence
+Conseiller·ère technique agroécologie,Production agricole,0.6,0.65,0.85,0.88,0.25,0.65,0.65,0.8,Conseiller agroécologie,Former,Normal,Émergent,"Expertise technique, autonomie des agriculteurs, innovation",BTS/BTSA
+Responsable logistique céréales / chef de silo,Production agricole,0.55,0.65,0.65,0.85,0.3,0.65,0.4,0.8,Manager logistique agricole,Piloter,Normal,Émergent,"Souveraineté alimentaire, responsabilité, organisation",BTS/BTSA
+Chargé·e de parcours volontariat agricole,Production agricole,0.6,0.65,0.7,0.88,0.25,0.65,0.9,0.8,Animateur agriculture,Former,Normal,Émergent,"Communauté, accueil, apprentissage",BTS/BTSA
+Ouvrier agricole,Production agricole,0.85,0.45,0.65,0.95,0.7,0.85,0.65,0.95,Producteur agricole,Produire,En tension,Traditionnel,"Autonomie, relation au vivant, stabilité financière",CAP/BEP
+Maraîcher / maraîcher bio,Production agricole,0.85,0.45,0.85,0.95,0.7,0.85,0.52,0.95,Producteur légumes,Produire,En tension,Traditionnel,"Autonomie, circuits courts, impact local",CAP/BEP
+Éleveur,Production agricole,0.85,0.45,0.65,0.95,0.7,0.85,0.52,0.95,Producteur animal,Produire,En tension,Traditionnel,"Relation aux animaux, autonomie, pénibilité acceptée",CAP/BEP
+Technicien agricole,Production agricole,0.55,0.65,0.65,0.85,0.3,0.65,0.65,0.8,Technicien agricole,Piloter,En tension,Traditionnel,"Expertise technique, coopération, stabilité",BTS/BTSA
+Technicien agroécologie,Production agricole,0.55,0.65,0.85,0.85,0.3,0.65,0.65,0.8,Technicien agroécologie,Piloter,Normal,Émergent,"Transition écologique, expertise, autonomie",BTS/BTSA
+Technicien agriculture de précision,Production agricole,0.55,0.65,0.65,0.85,0.3,0.65,0.4,0.8,Technicien agri-tech,Piloter,Normal,Émergent,"Innovation, technologie, efficacité",BTS/BTSA
+Chef de culture,Production agricole,0.55,0.55,0.65,0.85,0.3,0.65,0.4,0.8,Manager production,Piloter,En tension,Traditionnel,"Leadership, responsabilité, organisation",Bac
+Responsable d'exploitation agricole,Production agricole,0.55,0.55,0.65,0.85,0.3,0.65,0.4,0.8,Entrepreneur agricole,Piloter,Normal,Émergent,"Autonomie, responsabilité, business",Bac
+Tractoriste / conducteur d'engins,Production agricole,0.85,0.45,0.65,0.95,0.7,0.85,0.65,0.95,Conducteur agricole,Produire,En tension,Traditionnel,"Compétence technique, autonomie, stabilité",CAP/BEP
+Agriculteur urbain / fermier urbain,Production agricole,0.85,0.45,0.7,0.95,0.7,0.85,0.65,0.95,Agriculteur urbain,Produire,Normal,Traditionnel,"Autonomie, innovation, communauté",CAP/BEP
+Animateur agriculture urbaine,Production agricole,0.6,0.55,0.7,0.88,0.25,0.65,0.9,0.8,Animateur tiers-lieu,Former,Normal,Émergent,"Communauté, pédagogie, inclusion",Bac
+Responsable tiers-lieu agricole,Production agricole,0.55,0.65,0.85,0.85,0.3,0.65,0.4,0.8,Gestionnaire tiers-lieu,Piloter,Normal,Émergent,"Innovation, communauté, leadership",BTS/BTSA
+Responsable transition durable IAA,Transformation agroalimentaire,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.55,Responsable RSE transformation,Piloter,Normal,Émergent,"Transition écologique, innovation, responsabilité",Licence
+Opérateur de production agroalimentaire,Transformation agroalimentaire,0.85,0.45,0.85,0.95,0.7,0.85,0.9,0.55,Opérateur production,Produire,En tension,Traditionnel,"Stabilité, compétence technique, qualité",CAP/BEP
+Conducteur de ligne,Transformation agroalimentaire,0.85,0.55,0.85,0.95,0.7,0.65,0.9,0.55,Conducteur ligne production,Produire,En tension,Traditionnel,"Responsabilité, qualité, stabilité",Bac
+Maintenance industrielle agro,Transformation agroalimentaire,0.55,0.65,0.85,0.85,0.3,0.65,0.4,0.55,Technicien maintenance,Piloter,En tension,Traditionnel,"Expertise technique, responsabilité, stabilité",BTS/BTSA
+Data analyst agro/agri,Transformation agroalimentaire,0.55,0.8,0.85,0.9,0.2,0.35,0.4,0.55,Data analyst alimentation,Analyser,Normal,Émergent,"Innovation, impact données, autonomie",Licence
+Technicien agroalimentaire,Transformation agroalimentaire,0.55,0.65,0.85,0.85,0.3,0.65,0.4,0.55,Technicien transformation,Piloter,En tension,Traditionnel,"Expertise technique, qualité, innovation",BTS/BTSA
+Responsable qualité / QHSE,Transformation agroalimentaire,0.55,0.65,0.85,0.9,0.2,0.65,0.4,0.55,Responsable qualité,Analyser,En tension,Traditionnel,"Responsabilité, excellence, conformité",BTS/BTSA
+Responsable production agroalimentaire,Transformation agroalimentaire,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.55,Manager production IAA,Piloter,En tension,Traditionnel,"Leadership, responsabilité, innovation",Licence
+Responsable décarbonation site,Transformation agroalimentaire,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.55,Responsable décarbonation,Piloter,Normal,Émergent,"Urgence climatique, innovation, leadership",Licence
+Responsable sécurité alimentaire,Transformation agroalimentaire,0.55,0.65,0.85,0.9,0.2,0.65,0.4,0.55,Responsable sécurité alimentaire,Analyser,En tension,Traditionnel,"Responsabilité, rigueur, excellence",BTS/BTSA
+Chargé ACV,Transformation agroalimentaire,0.55,0.8,0.85,0.9,0.2,0.35,0.4,0.55,Analyste environnemental,Analyser,Normal,Émergent,"Impact environnemental, rigueur, innovation",Licence
+Ingénieur agroalimentaire,Transformation agroalimentaire,0.55,0.85,0.85,0.85,0.3,0.35,0.4,0.55,Ingénieur agroalimentaire,Piloter,Normal,Traditionnel,"Innovation, excellence, responsabilité",Master
+Responsable atelier transformation local,Transformation agroalimentaire,0.7,0.55,0.75,0.9,0.55,0.65,0.4,0.55,Responsable petit atelier,Transformer,Normal,Traditionnel,"Autonomie, relocalisation, innovation",Bac
+Responsable RSE agroalimentaire,Transformation agroalimentaire,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.55,Responsable RSE,Piloter,Normal,Émergent,"Transition écologique, impact social, leadership",Licence
+Chef·fe de projet circuits courts,Logistique distribution,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.4,Coordinateur circuits courts,Piloter,Normal,Émergent,"Stratégie, coordination, impact local",Licence
+Logisticien / agent logistique,Logistique distribution,0.85,0.45,0.85,0.95,0.7,0.85,0.9,0.4,Logisticien,Produire,En tension,Traditionnel,"Compétence technique, stabilité, organisation",CAP/BEP
+Préparateur de commandes,Logistique distribution,0.85,0.45,0.85,0.95,0.7,0.85,0.9,0.4,Préparateur logistique,Produire,En tension,Traditionnel,"Compétence, stabilité, organisation",CAP/BEP
+Logisticien (bac+2),Logistique distribution,0.55,0.55,0.85,0.85,0.3,0.65,0.4,0.4,Manager logistique,Piloter,En tension,Traditionnel,"Leadership, organisation, responsabilité",Bac
+Chauffeur / livreur,Logistique distribution,0.85,0.45,0.85,0.95,0.7,0.85,0.9,0.4,Livreur,Produire,En tension,Traditionnel,"Autonomie, fiabilité, relation client",CAP/BEP
+Responsable entrepôt,Logistique distribution,0.55,0.65,0.85,0.85,0.3,0.65,0.4,0.4,Manager entrepôt,Piloter,En tension,Traditionnel,"Leadership, organisation, rigueur",BTS/BTSA
+Responsable supply chain,Logistique distribution,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.4,Manager supply chain,Piloter,Normal,Traditionnel,"Stratégie, coordination, impact systémique",Licence
+Gestionnaire de flux,Logistique distribution,0.55,0.55,0.85,0.85,0.3,0.65,0.4,0.4,Gestionnaire flux,Piloter,En tension,Traditionnel,"Organisation, rigueur, responsabilité",Bac
+Responsable distribution,Logistique distribution,0.55,0.65,0.85,0.85,0.3,0.65,0.4,0.4,Manager distribution,Piloter,Normal,Traditionnel,"Leadership, stratégie, responsabilité",BTS/BTSA
+Responsable logistique circuits courts,Logistique distribution,0.55,0.65,0.75,0.85,0.3,0.65,0.4,0.4,Responsable circuits courts,Piloter,Normal,Émergent,"Innovation, relocalisation, impact local",BTS/BTSA
+Chargé logistique bas carbone,Logistique distribution,0.55,0.8,0.85,0.9,0.2,0.35,0.4,0.4,Spécialiste décarbonation logistique,Analyser,Normal,Émergent,"Urgence climatique, innovation, impact",Licence
+Responsable supply chain durable,Logistique distribution,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.4,Responsable supply chain durable,Piloter,Normal,Émergent,"Impact environnemental, stratégie, responsabilité",Licence
+Coordinateur plateforme alimentaire territoriale,Logistique distribution,0.55,0.65,0.75,0.85,0.3,0.65,0.4,0.4,Coordinateur plateforme locale,Piloter,Normal,Émergent,"Coordination, impact territorial, innovation",BTS/BTSA
+Responsable drive fermier,Logistique distribution,0.7,0.55,0.7,0.9,0.55,0.65,0.4,0.4,Responsable drive fermier,Transformer,Normal,Traditionnel,"Numérique, relocalisation, innovation",Bac
+Gestionnaire flux alimentaires locaux,Logistique distribution,0.55,0.55,0.75,0.85,0.3,0.65,0.4,0.4,Manager flux locaux,Piloter,Normal,Émergent,"Coordination, organisation, impact local",Bac
+Coordinateur circuits courts,Logistique distribution,0.55,0.65,0.75,0.85,0.3,0.65,0.4,0.4,Coordinateur circuits courts,Piloter,Normal,Émergent,"Coordination, réseau, impact local",BTS/BTSA
+Responsable restauration collective durable,Restauration,0.7,0.65,0.7,0.9,0.55,0.65,0.4,0.35,Responsable restauration collective,Transformer,Normal,Émergent,"Durabilité, responsabilité, qualité",BTS/BTSA
+Responsable achats durables,Restauration,0.55,0.8,0.7,0.85,0.3,0.35,0.4,0.35,Responsable achats responsables,Piloter,Normal,Émergent,"Impact, responsabilité, stratégie",Licence
+Responsable anti-gaspillage,Restauration,0.55,0.55,0.7,0.9,0.2,0.65,0.4,0.35,Responsable anti-gaspi,Analyser,Normal,Émergent,"Impact, innovation, économies",Bac
+Cuisinier / chef cuisinier,Restauration,0.7,0.45,0.7,0.9,0.55,0.85,0.9,0.35,Chef cuisinier,Transformer,En tension,Traditionnel,"Passion culinaire, créativité, stabilité financière",CAP/BEP
+Responsable restauration collective,Restauration,0.55,0.65,0.7,0.85,0.3,0.65,0.4,0.35,Manager restauration,Piloter,En tension,Traditionnel,"Leadership, responsabilité, qualité",BTS/BTSA
+Aide cuisine,Restauration,0.85,0.45,0.7,0.95,0.7,0.85,0.9,0.35,Aide cuisine,Produire,En tension,Traditionnel,"Compétence, stabilité, équipe",CAP/BEP
+Serveur,Restauration,0.85,0.45,0.7,0.95,0.7,0.85,0.9,0.35,Serveur-hôtesse,Produire,En tension,Traditionnel,"Compétence, relation client, stabilité",CAP/BEP
+Boulanger,Restauration,0.7,0.45,0.75,0.9,0.55,0.85,0.65,0.35,Boulanger,Transformer,En tension,Traditionnel,"Compétence artisanale, autonomie, excellence",CAP/BEP
+Boucher,Restauration,0.7,0.45,0.75,0.9,0.55,0.85,0.65,0.35,Boucher,Transformer,En tension,Traditionnel,"Compétence artisanale, qualité, autonomie",CAP/BEP
+Chef de projet alimentation durable,Restauration,0.55,0.8,0.7,0.85,0.3,0.35,0.4,0.35,Chef projet restauration,Piloter,Normal,Émergent,"Stratégie, impact social, coordination",Licence
+Artisan métiers de bouche,Restauration,0.7,0.45,0.75,0.9,0.55,0.85,0.4,0.35,Artisan bouche,Transformer,Normal,Traditionnel,"Autonomie, créativité, excellence",CAP/BEP
+Restaurateur engagé,Restauration,0.7,0.55,0.7,0.9,0.55,0.65,0.4,0.35,Restaurateur,Transformer,Normal,Traditionnel,"Autonomie, créativité, impact social",Bac
+Chargé·e de projet agroécologie collective,Transversal,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.3,Chef projet transition,Piloter,Normal,Émergent,"Impact systémique, coordination, pédagogie",Licence
+Responsable politique publique alimentaire,Transversal,0.55,0.85,0.7,0.85,0.3,0.35,0.4,0.3,Responsable politiques,Piloter,Normal,Émergent,"Influence, stratégie, impact systémique",Master
+Chef de projet territorial,Transversal,0.55,0.8,0.75,0.85,0.3,0.35,0.4,0.3,Chef projet territorial,Piloter,Normal,Traditionnel,"Leadership, coordination, impact local",Licence
+Chargé·e d'expérimentation / transfert,Transversal,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.3,Chargé transfert innovation,Piloter,Normal,Émergent,"Innovation, liaison recherche, terrain",Licence
+Community manager / chargé·e com',Transversal,0.6,0.65,0.7,0.88,0.25,0.65,0.4,0.3,Manager communication,Former,Normal,Traditionnel,"Transparence, impact image, engagement",BTS/BTSA
+Référent·e bas-carbone,Transversal,0.55,0.8,0.85,0.9,0.2,0.35,0.4,0.3,Spécialiste bas-carbone,Analyser,Normal,Émergent,"Urgence climatique, innovation, impact",Licence
+Coordinateur centre formation,Transversal,0.6,0.65,0.85,0.88,0.25,0.65,0.4,0.3,Coordinateur formation,Former,Normal,Émergent,"Pédagogie, coordination, impact formation",BTS/BTSA
+Chef·fe de projet conventions public-privé,Transversal,0.55,0.8,0.7,0.85,0.3,0.35,0.4,0.3,Chef projet partenariats,Piloter,Normal,Émergent,"Stratégie, collaboration, innovation",Licence
+Responsable RSE,Transversal,0.55,0.8,0.7,0.85,0.3,0.35,0.4,0.3,Responsable RSE,Piloter,Normal,Émergent,"Impact social, environnemental, stratégie",Licence
+Diagnostic territorial,Transversal,0.55,0.8,0.85,0.9,0.2,0.35,0.4,0.3,Analyste territorial,Analyser,Normal,Émergent,"Analyse systémique, impact, compréhension locale",Licence
+Formateur transition alimentaire,Transversal,0.6,0.65,0.85,0.88,0.25,0.35,0.4,0.3,Formateur métiers,Former,Normal,Émergent,"Pédagogie, expertise, transformation",BTS/BTSA
+Facilitateur transition,Transversal,0.55,0.65,0.75,0.85,0.3,0.65,0.4,0.3,Facilitateur collectif,Piloter,Normal,Émergent,"Dialogue, inclusion, transformation",BTS/BTSA
+Coordinateur ESS,Transversal,0.55,0.65,0.75,0.85,0.3,0.65,0.4,0.3,Coordinateur ESS,Piloter,Normal,Émergent,"Solidarité, impact, réseau",BTS/BTSA
+Conseiller accompagnement agricole,Transversal,0.6,0.65,0.85,0.88,0.25,0.65,0.65,0.3,Conseiller agricole,Former,Normal,Émergent,"Expertise, accompagnement humain, confiance",BTS/BTSA
+Accompagnateur reconversion,Transversal,0.6,0.65,0.7,0.88,0.25,0.65,0.4,0.3,Coach reconversion,Former,Normal,Émergent,"Empathie, guidance, transformation personnelle",BTS/BTSA
+Consultant transition alimentaire,Transversal,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.3,Consultant transition,Piloter,Normal,Émergent,"Expertise, stratégie, impact systémique",Licence
+Référent technique innovation,Transversal,0.55,0.8,0.85,0.85,0.3,0.35,0.4,0.3,Expert technique,Piloter,Normal,Émergent,"Innovation, expertise, transmission",Licence
+Responsable collecte données,Transversal,0.55,0.65,0.85,0.9,0.2,0.35,0.4,0.3,Data manager,Analyser,Normal,Émergent,"Rigueur, impact données, transparence",BTS/BTSA
