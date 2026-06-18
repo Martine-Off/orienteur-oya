@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation, Navigate } from "react-router-dom";
+import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import { useMetiers } from "../hooks/useMetiers";
 import { groupByThematique } from "../utils/scoring";
 import { submitLead } from "../utils/api";
@@ -191,6 +191,7 @@ export default function Results() {
   const location = useLocation();
   const reponses = location.state?.reponses;
   const { metiers, loading, error } = useMetiers();
+  const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [submitState, setSubmitState] = useState("idle");
   const [confirmedEmail, setConfirmedEmail] = useState("");
@@ -295,6 +296,14 @@ export default function Results() {
           Recevoir mon diagnostic par email
         </button>
       )}
+
+      <button
+        type="button"
+        className="btn btn-secondary results-retry"
+        onClick={() => navigate("/")}
+      >
+        Refaire le test
+      </button>
 
       {showModal && (
         <EmailModal

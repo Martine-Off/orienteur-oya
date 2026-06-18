@@ -45,22 +45,25 @@ export const QUESTIONS = [
   {
     id: "Q3",
     type: "cartes",
-    imageLayout: "left",
     titre: "Dans quel cadre de vie souhaitez-vous exercer votre futur métier ?",
-    options: CADRES_DE_VIE.map((v) => ({
-      value: v,
-      icon: `/icons/${v.toLowerCase()}.svg`,
-      label: v,
-    })),
+    options: [
+      { value: "Urbain",   icon: "/images/Image1ville.jpg",    label: "Urbain" },
+      { value: "Campagne", icon: "/images/Image2campagne.jpg", label: "Campagne" },
+      { value: "Flexible", icon: "/images/Image3flexible.jpg", label: "Flexible" },
+    ],
   },
   {
     id: "Q4",
     type: "cartes",
     titre: "Qu'est-ce qui vous attire le plus dans un métier ?",
-    options: ATTRAITS.map((a) => ({
-      value: a.value,
-      icon: ATTRAIT_ICONS[a.value],
-    })),
+    options: [
+      { value: "Produire / cultiver",       icon: "/images/Image4Produire.jpg",    label: "Produire" },
+      { value: "Transformer / créer",       icon: "/images/Image5Transformer.jpg", label: "Transformer" },
+      { value: "Piloter / organiser",       icon: "/images/Image6Piloter.jpg",     label: "Piloter" },
+      { value: "Conseiller / former",       icon: "/images/Image7Conseiller.jpg",  label: "Conseiller" },
+      { value: "Analyser / optimiser",      icon: "/images/Image8Analyser.jpg",    label: "Analyser" },
+      { value: "Prendre soin des animaux",  icon: "/images/Image9Animaux.jpg",     label: "Animaux" },
+    ],
   },
   {
     id: "Q5",

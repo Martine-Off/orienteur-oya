@@ -1,6 +1,6 @@
 describe("Quiz d'orientation OYA", () => {
   function repondreAuQuiz() {
-    cy.contains("Démarrer le quiz").click();
+    cy.contains("Démarrer le diagnostic").click();
 
     // Q1 — secteur (choix)
     cy.contains("label", "Management/Encadrement").click();
@@ -114,7 +114,7 @@ describe("Quiz d'orientation OYA", () => {
   it("s'affiche correctement en viewport mobile (375px)", () => {
     cy.viewport(375, 667);
     cy.visit("/");
-    cy.contains("Démarrer le quiz").should("be.visible");
+    cy.contains("Démarrer le diagnostic").should("be.visible");
     cy.get("body").then(($body) => {
       expect($body[0].scrollWidth).to.be.at.most(375);
     });

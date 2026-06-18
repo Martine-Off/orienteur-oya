@@ -12,6 +12,7 @@ export default function Question({ question, value, onChange }) {
         {question.hint && (
           <p className="question-hint">{question.hint}</p>
         )}
+        <div className="question-divider" aria-hidden="true" />
         <div className="options-checkboxes">
           {question.options.map((opt) => (
             <label key={opt.key} className="checkbox-option">
