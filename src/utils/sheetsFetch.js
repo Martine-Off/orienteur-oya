@@ -1,3 +1,4 @@
+// Google Sheet natif OYA POC (ID différent du xlsx Drive qui est la source éditable)
 const SHEET_ID = "1Qy1fYOnCBFZHMHwu0RZ2n5-wI8_RZDsQ3YmUuG0QF-s";
 const RANGE = "Métiers!A1:P77";
 const CACHE_KEY = "oya_metiers";
@@ -22,24 +23,36 @@ export async function fetchFromSheet() {
   return json.values; // [header, row1, row2, ...]
 }
 
-// Mapping colonne P (Niveau) → niveauMin numérique attendu par scoreMetier
+// Mapping colonne Niveau → niveauMin numérique attendu par scoreMetier
+// Supporte les valeurs actuelles du Sheet (BTS/BTSA) et les alias cibles (Bac+2…)
 const NIVEAU_TO_MIN = {
-  "CAP/BEP": 3, "Bac": 4, "BTS/BTSA": 5, "Licence": 6, "Master": 7,
+  "CAP/BEP": 3, "Bac": 4,
+  "BTS/BTSA": 5, "Bac+2": 5, "Bac+3": 5,
+  "Licence": 6, "Bac+5": 7, "Master": 7,
 };
+
+// Structure actuelle du Sheet (colonnes A-P, indices 0-15) :
+//   A(0)=Métier  B(1)=Bloc  C-J(2-9)=Poids_Q1-Q8
+//   K(10)=Secteur  L(11)=Autonomie/Type_métier  M(12)=Pénurie
+//   N(13)=Évolution  O(14)=Compétences  P(15)=Niveau
+//
+// Structure CIBLE après reorder Sheet (voir data/Metiers_CIBLE_clean.csv) :
+//   K(10)=Compétences  L(11)=Niveau  M(12)=Secteur  N(13)=Type_métier
+//   O(14)=Pénurie  P(15)=Évolution
+// → Mettre à jour les indices ci-dessous après avoir importé Metiers_CIBLE_clean.csv dans le Sheet.
 
 export function parseMetiers(values) {
   const [, ...rows] = values; // on ignore le header (ligne 0)
 
-  // Colonnes A-P :
-  // A=Métier  B=Bloc  C-J=Poids_Q1-Q8
-  // K=Secteur  L=Autonomie(=typeActivite)  M=Pénurie  N=Évolution
-  // O=Compétences  P=Niveau
   return rows
     .filter(row => row[0])
     .map((row, idx) => ({
       id: idx,
       metier: row[0] || "",
       bloc: row[1] || "",
+      // thematiqueFormation = bloc (le Sheet n'a pas de colonne dédiée)
+      // Utilisé par groupByThematique() pour regrouper les résultats
+      thematiqueFormation: row[1] || "",
       poids: {
         Q1: parseFloat(row[2]) || 0,
         Q2: parseFloat(row[3]) || 0,
@@ -50,18 +63,18 @@ export function parseMetiers(values) {
         Q7: parseFloat(row[8]) || 0,
         Q8: parseFloat(row[9]) || 0,
       },
-      // Champs dérivés pour compatibilité avec scoreMetier()
-      typeActivite: row[11] || "",                      // col L = typeActivite brut
-      niveauMin: NIVEAU_TO_MIN[row[15]] ?? 4,           // col P → entier
-      statut: row[12] === "En tension" ? "Tension"      // col M Pénurie
-            : row[13] === "Émergent"   ? "Émergent"     // col N Évolution
+      // Champs dérivés pour scoreMetier()
+      typeActivite: row[11] || "",           // L = Autonomie (valeurs : Piloter/Produire/Former/Analyser/Transformer)
+      niveauMin: NIVEAU_TO_MIN[row[15]] ?? 4, // P = Niveau → entier 3-7
+      statut: row[12] === "En tension" ? "Tension"
+            : row[13] === "Émergent"   ? "Émergent"
             : "",
-      localisation: ["Flexible"],                       // absent du Sheet → neutre
-      situation: [],                                    // absent du Sheet → neutre (0.5 via matchQ7)
-      relationVivant: [],                               // absent du Sheet → partial match Q4
+      localisation: ["Flexible"],            // absent du Sheet → neutre pour Q3
+      situation: [],                         // absent du Sheet → 0.5 neutre pour Q7
+      relationVivant: [],                    // absent du Sheet → partial match Q4
       // Champs display
       secteur: row[10] || "",
-      autonomie: row[11] || "",
+      typemetier: row[11] || "",             // alias de typeActivite pour affichage
       penurie: row[12] || "",
       evolution: row[13] || "",
       competencesCles: (row[14] || "").split(",").map(s => s.trim()).filter(Boolean),
