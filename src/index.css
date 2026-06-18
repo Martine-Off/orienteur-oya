@@ -1,33 +1,64 @@
 :root {
-  /* Charte OYA officielle (ClaudieUX J2) */
-  --color-primary: #EF8D11;         /* orange OYA — boutons, hover, focus */
-  --color-primary-dark: #D67C0A;    /* orange foncé — hover boutons, liens */
-  --color-secondary: #38AA3F;       /* vert OYA — checkboxes checked, validation, success */
-  --color-salmon: #FFFBF8;          /* fond doux — page Peurs, cards soft */
-  --color-text: #424242;            /* texte principal */
-  --color-text-muted: #888888;      /* texte secondaire / captions */
-  --color-border: #E8E8E8;          /* bordures inputs, cards */
+  /* === Design tokens OYA (verrouillés 18 juin 2026) === */
 
+  /* Action / CTA */
+  --color-cta:          #A85D08; /* boutons primaires — blanc dessus 4.8:1 WCAG AA ✅ */
+  --color-cta-hover:    #8F4E06;
+  --color-accent:       #EF8D11; /* bordures, focus, séparateurs, barre rank 1 — JAMAIS en texte */
+
+  /* Marque / validation */
+  --color-title:        #2E7D33; /* H2/legend — 4.5:1 ✅ */
+  --color-green:        #38AA3F; /* cases cochées, badges, icônes — non-texte uniquement */
+
+  /* Texte */
+  --text:               #424242; /* body, labels, H1 — 9.7:1 ✅ */
+  --text-muted:         #888888;
+
+  /* Fonds */
+  --bg:                 #FFFFFF;
+  --bg-app:             #F4F3F0;
+  --bg-helper:          #F0FFF4;
+  --bg-peurs:           #FFFBF8; /* zone Q9 salmon */
+  --bg-selected:        #FFF5E6; /* hover + selected blocs */
+  --track:              #F0EFEC; /* piste barres score */
+
+  /* Barres résultats par rang */
+  --bar-rank-1:         #EF8D11; /* orange */
+  --bar-rank-2:         #38AA3F; /* vert */
+  --bar-rank-3:         #9B7B6B; /* terracotta muted — 3.1:1 sur #F0EFEC ✅ */
+
+  /* Bordures */
+  --border:             #E8E8E8;
+  --border-accent:      #EF8D11;
+
+  /* Erreur */
+  --error:              #B5241B;
+  --error-bg:           #FCEEEC;
+
+  /* Compatibilité tokens legacy */
+  --color-primary:      #EF8D11;
+  --color-primary-dark: #A85D08;
+  --color-secondary:    #38AA3F;
+  --color-salmon:       #FFFBF8;
+  --color-text:         #424242;
+  --color-text-muted:   #888888;
+  --color-border:       #E8E8E8;
+
+  /* Typo */
   --font-sans: 'Poppins', 'Segoe UI', system-ui, sans-serif;
-  --font-heading: Georgia, 'Times New Roman', serif;  /* Aller Display fallback */
+  --font:      'Poppins', system-ui, sans-serif;
 
+  /* Spacing */
+  --space-xs: 8px;
+  --space-s:  16px;
+  --space-m:  24px;
+  --space-l:  32px;
+  --space-xl: 48px;
   --spacing-xs: 8px;
-  --spacing-s: 16px;
-  --spacing-m: 24px;
-  --spacing-l: 32px;
+  --spacing-s:  16px;
+  --spacing-m:  24px;
+  --spacing-l:  32px;
   --spacing-xl: 48px;
-
-  /* Ancienne palette conservée pour les éléments non encore migrés */
-  --oya-vert-fonce: #1f4a3b;
-  --oya-vert: #3b8870;
-  --oya-olive: #b5c757;
-  --oya-corail: #d9633b;
-  --oya-jaune: #b97a0f;
-
-  --text: var(--color-text);
-  --text-muted: #4b5159;
-  --bg: #fdfdfb;
-  --border: #d8dcd6;
 
   --sans: var(--font-sans);
 
@@ -35,10 +66,6 @@
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
 @keyframes fadeIn {
@@ -75,16 +102,17 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--color-secondary);
   font-weight: 700;
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 1.75rem;
+  color: var(--text);
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
+  color: var(--color-title);
 }
 
 a {
@@ -98,6 +126,6 @@ select {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-primary);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }

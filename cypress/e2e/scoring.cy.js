@@ -7,10 +7,10 @@
  */
 
 function repondreAuQuiz() {
-  cy.contains("Démarrer le quiz").click();
+  cy.contains("Démarrer le diagnostic").click();
   cy.contains("label", "Management/Encadrement").click();
   cy.contains("button", "Suivant").click();
-  cy.get("#Q2").select("BTS / BTSA");
+  cy.contains("label", "BTS / BTSA").click();
   cy.contains("button", "Suivant").click();
   cy.contains("label", "Flexible").click();
   cy.contains("button", "Suivant").click();
@@ -18,9 +18,9 @@ function repondreAuQuiz() {
   cy.contains("button", "Suivant").click();
   cy.contains("label", "Non").click();
   cy.contains("button", "Suivant").click();
-  cy.get("#Q6").select("6-12 mois");
+  cy.contains("label", "6-12 mois").click();
   cy.contains("button", "Suivant").click();
-  cy.get("#Q7").select("5-15k");
+  cy.contains("label", "5-15k").click();
   cy.contains("button", "Suivant").click();
   cy.contains("label", "Oui").click();
   cy.contains("button", "Suivant").click();
@@ -34,14 +34,14 @@ describe("Scoring avec métiers (Sheet ou fallback JSON)", () => {
   it("affiche 3 thématiques après avoir complété le quiz", () => {
     cy.visit("/");
     repondreAuQuiz();
-    cy.contains("Vos thématiques de reconversion").should("be.visible");
-    cy.get(".thematic-card").should("have.length", 3);
+    cy.contains("Votre diagnostic personnalisé").should("be.visible");
+    cy.get(".result-card").should("have.length", 3);
   });
 
   it("les scores sont des entiers entre 0 et 100", () => {
     cy.visit("/");
     repondreAuQuiz();
-    cy.get(".thematic-card").each($card => {
+    cy.get(".result-card").each($card => {
       // Le score est affiché sous forme "75%" ou "75"
       const text = $card.text();
       const match = text.match(/(\d+)\s*%?/);
@@ -57,7 +57,7 @@ describe("Scoring avec métiers (Sheet ou fallback JSON)", () => {
     cy.visit("/");
     repondreAuQuiz();
     const scores = [];
-    cy.get(".thematic-card").each($card => {
+    cy.get(".result-card").each($card => {
       const match = $card.text().match(/(\d+)\s*%?/);
       if (match) scores.push(parseInt(match[1], 10));
     }).then(() => {

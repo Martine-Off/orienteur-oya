@@ -3,18 +3,19 @@ import { REGIONS_FRANCE } from "../data/questions";
 export default function Question({ question, value, onChange }) {
   const name = question.id;
 
+  // Q9 — multi-select avec cases vertes (design system OYA)
   if (question.type === "checkboxes") {
     const checked = value || {};
     return (
       <fieldset className="question">
         <legend>{question.titre}</legend>
-        {question.hint && <p className="question-hint">{question.hint}</p>}
-        <div className="options-blocs options-blocs--multi">
+        {question.hint && (
+          <p className="question-hint">{question.hint}</p>
+        )}
+        <div className="question-divider" aria-hidden="true" />
+        <div className="options-checkboxes">
           {question.options.map((opt) => (
-            <label
-              key={opt.key}
-              className={`bloc-option ${checked[opt.key] ? "selected" : ""}`}
-            >
+            <label key={opt.key} className="checkbox-option">
               <input
                 type="checkbox"
                 name={name}
@@ -57,10 +58,12 @@ export default function Question({ question, value, onChange }) {
 
   if (question.type === "cartes") {
     const hasImages = question.options.length > 0 && typeof question.options[0] === "object" && question.options[0].icon;
+    const iconLeft = question.imageLayout === "left";
+
     return (
       <fieldset className="question">
         <legend>{question.titre}</legend>
-        <div className={`options-blocs options-blocs--grid${hasImages ? " options-blocs--image" : ""}`}>
+        <div className={`options-blocs${hasImages && !iconLeft ? " options-blocs--grid options-blocs--image" : ""}`}>
           {question.options.map((opt) => {
             const optValue = typeof opt === "string" ? opt : opt.value;
             const optIcon = typeof opt === "object" ? opt.icon : null;
@@ -68,7 +71,7 @@ export default function Question({ question, value, onChange }) {
             return (
               <label
                 key={optValue}
-                className={`bloc-option${optIcon ? " bloc-option--with-image" : ""} ${value === optValue ? "selected" : ""}`}
+                className={`bloc-option${optIcon && !iconLeft ? " bloc-option--with-image" : ""}${optIcon && iconLeft ? " bloc-option--icon-left" : ""} ${value === optValue ? "selected" : ""}`}
               >
                 <input
                   type="radio"
@@ -77,7 +80,9 @@ export default function Question({ question, value, onChange }) {
                   checked={value === optValue}
                   onChange={() => onChange(optValue)}
                 />
-                {optIcon && <img src={optIcon} alt="" className="bloc-option__icon" aria-hidden="true" />}
+                {optIcon && (
+                  <img src={optIcon} alt="" className="bloc-option__icon" aria-hidden="true" />
+                )}
                 <span>{optLabel}</span>
               </label>
             );
