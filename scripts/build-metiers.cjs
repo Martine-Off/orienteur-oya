@@ -10,7 +10,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const csvPath = process.argv[2] || path.join(__dirname, "..", "CSV_87_Metiers_OYA_V2_Niveau_MIN.csv");
+const csvPath = process.argv[2] || path.join(__dirname, "..", "data", "CSV_87_Metiers_OYA_V2_Niveau_MIN.csv");
 const outPath = path.join(__dirname, "..", "public", "metiers.json");
 
 // Poids par défaut par question (importance générique, modifiable par métier dans le Sheet "Métiers")
