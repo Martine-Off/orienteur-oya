@@ -427,6 +427,12 @@ select {
   padding-top: 24px;
 }
 
+@media (min-width: 768px) {
+  .page-quiz .quiz-actions {
+    margin-top: 32px;
+  }
+}
+
 @media (max-width: 599px) {
   .page-quiz .quiz-actions {
     flex-direction: column;
