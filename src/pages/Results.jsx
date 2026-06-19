@@ -103,6 +103,10 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
     if (e.target === e.currentTarget) onClose();
   }
 
+  function handleOverlayKeyDown(e) {
+    if (e.key === "Escape") onClose();
+  }
+
   return (
     <div
       className="email-modal-overlay"
@@ -110,6 +114,7 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
       aria-modal="true"
       aria-labelledby="email-modal-title"
       onClick={handleOverlayClick}
+      onKeyDown={handleOverlayKeyDown}
     >
       <div className="email-modal">
         <button
@@ -132,6 +137,7 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
               id="modal-email"
               type="email"
               autoComplete="email"
+              autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               aria-invalid={touched && !emailValid}
@@ -144,7 +150,17 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
             )}
           </div>
 
-          <label className="checkbox-label">
+          <label className="checkbox-label" htmlFor="modal-opt-in">
+            <input
+              id="modal-opt-in"
+              type="checkbox"
+              checked={optIn}
+              onChange={(e) => setOptIn(e.target.checked)}
+            />
+            Être tenu·e au courant des formations OYA
+          </label>
+
+          <label className="checkbox-label" htmlFor="modal-rgpd">
             <input
               id="modal-rgpd"
               type="checkbox"
@@ -153,23 +169,22 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
               onChange={(e) => setRgpd(e.target.checked)}
               aria-describedby={touched && !rgpd ? "modal-rgpd-error" : undefined}
             />
-            J'accepte de recevoir mon diagnostic et que mes réponses soient utilisées à titre
-            statistique <span aria-hidden="true">*</span>
+            <span style={{ fontSize: "0.75rem", lineHeight: 1.5 }}>
+              En cochant cette case, je consens expressément à la communication de mon diagnostic
+              et j'accepte que mes réponses fassent l'objet d'un traitement à des fins statistiques.
+              Je reconnais avoir été informé(e) de mes droits d'accès, de rectification et de
+              suppression, conformément au RGPD.{" "}
+              <span style={{ color: "#A85D08", textDecoration: "underline", cursor: "default" }}>
+                Lien vers votre politique de confidentialité complète
+              </span>
+              {" "}<span aria-hidden="true">*</span>
+            </span>
           </label>
           {touched && !rgpd && (
             <p id="modal-rgpd-error" className="field-error" role="alert">
-              Consentement requis pour continuer.
+              Vous devez accepter pour continuer.
             </p>
           )}
-
-          <label className="checkbox-label">
-            <input
-              type="checkbox"
-              checked={optIn}
-              onChange={(e) => setOptIn(e.target.checked)}
-            />
-            Être tenu·e au courant des formations OYA
-          </label>
 
           {hasError && (
             <p className="field-error" role="alert">
@@ -287,7 +302,7 @@ export default function Results() {
       )}
 
       {submitState === "done" ? (
-        <p className="results-success">
+        <p className="results-success" role="status">
           Diagnostic envoyé à {confirmedEmail} — vérifiez votre boîte mail.
         </p>
       ) : (

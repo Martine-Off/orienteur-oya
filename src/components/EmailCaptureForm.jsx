@@ -43,24 +43,6 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
         </p>
       )}
 
-      <label className="checkbox-label" htmlFor="rgpd">
-        <input
-          id="rgpd"
-          type="checkbox"
-          required
-          checked={rgpd}
-          onChange={(e) => setRgpd(e.target.checked)}
-          aria-describedby="rgpd-error"
-        />
-        J'accepte de recevoir mon diagnostic et que mes réponses soient utilisées à titre
-        statistique <span aria-hidden="true">*</span>
-      </label>
-      {touched && !rgpd && (
-        <p id="rgpd-error" className="field-error" role="alert">
-          Vous devez accepter le RGPD pour continuer.
-        </p>
-      )}
-
       <label className="checkbox-label" htmlFor="etre-tenu-au-courant">
         <input
           id="etre-tenu-au-courant"
@@ -70,6 +52,32 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
         />
         Être tenu·e au courant des formations OYA
       </label>
+
+      <label className="checkbox-label" htmlFor="rgpd">
+        <input
+          id="rgpd"
+          type="checkbox"
+          required
+          checked={rgpd}
+          onChange={(e) => setRgpd(e.target.checked)}
+          aria-describedby="rgpd-error"
+        />
+        <span style={{ fontSize: "0.75rem", lineHeight: 1.5 }}>
+          En cochant cette case, je consens expressément à la communication de mon diagnostic
+          et j'accepte que mes réponses fassent l'objet d'un traitement à des fins statistiques.
+          Je reconnais avoir été informé(e) de mes droits d'accès, de rectification et de
+          suppression, conformément au RGPD.{" "}
+          <span style={{ color: "#A85D08", textDecoration: "underline", cursor: "default" }}>
+            Lien vers votre politique de confidentialité complète
+          </span>
+          {" "}<span aria-hidden="true">*</span>
+        </span>
+      </label>
+      {touched && !rgpd && (
+        <p id="rgpd-error" className="field-error" role="alert">
+          Vous devez accepter pour continuer.
+        </p>
+      )}
 
       <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
         {submitting ? "Envoi en cours..." : "Envoyer"}
