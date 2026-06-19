@@ -151,6 +151,10 @@
   .question {
     gap: 48px;
   }
+
+  .question legend {
+    margin-bottom: 32px;
+  }
 }
 
 .question legend {
@@ -481,6 +485,7 @@ select {
 @media (min-width: 768px) {
   .page-quiz form {
     flex: none;
+    margin-top: 32px;
   }
 
   .page-quiz .quiz-actions {

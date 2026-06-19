@@ -8,20 +8,46 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { NIVEAU_ETUDES } from "../utils/scoring";
 
-const AXES = [
-  { key: "Q1", label: "Secteur" },
-  { key: "Q2", label: "Études" },
-  { key: "Q3", label: "Cadre" },
-  { key: "Q4", label: "Attrait" },
-  { key: "Q5", label: "Mobilité" },
-  { key: "Q7", label: "Budget" },
-  { key: "Q8", label: "Expérience" },
-];
+const AXES = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q7", "Q8"];
 
-export default function RadarChartMetier({ metier, normalizedScores }) {
-  const radarData = AXES.map(({ key, label }) => ({
-    name: label,
+function answerLabel(key, reponses) {
+  switch (key) {
+    case "Q1": {
+      const val = reponses?.Q1 ?? "";
+      // "Management/Encadrement" → "Management"
+      return val.split("/")[0].trim() || "Secteur";
+    }
+    case "Q2": {
+      const niveau = NIVEAU_ETUDES.find((e) => e.value === Number(reponses?.Q2));
+      // "Sans diplôme / CAP" → "Sans diplôme", "BTS / BTSA" → "BTS/BTSA"
+      return niveau?.label.split(" / ")[0].replace(" / ", "/") ?? "Études";
+    }
+    case "Q3":
+      return reponses?.Q3 ?? "Cadre";
+    case "Q4": {
+      const val = reponses?.Q4 ?? "";
+      // "Produire / cultiver" → "Produire"
+      // "Prendre soin des animaux" → "Animaux"
+      if (val.startsWith("Prendre soin")) return "Animaux";
+      if (val.startsWith("Cuisinier")) return "Cuisiner";
+      return val.split(/[/,]/)[0].trim().split(" ")[0] || "Attrait";
+    }
+    case "Q5":
+      return reponses?.Q5 === "Oui" ? "Contraint·e" : "Mobile";
+    case "Q7":
+      return reponses?.Q7 ?? "Budget";
+    case "Q8":
+      return reponses?.Q8 === "Oui" ? "Expérimenté·e" : "Reconversion";
+    default:
+      return key;
+  }
+}
+
+export default function RadarChartMetier({ metier, normalizedScores, reponses }) {
+  const radarData = AXES.map((key) => ({
+    name: answerLabel(key, reponses),
     Métier: Math.round((metier.poids?.[key] ?? 0) * 100),
     Vous: Math.round((normalizedScores?.[key] ?? 0) * 100),
   }));

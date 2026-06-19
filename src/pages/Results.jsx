@@ -33,7 +33,7 @@ function ScoreBar({ score, rank }) {
   );
 }
 
-function ResultCard({ thematique, rank, rankLabel, normalizedScores }) {
+function ResultCard({ thematique, rank, rankLabel, normalizedScores, reponses }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -77,7 +77,7 @@ function ResultCard({ thematique, rank, rankLabel, normalizedScores }) {
                   ))}
                 </ul>
               )}
-              <RadarChartMetier metier={metier} normalizedScores={normalizedScores} />
+              <RadarChartMetier metier={metier} normalizedScores={normalizedScores} reponses={reponses} />
             </div>
           ))}
         </div>
@@ -285,6 +285,7 @@ export default function Results() {
             rank={i + 1}
             rankLabel={RANK_LABELS[i] ?? `Rang ${i + 1}`}
             normalizedScores={normalizedScores}
+            reponses={reponses}
           />
         ))}
       </div>
