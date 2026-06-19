@@ -8,7 +8,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { NIVEAU_ETUDES } from "../utils/scoring";
 
 const ALL_AXES = ["Q1", "Q2", "Q3", "Q4", "Q7", "Q8"];
 
@@ -27,7 +26,7 @@ function shortAnswer(key, reponses) {
   switch (key) {
     case "Q1": {
       const val = reponses?.Q1 ?? "";
-      if (!val || val === "Autre") return "—";
+      if (!val) return "—";
       return val.split("/")[0].trim();
     }
     case "Q2":
@@ -55,7 +54,7 @@ export default function RadarChartMetier({ metier, normalizedScores, reponses })
 
   const radarData = axes.map((key) => ({
     name: reponses
-      ? `${PREFIXES[key]}: ${shortAnswer(key, reponses)}`
+      ? `${PREFIXES[key]}:\n${shortAnswer(key, reponses)}`
       : PREFIXES[key],
     Métier: Math.round(metier.poids[key] * 100),
     Vous: Math.round((normalizedScores?.[key] ?? 0) * 100),
@@ -67,12 +66,12 @@ export default function RadarChartMetier({ metier, normalizedScores, reponses })
         <ResponsiveContainer width="100%" height={260}>
           <RadarChart
             data={radarData}
-            margin={{ top: 8, right: 90, bottom: 56, left: 90 }}
+            margin={{ top: 20, right: 80, bottom: 40, left: 80 }}
           >
             <PolarGrid stroke="var(--border, #E8E8E8)" />
             <PolarAngleAxis
               dataKey="name"
-              tick={{ fill: "#424242", fontSize: 10, fontFamily: "Poppins, sans-serif" }}
+              tick={{ fill: "#424242", fontSize: 11, fontFamily: "Poppins, sans-serif" }}
             />
             <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
             <Radar
@@ -98,7 +97,7 @@ export default function RadarChartMetier({ metier, normalizedScores, reponses })
                 borderRadius: 6,
               }}
             />
-            <Legend iconType="line" wrapperStyle={{ fontSize: 11, paddingTop: 4 }} />
+            <Legend iconType="line" wrapperStyle={{ fontSize: 11, marginTop: 30 }} />
           </RadarChart>
         </ResponsiveContainer>
       </div>

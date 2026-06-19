@@ -1244,8 +1244,8 @@ select {
 
 /* ---------- Radar Chart (compact, dans les détails de chaque carte) ---------- */
 .radar-compact {
-  margin-top: 2px;
-  padding-top: 6px;
+  margin-top: 4px;
+  padding-top: 4px;
   border-top: 1px dashed var(--border, #E8E8E8);
 }
 
