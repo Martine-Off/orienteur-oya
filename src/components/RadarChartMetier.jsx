@@ -12,34 +12,31 @@ import { NIVEAU_ETUDES } from "../utils/scoring";
 
 const AXES = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q7", "Q8"];
 
+const Q2_COURT = { 3: "CAP", 4: "Bac", 5: "BTS", 6: "Licence", 7: "Master+" };
+
 function answerLabel(key, reponses) {
   switch (key) {
     case "Q1": {
       const val = reponses?.Q1 ?? "";
-      // "Management/Encadrement" → "Management"
       return val.split("/")[0].trim() || "Secteur";
     }
-    case "Q2": {
-      const niveau = NIVEAU_ETUDES.find((e) => e.value === Number(reponses?.Q2));
-      // "Sans diplôme / CAP" → "Sans diplôme", "BTS / BTSA" → "BTS/BTSA"
-      return niveau?.label.split(" / ")[0].replace(" / ", "/") ?? "Études";
-    }
+    case "Q2":
+      return Q2_COURT[Number(reponses?.Q2)] ?? "Études";
     case "Q3":
       return reponses?.Q3 ?? "Cadre";
     case "Q4": {
       const val = reponses?.Q4 ?? "";
-      // "Produire / cultiver" → "Produire"
-      // "Prendre soin des animaux" → "Animaux"
       if (val.startsWith("Prendre soin")) return "Animaux";
       if (val.startsWith("Cuisinier")) return "Cuisiner";
+      if (val.startsWith("Partager")) return "Vendre";
       return val.split(/[/,]/)[0].trim().split(" ")[0] || "Attrait";
     }
     case "Q5":
-      return reponses?.Q5 === "Oui" ? "Contraint·e" : "Mobile";
+      return reponses?.Q5 === "Oui" ? "Contrainte" : "Mobile";
     case "Q7":
       return reponses?.Q7 ?? "Budget";
     case "Q8":
-      return reponses?.Q8 === "Oui" ? "Expérimenté·e" : "Reconversion";
+      return reponses?.Q8 === "Oui" ? "Expérimenté" : "Reconversion";
     default:
       return key;
   }
@@ -58,12 +55,12 @@ export default function RadarChartMetier({ metier, normalizedScores, reponses })
         <ResponsiveContainer width="100%" height={240}>
           <RadarChart
             data={radarData}
-            margin={{ top: 10, right: 48, bottom: 10, left: 48 }}
+            margin={{ top: 14, right: 72, bottom: 14, left: 72 }}
           >
             <PolarGrid stroke="var(--border, #E8E8E8)" />
             <PolarAngleAxis
               dataKey="name"
-              tick={{ fill: "#424242", fontSize: 11, fontFamily: "Poppins, sans-serif" }}
+              tick={{ fill: "#424242", fontSize: 10, fontFamily: "Poppins, sans-serif" }}
             />
             <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
             <Radar
