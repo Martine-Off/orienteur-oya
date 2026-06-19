@@ -12,7 +12,7 @@
 
   /* Texte */
   --text:               #424242; /* body, labels, H1 — 9.7:1 ✅ */
-  --text-muted:         #888888;
+  --text-muted:         #767676; /* darkened from #888 → 4.67:1 on white WCAG AA ✅ */
 
   /* Fonds */
   --bg:                 #FFFFFF;
@@ -41,7 +41,7 @@
   --color-secondary:    #38AA3F;
   --color-salmon:       #FFFBF8;
   --color-text:         #424242;
-  --color-text-muted:   #888888;
+  --color-text-muted:   #767676;
   --color-border:       #E8E8E8;
 
   /* Typo */

@@ -31,7 +31,7 @@ export default function Quiz() {
 
   function handleKeyDown(e) {
     if (e.key === "Escape") {
-      setConfirmQuit(true);
+      setConfirmQuit((prev) => !prev);
     }
   }
 
