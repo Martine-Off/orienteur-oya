@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import { NIVEAU_ETUDES } from "../utils/scoring";
 
-const AXES = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q7", "Q8"];
+const ALL_AXES = ["Q1", "Q2", "Q3", "Q4", "Q7", "Q8"];
 
 const Q2_COURT = { 3: "CAP", 4: "Bac", 5: "BTS", 6: "Licence", 7: "Master+" };
 
@@ -18,7 +18,8 @@ function answerLabel(key, reponses) {
   switch (key) {
     case "Q1": {
       const val = reponses?.Q1 ?? "";
-      return val.split("/")[0].trim() || "Secteur";
+      if (!val || val === "Autre") return "Secteur";
+      return val.split("/")[0].trim();
     }
     case "Q2":
       return Q2_COURT[Number(reponses?.Q2)] ?? "Études";
@@ -31,8 +32,6 @@ function answerLabel(key, reponses) {
       if (val.startsWith("Partager")) return "Vendre";
       return val.split(/[/,]/)[0].trim().split(" ")[0] || "Attrait";
     }
-    case "Q5":
-      return reponses?.Q5 === "Oui" ? "Contrainte" : "Mobile";
     case "Q7":
       return reponses?.Q7 ?? "Budget";
     case "Q8":
@@ -43,9 +42,11 @@ function answerLabel(key, reponses) {
 }
 
 export default function RadarChartMetier({ metier, normalizedScores, reponses }) {
-  const radarData = AXES.map((key) => ({
+  const axes = ALL_AXES.filter((key) => (metier.poids?.[key] ?? 0) > 0);
+
+  const radarData = axes.map((key) => ({
     name: answerLabel(key, reponses),
-    Métier: Math.round((metier.poids?.[key] ?? 0) * 100),
+    Métier: Math.round((metier.poids[key] * 100)),
     Vous: Math.round((normalizedScores?.[key] ?? 0) * 100),
   }));
 
