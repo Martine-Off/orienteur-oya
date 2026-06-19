@@ -49,6 +49,16 @@ function shortAnswer(key, reponses) {
   }
 }
 
+const CustomTick = ({ x, y, payload }) => {
+  const parts = payload.value.split("\n");
+  return (
+    <text x={x} y={y} textAnchor="middle" dominantBaseline="middle" fill="#424242" fontSize={11} fontFamily="Poppins, sans-serif">
+      <tspan x={x} dy="0">{parts[0]}</tspan>
+      <tspan x={x} dy="14">{parts[1] || ""}</tspan>
+    </text>
+  );
+};
+
 export default function RadarChartMetier({ metier, normalizedScores, reponses }) {
   const axes = ALL_AXES.filter((key) => (metier.poids?.[key] ?? 0) > 0);
 
@@ -69,10 +79,7 @@ export default function RadarChartMetier({ metier, normalizedScores, reponses })
             margin={{ top: 20, right: 80, bottom: 40, left: 80 }}
           >
             <PolarGrid stroke="var(--border, #E8E8E8)" />
-            <PolarAngleAxis
-              dataKey="name"
-              tick={{ fill: "#424242", fontSize: 11, fontFamily: "Poppins, sans-serif" }}
-            />
+            <PolarAngleAxis dataKey="name" tick={<CustomTick />} />
             <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
             <Radar
               name="Métier"
