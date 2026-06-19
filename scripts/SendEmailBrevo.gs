@@ -82,28 +82,40 @@ function buildCard(rank, thematique, score, metierRows, competences, statut, niv
     </table>`;
 }
 
+// ── Normalise les deux formats React (Results = tableaux, EmailCapture = plat) ─
+function normalizeCards(data) {
+  if (data.top_3_thematiques) {
+    // Format Results.jsx : champs tableau
+    return (data.top_3_thematiques || []).map((them, i) => ({
+      thematique:  them,
+      score:       data.scores_thematiques?.[i] || 0,
+      metiers: [
+        data.top_3_metiers?.[i] && { nom: data.top_3_metiers[i], score: data.scores?.[i]   || '—' },
+        data.metiers_2?.[i]        && { nom: data.metiers_2[i],        score: data.scores_2?.[i] || '—' },
+        data.metiers_3?.[i]        && { nom: data.metiers_3[i],        score: data.scores_3?.[i] || '—' },
+      ].filter(Boolean),
+      competences: Array.isArray(data.competences?.[i]) ? data.competences[i].join(' · ') : (data.competences?.[i] || ''),
+      statut:      data.statuts?.[i]  || '',
+      niveau:      data.niveaux?.[i]  || '',
+    }));
+  }
+  // Format EmailCapture.jsx : champs plats thematique_N / metier_N / score_N
+  return [
+    { thematique: data.thematique_1, score: data.score_1 || 0, metiers: data.metier_1 ? [{ nom: data.metier_1, score: data.score_1 || '—' }] : [], competences: '', statut: '', niveau: '' },
+    { thematique: data.thematique_2, score: data.score_2 || 0, metiers: data.metier_2 ? [{ nom: data.metier_2, score: data.score_2 || '—' }] : [], competences: '', statut: '', niveau: '' },
+    { thematique: data.thematique_3, score: data.score_3 || 0, metiers: data.metier_3 ? [{ nom: data.metier_3, score: data.score_3 || '—' }] : [], competences: '', statut: '', niveau: '' },
+  ].filter(c => c.thematique);
+}
+
 // ── Corps du mail complet ─────────────────────────────────────────────────────
 function buildEmailHtml(data) {
-  const thematiques = data.top_3_thematiques || [];
-  const scores      = data.scores_thematiques || [];
-  const topMetiers  = data['top_3_métiers']   || [];
-  const topScores   = data.scores             || [];
-  const peurs       = data.Q9_peurs           || '';
-  const region      = data.région || data.Q10_region || '';
+  const cardData = normalizeCards(data);
+  const peurs    = data.Q9_peurs || '';
+  const region   = data.région || data.Q10_region || '';
 
-  const cards = thematiques.map((them, i) => {
-    const rows = [
-      topMetiers[i]         && { nom: topMetiers[i],       score: topScores[i]               || '—' },
-      data.metiers_2?.[i]   && { nom: data.metiers_2[i],   score: data.scores_2?.[i]          || '—' },
-      data.metiers_3?.[i]   && { nom: data.metiers_3[i],   score: data.scores_3?.[i]          || '—' },
-    ].filter(Boolean);
-
-    const competences = Array.isArray(data.competences?.[i])
-      ? data.competences[i].join(' · ')
-      : (data.competences?.[i] || '');
-
-    return buildCard(i + 1, them, scores[i] || 0, rows, competences, data.statuts?.[i] || '', data.niveaux?.[i] || '');
-  }).join('');
+  const cards = cardData.map((c, i) =>
+    buildCard(i + 1, c.thematique, c.score, c.metiers, c.competences, c.statut, c.niveau)
+  ).join('');
 
   const peursHtml = peurs ? (() => {
     const badges = peurs.split(',').map(p =>
@@ -182,7 +194,8 @@ function sendEmailBrevo(data) {
     return;
   }
 
-  const subject = `Votre diagnostic OYA${data.top_3_thematiques?.[0] ? ` — ${data.top_3_thematiques[0]}` : ''}`;
+  const firstThematique = data.top_3_thematiques?.[0] || data.thematique_1 || '';
+  const subject = `Votre diagnostic OYA${firstThematique ? ` — ${firstThematique}` : ''}`;
 
   const response = UrlFetchApp.fetch('https://api.brevo.com/v3/smtp/email', {
     method:             'post',

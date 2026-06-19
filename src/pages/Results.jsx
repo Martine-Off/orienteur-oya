@@ -298,7 +298,7 @@ export default function Results() {
         Q10_region: reponses.Q10,
         top_3_thematiques: thematiques.map((t) => t.thematique),
         scores_thematiques: thematiques.map((t) => t.avgScore),
-        top_3_métiers: thematiques.map((t) => t.metiers[0]?.metier.metier),
+        top_3_metiers: thematiques.map((t) => t.metiers[0]?.metier.metier),
         scores: thematiques.map((t) => t.metiers[0]?.score),
         metiers_2: thematiques.map((t) => t.metiers[1]?.metier.metier),
         scores_2: thematiques.map((t) => t.metiers[1]?.score),
@@ -306,7 +306,7 @@ export default function Results() {
         scores_3: thematiques.map((t) => t.metiers[2]?.score),
         région: reponses.Q10,
         bloc: thematiques[0]?.thematique,
-        être_tenu_au_courant: etreTenuAuCourant,
+        etre_tenu_au_courant: etreTenuAuCourant,
         rgpd_accepte: rgpd,
       });
       setConfirmedEmail(email);
