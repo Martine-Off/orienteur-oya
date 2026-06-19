@@ -32,10 +32,10 @@ export default function RadarChartMetier({ metier, normalizedScores }) {
   return (
     <div className="radar-compact">
       <div className="radar-chart-wrapper" aria-hidden="true">
-        <ResponsiveContainer width="100%" height={280}>
+        <ResponsiveContainer width="100%" height={220}>
           <RadarChart
             data={radarData}
-            margin={{ top: 16, right: 72, bottom: 48, left: 72 }}
+            margin={{ top: 10, right: 64, bottom: 36, left: 64 }}
           >
             <PolarGrid stroke="var(--border, #E8E8E8)" />
             <PolarAngleAxis
