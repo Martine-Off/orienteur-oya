@@ -86,10 +86,10 @@ function buildCard_(rank, thematique, score, metiersRows, competences, statut, n
 
 // ─── Construire le HTML complet du diagnostic ────────────────────────────────
 function buildDiagnosticEmailHtml(data) {
-  var thematiques = data.top_3_thematiques || [];
-  var scores      = data.scores_thematiques || [];
-  var topMetiers  = data.top_3_métiers || [];
-  var topScores   = data.scores || [];
+  var thematiques = [data.thematique_1, data.thematique_2, data.thematique_3];
+  var scores      = [data.score_1, data.score_2, data.score_3];
+  var topMetiers  = [data.metier_1, data.metier_2, data.metier_3];
+  var topScores   = [data.score_1, data.score_2, data.score_3];
   var peurs       = data.Q9_peurs || '';
   var region      = data.région || data.Q10_region || '';
 
@@ -187,7 +187,7 @@ function sendEmailBrevo(data) {
   }
 
   var subject = 'Votre diagnostic OYA'
-    + (data.top_3_thematiques && data.top_3_thematiques[0] ? ' — ' + data.top_3_thematiques[0] : '');
+    + (data.thematique_1 ? ' — ' + data.thematique_1 : '');
 
   var htmlContent = buildDiagnosticEmailHtml(data);
 

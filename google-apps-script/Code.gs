@@ -53,14 +53,15 @@ function appendReponse(data) {
     data.Q8,
     data.Q9_peurs || "",          // col K -- peurs et preoccupations (CSV des cles cochees)
     data.Q10_region || "",        // col L -- region
-    (data.top_3_thematiques || [])[0] || "",
-    (data.top_3_thematiques || [])[1] || "",
-    (data.top_3_thematiques || [])[2] || "",
-    (data.scores_thematiques || [])[0] || "",
-    (data.scores_thematiques || [])[1] || "",
-    (data.scores_thematiques || [])[2] || "",
-    data.region || "",
-    data.bloc || "",
+    data.thematique_1 || "",
+    data.metier_1 || "",
+    data.score_1 || "",
+    data.thematique_2 || "",
+    data.metier_2 || "",
+    data.score_2 || "",
+    data.thematique_3 || "",
+    data.metier_3 || "",
+    data.score_3 || "",
     data.etre_tenu_au_courant === true,
   ]);
 }
@@ -75,10 +76,10 @@ function sendEmailBrevo(email, data) {
     return { ok: false, error: msg };
   }
 
-  const thematiques = data.top_3_thematiques || [];
-  const scoresThematiques = data.scores_thematiques || [];
-  const metiers = data.top_3_metiers || data["top_3_métiers"] || [];
-  const scores = data.scores || [];
+  const thematiques = [data.thematique_1, data.thematique_2, data.thematique_3];
+  const scoresThematiques = [data.score_1, data.score_2, data.score_3];
+  const metiers = [data.metier_1, data.metier_2, data.metier_3];
+  const scores = [data.score_1, data.score_2, data.score_3];
 
   var htmlDiagnostic = "";
   if (thematiques.length > 0) {

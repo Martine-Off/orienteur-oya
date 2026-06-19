@@ -20,7 +20,7 @@ function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
 
-    if (!data.email || !data.top_3_métiers || !data.scores) {
+    if (!data.email) {
       return ContentService.createTextOutput("Invalid data").setMimeType(
         ContentService.MimeType.TEXT,
       );
@@ -51,14 +51,15 @@ function appendReponse(data) {
     data.Q8,
     data.Q9_peurs || "",
     data.Q10_region || "",
-    data.top_3_métiers[0] || "",
-    data.top_3_métiers[1] || "",
-    data.top_3_métiers[2] || "",
-    data.scores[0] || "",
-    data.scores[1] || "",
-    data.scores[2] || "",
-    data.région,
-    data.bloc,
-    data.être_tenu_au_courant === true,
+    data.thematique_1 || "",
+    data.metier_1 || "",
+    data.score_1 || "",
+    data.thematique_2 || "",
+    data.metier_2 || "",
+    data.score_2 || "",
+    data.thematique_3 || "",
+    data.metier_3 || "",
+    data.score_3 || "",
+    data.etre_tenu_au_courant === true,
   ]);
 }
