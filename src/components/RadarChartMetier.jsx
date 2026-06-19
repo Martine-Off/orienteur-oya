@@ -76,10 +76,10 @@ export default function RadarChartMetier({ metier, normalizedScores, reponses })
         <ResponsiveContainer width="100%" height={300}>
           <RadarChart
             data={radarData}
-            margin={{ top: 4, right: 4, bottom: 4, left: 4 }}
+            margin={{ top: 10, right: 30, bottom: 20, left: 30 }}
           >
             <PolarGrid stroke="var(--border, #E8E8E8)" />
-            <PolarAngleAxis dataKey="name" tick={false} />
+            <PolarAngleAxis dataKey="name" tick={<CustomTick />} />
             <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
             <Radar
               name="Métier"
