@@ -4,7 +4,7 @@ import { isValidEmail } from "../utils/validation";
 export default function EmailCaptureForm({ onSubmit, submitting }) {
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
-  const [etreTenuAuCourant, setEtreTenuAuCourant] = useState(true);
+  const [etreTenuAuCourant, setEtreTenuAuCourant] = useState(false);
   const [touched, setTouched] = useState(false);
 
   const emailValid = isValidEmail(email);

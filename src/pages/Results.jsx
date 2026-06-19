@@ -87,7 +87,7 @@ function ResultCard({ thematique, rank, rankLabel }) {
 function EmailModal({ onSubmit, onClose, submitting, hasError }) {
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
-  const [optIn, setOptIn] = useState(true);
+  const [optIn, setOptIn] = useState(false);
   const [touched, setTouched] = useState(false);
   const emailValid = isValidEmail(email);
   const buttonEnabled = emailValid && rgpd && !submitting;
