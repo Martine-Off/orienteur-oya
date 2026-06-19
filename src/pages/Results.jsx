@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import { useMetiers } from "../hooks/useMetiers";
-import { groupByThematique } from "../utils/scoring";
+import { groupByThematique, normalizeAnswers } from "../utils/scoring";
 import { submitLead } from "../utils/api";
 import { isValidEmail } from "../utils/validation";
 import { PEURS } from "../data/questions";
+import RadarChartMetier from "../components/RadarChartMetier";
 
 const BAR_COLORS = {
   1: "var(--bar-rank-1, #EF8D11)",
@@ -232,6 +233,8 @@ export default function Results() {
 
   const thematiques = groupByThematique(reponses, metiers, 3);
   const peursChoisies = PEURS.filter((p) => reponses.Q9?.[p.key]);
+  const topMetier = thematiques[0]?.metiers[0]?.metier;
+  const normalizedScores = normalizeAnswers(reponses);
 
   async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
     setSubmitState("submitting");
@@ -289,6 +292,10 @@ export default function Results() {
           />
         ))}
       </div>
+
+      {topMetier && (
+        <RadarChartMetier metier={topMetier} normalizedScores={normalizedScores} />
+      )}
 
       {peursChoisies.length > 0 && (
         <div className="peurs-block">
