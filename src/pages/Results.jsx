@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import { useMetiers } from "../hooks/useMetiers";
-import { groupByThematique, normalizeAnswers } from "../utils/scoring";
+import { groupByThematique, normalizeAnswers, NIVEAU_ETUDES } from "../utils/scoring";
 import { submitLead } from "../utils/api";
 import { isValidEmail } from "../utils/validation";
 import { PEURS } from "../data/questions";
@@ -33,7 +33,7 @@ function ScoreBar({ score, rank }) {
   );
 }
 
-function ResultCard({ thematique, rank, rankLabel, normalizedScores, reponses }) {
+function ResultCard({ thematique, rank, rankLabel, normalizedScores }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -77,12 +77,51 @@ function ResultCard({ thematique, rank, rankLabel, normalizedScores, reponses })
                   ))}
                 </ul>
               )}
-              <RadarChartMetier metier={metier} normalizedScores={normalizedScores} reponses={reponses} />
+              <RadarChartMetier metier={metier} normalizedScores={normalizedScores} />
             </div>
           ))}
         </div>
       )}
     </article>
+  );
+}
+
+function ProfilRecap({ reponses }) {
+  const niveauLabel = NIVEAU_ETUDES.find((e) => e.value === Number(reponses.Q2))?.label;
+  const peursChoisies = PEURS.filter((p) => reponses.Q9?.[p.key]);
+
+  const lignes = [
+    { label: "Secteur d'origine",     valeur: reponses.Q1 },
+    { label: "Niveau d'études",        valeur: niveauLabel },
+    { label: "Cadre de vie",           valeur: reponses.Q3 },
+    { label: "Ce qui vous attire",     valeur: reponses.Q4 },
+    { label: "Contraintes physiques",  valeur: reponses.Q5 },
+    { label: "Temps disponible",       valeur: reponses.Q6 },
+    { label: "Budget reconversion",    valeur: reponses.Q7 },
+    { label: "Expérience agriculture", valeur: reponses.Q8 },
+    { label: "Région",                 valeur: reponses.Q10 },
+  ].filter((l) => l.valeur);
+
+  return (
+    <div className="profil-recap">
+      <h2>Votre profil</h2>
+      <dl className="profil-recap__grid">
+        {lignes.map(({ label, valeur }) => (
+          <div key={label} className="profil-recap__item">
+            <dt>{label}</dt>
+            <dd>{valeur}</dd>
+          </div>
+        ))}
+      </dl>
+      {peursChoisies.length > 0 && (
+        <div className="profil-recap__peurs">
+          <p className="profil-recap__peurs-titre">Préoccupations identifiées</p>
+          <ul className="peurs-list">
+            {peursChoisies.map((p) => <li key={p.key}>{p.label}</li>)}
+          </ul>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -285,21 +324,11 @@ export default function Results() {
             rank={i + 1}
             rankLabel={RANK_LABELS[i] ?? `Rang ${i + 1}`}
             normalizedScores={normalizedScores}
-            reponses={reponses}
           />
         ))}
       </div>
 
-      {peursChoisies.length > 0 && (
-        <div className="peurs-block">
-          <h2>Vos préoccupations identifiées</h2>
-          <ul className="peurs-list">
-            {peursChoisies.map((p) => (
-              <li key={p.key}>{p.label}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <ProfilRecap reponses={reponses} />
 
       {submitState === "done" ? (
         <p className="results-success" role="status">

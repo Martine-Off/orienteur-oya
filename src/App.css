@@ -1064,20 +1064,71 @@ select {
   color: var(--text-muted, #888888);
 }
 
-/* Bloc peurs */
-.peurs-block {
+/* Bloc profil récap */
+.profil-recap {
   background: var(--bg-peurs, #FFFBF8);
   border: 1px solid rgba(239, 141, 17, 0.25);
   border-radius: 12px;
   padding: 16px 20px;
 }
 
-.peurs-block h2 {
+.profil-recap h2 {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-title, #2E7D33);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
+
+.profil-recap__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 20px;
+  margin: 0;
+}
+
+.profil-recap__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.profil-recap__item dt {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted, #767676);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.profil-recap__item dd {
+  font-size: 0.85rem;
+  color: var(--text, #424242);
+  font-weight: 500;
+  margin: 0;
+}
+
+.profil-recap__peurs {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(239, 141, 17, 0.2);
+}
+
+.profil-recap__peurs-titre {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted, #767676);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px;
+}
+
+@media (max-width: 599px) {
+  .profil-recap__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Bloc peurs (legacy — conservé pour compatibilité) */
 
 .peurs-list {
   list-style: none;
