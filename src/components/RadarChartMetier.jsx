@@ -27,21 +27,17 @@ export default function RadarChartMetier({ metier, normalizedScores }) {
   }));
 
   return (
-    <section className="radar-section" aria-labelledby="radar-title">
-      <h2 id="radar-title" className="radar-title">
-        Votre profil vs {metier.metier}
-      </h2>
-
+    <div className="radar-compact">
       <div className="radar-chart-wrapper" aria-hidden="true">
-        <ResponsiveContainer width="100%" height={340}>
+        <ResponsiveContainer width="100%" height={240}>
           <RadarChart
             data={radarData}
-            margin={{ top: 16, right: 64, bottom: 16, left: 64 }}
+            margin={{ top: 10, right: 48, bottom: 10, left: 48 }}
           >
             <PolarGrid stroke="var(--border, #E8E8E8)" />
             <PolarAngleAxis
               dataKey="name"
-              tick={{ fill: "#424242", fontSize: 12, fontFamily: "Poppins, sans-serif" }}
+              tick={{ fill: "#424242", fontSize: 11, fontFamily: "Poppins, sans-serif" }}
             />
             <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
             <Radar
@@ -61,21 +57,20 @@ export default function RadarChartMetier({ metier, normalizedScores }) {
             <Tooltip
               formatter={(v) => `${v}%`}
               contentStyle={{
-                fontSize: 13,
+                fontSize: 12,
                 fontFamily: "Poppins, sans-serif",
                 border: "1px solid var(--border, #E8E8E8)",
                 borderRadius: 6,
               }}
             />
-            <Legend iconType="line" wrapperStyle={{ fontSize: 13, paddingTop: 8 }} />
+            <Legend iconType="line" wrapperStyle={{ fontSize: 11, paddingTop: 4 }} />
           </RadarChart>
         </ResponsiveContainer>
       </div>
 
       <p className="radar-desc">
-        <strong>Orange</strong> = ce que ce métier valorise.{" "}
-        <strong>Vert</strong> = votre profil.
-        Plus les courbes se superposent, meilleur est le match.
+        <strong style={{ color: "#A85D08" }}>Orange</strong> = ce que ce métier valorise.{" "}
+        <strong style={{ color: "#2E7D33" }}>Vert</strong> = votre profil.
       </p>
 
       <div
@@ -100,6 +95,6 @@ export default function RadarChartMetier({ metier, normalizedScores }) {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

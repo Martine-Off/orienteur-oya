@@ -479,22 +479,22 @@ select {
 }
 
 @media (min-width: 768px) {
+  .page-quiz form {
+    flex: none;
+  }
+
   .page-quiz .quiz-actions {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: 0;
-    padding: 20px;
-    background: #fff;
+    position: static;
+    margin-top: 32px;
+    padding: 16px 0;
+    background: transparent;
     border-top: 1px solid var(--border, #E8E8E8);
     gap: 24px;
     justify-content: space-between;
-    z-index: 100;
   }
 
   .page-quiz {
-    padding-bottom: 48px;
+    padding-bottom: 0;
   }
 }
 
@@ -1176,37 +1176,30 @@ select {
   border-color: var(--color-accent, #EF8D11);
 }
 
-/* ---------- Radar Chart ---------- */
-.radar-section {
-  padding: 24px;
-  background: var(--bg-app, #F4F3F0);
-  border-radius: 12px;
-  border: 1px solid var(--border, #E8E8E8);
-}
-
-.radar-title {
-  font-size: 1rem;
-  color: var(--color-title, #2E7D33);
-  margin: 0 0 16px;
+/* ---------- Radar Chart (compact, dans les détails de chaque carte) ---------- */
+.radar-compact {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border, #E8E8E8);
 }
 
 .radar-desc {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: var(--text-muted, #767676);
-  margin: 8px 0 0;
-  line-height: 1.5;
+  margin: 4px 0 0;
+  line-height: 1.4;
 }
 
 .radar-table {
   display: none;
-  margin-top: 16px;
-  font-size: 0.85rem;
+  margin-top: 12px;
+  font-size: 0.82rem;
 }
 
 .radar-table__row {
   display: grid;
-  grid-template-columns: 1fr 60px 60px;
-  padding: 8px 4px;
+  grid-template-columns: 1fr 52px 52px;
+  padding: 6px 4px;
   border-bottom: 1px solid var(--border, #E8E8E8);
   gap: 8px;
 }
@@ -1214,7 +1207,7 @@ select {
 .radar-table__row--head {
   font-weight: 700;
   color: var(--text, #424242);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
 }
 
 .radar-table__row span:not(:first-child) {

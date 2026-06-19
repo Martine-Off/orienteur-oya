@@ -33,7 +33,7 @@ function ScoreBar({ score, rank }) {
   );
 }
 
-function ResultCard({ thematique, rank, rankLabel }) {
+function ResultCard({ thematique, rank, rankLabel, normalizedScores }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -77,6 +77,7 @@ function ResultCard({ thematique, rank, rankLabel }) {
                   ))}
                 </ul>
               )}
+              <RadarChartMetier metier={metier} normalizedScores={normalizedScores} />
             </div>
           ))}
         </div>
@@ -228,7 +229,6 @@ export default function Results() {
 
   const thematiques = groupByThematique(reponses, metiers, 3);
   const peursChoisies = PEURS.filter((p) => reponses.Q9?.[p.key]);
-  const topMetier = thematiques[0]?.metiers[0]?.metier;
   const normalizedScores = normalizeAnswers(reponses);
 
   async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
@@ -284,13 +284,10 @@ export default function Results() {
             thematique={t}
             rank={i + 1}
             rankLabel={RANK_LABELS[i] ?? `Rang ${i + 1}`}
+            normalizedScores={normalizedScores}
           />
         ))}
       </div>
-
-      {topMetier && (
-        <RadarChartMetier metier={topMetier} normalizedScores={normalizedScores} />
-      )}
 
       {peursChoisies.length > 0 && (
         <div className="peurs-block">
