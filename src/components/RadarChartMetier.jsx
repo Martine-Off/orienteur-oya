@@ -8,23 +8,55 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { NIVEAU_ETUDES } from "../utils/scoring";
 
 const ALL_AXES = ["Q1", "Q2", "Q3", "Q4", "Q7", "Q8"];
 
-const AXIS_LABELS = {
+const PREFIXES = {
   Q1: "Secteur",
-  Q2: "Études",
+  Q2: "Niveau",
   Q3: "Cadre",
   Q4: "Attrait",
   Q7: "Budget",
   Q8: "Agriculture",
 };
 
-export default function RadarChartMetier({ metier, normalizedScores }) {
+const Q2_COURT = { 3: "CAP", 4: "Bac", 5: "BTS", 6: "Licence", 7: "Master+" };
+
+function shortAnswer(key, reponses) {
+  switch (key) {
+    case "Q1": {
+      const val = reponses?.Q1 ?? "";
+      if (!val || val === "Autre") return "—";
+      return val.split("/")[0].trim();
+    }
+    case "Q2":
+      return Q2_COURT[Number(reponses?.Q2)] ?? "—";
+    case "Q3":
+      return reponses?.Q3 ?? "—";
+    case "Q4": {
+      const val = reponses?.Q4 ?? "";
+      if (val.startsWith("Prendre soin")) return "Animaux";
+      if (val.startsWith("Cuisinier")) return "Cuisiner";
+      if (val.startsWith("Partager")) return "Vendre";
+      return val.split(/[/,]/)[0].trim().split(" ")[0] || "—";
+    }
+    case "Q7":
+      return reponses?.Q7 ?? "—";
+    case "Q8":
+      return reponses?.Q8 ?? "—";
+    default:
+      return "—";
+  }
+}
+
+export default function RadarChartMetier({ metier, normalizedScores, reponses }) {
   const axes = ALL_AXES.filter((key) => (metier.poids?.[key] ?? 0) > 0);
 
   const radarData = axes.map((key) => ({
-    name: AXIS_LABELS[key],
+    name: reponses
+      ? `${PREFIXES[key]}: ${shortAnswer(key, reponses)}`
+      : PREFIXES[key],
     Métier: Math.round(metier.poids[key] * 100),
     Vous: Math.round((normalizedScores?.[key] ?? 0) * 100),
   }));
@@ -32,15 +64,15 @@ export default function RadarChartMetier({ metier, normalizedScores }) {
   return (
     <div className="radar-compact">
       <div className="radar-chart-wrapper" aria-hidden="true">
-        <ResponsiveContainer width="100%" height={220}>
+        <ResponsiveContainer width="100%" height={260}>
           <RadarChart
             data={radarData}
-            margin={{ top: 10, right: 64, bottom: 36, left: 64 }}
+            margin={{ top: 8, right: 90, bottom: 56, left: 90 }}
           >
             <PolarGrid stroke="var(--border, #E8E8E8)" />
             <PolarAngleAxis
               dataKey="name"
-              tick={{ fill: "#424242", fontSize: 11, fontFamily: "Poppins, sans-serif" }}
+              tick={{ fill: "#424242", fontSize: 10, fontFamily: "Poppins, sans-serif" }}
             />
             <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
             <Radar
@@ -66,10 +98,7 @@ export default function RadarChartMetier({ metier, normalizedScores }) {
                 borderRadius: 6,
               }}
             />
-            <Legend
-              iconType="line"
-              wrapperStyle={{ fontSize: 11, paddingTop: 8 }}
-            />
+            <Legend iconType="line" wrapperStyle={{ fontSize: 11, paddingTop: 4 }} />
           </RadarChart>
         </ResponsiveContainer>
       </div>
