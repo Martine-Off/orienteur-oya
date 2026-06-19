@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import { useMetiers } from "../hooks/useMetiers";
-import { groupByThematique } from "../utils/scoring";
+import { groupByThematique, normalizeAnswers } from "../utils/scoring";
 import { submitLead } from "../utils/api";
 import { isValidEmail } from "../utils/validation";
 import { PEURS } from "../data/questions";
+import RadarChartMetier from "../components/RadarChartMetier";
 
 const BAR_COLORS = {
   1: "var(--bar-rank-1, #EF8D11)",
@@ -169,16 +170,11 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
               onChange={(e) => setRgpd(e.target.checked)}
               aria-describedby={touched && !rgpd ? "modal-rgpd-error" : undefined}
             />
-            <span style={{ fontSize: "0.75rem", lineHeight: 1.5 }}>
-              En cochant cette case, je consens expressément à la communication de mon diagnostic
-              et j'accepte que mes réponses fassent l'objet d'un traitement à des fins statistiques.
-              Je reconnais avoir été informé(e) de mes droits d'accès, de rectification et de
-              suppression, conformément au RGPD.{" "}
-              <span style={{ color: "#A85D08", textDecoration: "underline", cursor: "default" }}>
-                Lien vers votre politique de confidentialité complète
-              </span>
-              {" "}<span aria-hidden="true">*</span>
-            </span>
+            J'accepte de recevoir mon diagnostic par email et que mes données soient utilisées par OYA.{" "}
+            <span style={{ color: "#A85D08", textDecoration: "underline", cursor: "default", fontSize: "0.85rem" }}>
+              Politique de confidentialité
+            </span>{" "}
+            <span aria-hidden="true">*</span>
           </label>
           {touched && !rgpd && (
             <p id="modal-rgpd-error" className="field-error" role="alert">
@@ -232,6 +228,8 @@ export default function Results() {
 
   const thematiques = groupByThematique(reponses, metiers, 3);
   const peursChoisies = PEURS.filter((p) => reponses.Q9?.[p.key]);
+  const topMetier = thematiques[0]?.metiers[0]?.metier;
+  const normalizedScores = normalizeAnswers(reponses);
 
   async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
     setSubmitState("submitting");
@@ -289,6 +287,10 @@ export default function Results() {
           />
         ))}
       </div>
+
+      {topMetier && (
+        <RadarChartMetier metier={topMetier} normalizedScores={normalizedScores} />
+      )}
 
       {peursChoisies.length > 0 && (
         <div className="peurs-block">

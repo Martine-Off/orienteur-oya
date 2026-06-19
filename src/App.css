@@ -146,6 +146,13 @@
   gap: 16px;
 }
 
+@media (min-width: 768px) {
+  .question fieldset,
+  .question {
+    gap: 48px;
+  }
+}
+
 .question legend {
   font-size: 1.25rem;
   font-weight: 600;
@@ -487,7 +494,7 @@ select {
   }
 
   .page-quiz {
-    padding-bottom: 120px;
+    padding-bottom: 48px;
   }
 }
 
@@ -1167,6 +1174,60 @@ select {
   outline: 2px solid var(--color-accent, #EF8D11);
   outline-offset: 2px;
   border-color: var(--color-accent, #EF8D11);
+}
+
+/* ---------- Radar Chart ---------- */
+.radar-section {
+  padding: 24px;
+  background: var(--bg-app, #F4F3F0);
+  border-radius: 12px;
+  border: 1px solid var(--border, #E8E8E8);
+}
+
+.radar-title {
+  font-size: 1rem;
+  color: var(--color-title, #2E7D33);
+  margin: 0 0 16px;
+}
+
+.radar-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted, #767676);
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+.radar-table {
+  display: none;
+  margin-top: 16px;
+  font-size: 0.85rem;
+}
+
+.radar-table__row {
+  display: grid;
+  grid-template-columns: 1fr 60px 60px;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--border, #E8E8E8);
+  gap: 8px;
+}
+
+.radar-table__row--head {
+  font-weight: 700;
+  color: var(--text, #424242);
+  font-size: 0.8rem;
+}
+
+.radar-table__row span:not(:first-child) {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .radar-chart-wrapper {
+    display: none;
+  }
+  .radar-table {
+    display: block;
+  }
 }
 
 /* ---------- Responsive ---------- */

@@ -62,16 +62,11 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
           onChange={(e) => setRgpd(e.target.checked)}
           aria-describedby="rgpd-error"
         />
-        <span style={{ fontSize: "0.75rem", lineHeight: 1.5 }}>
-          En cochant cette case, je consens expressément à la communication de mon diagnostic
-          et j'accepte que mes réponses fassent l'objet d'un traitement à des fins statistiques.
-          Je reconnais avoir été informé(e) de mes droits d'accès, de rectification et de
-          suppression, conformément au RGPD.{" "}
-          <span style={{ color: "#A85D08", textDecoration: "underline", cursor: "default" }}>
-            Lien vers votre politique de confidentialité complète
-          </span>
-          {" "}<span aria-hidden="true">*</span>
-        </span>
+        J'accepte de recevoir mon diagnostic par email et que mes données soient utilisées par OYA.{" "}
+        <span style={{ color: "#A85D08", textDecoration: "underline", cursor: "default", fontSize: "0.85rem" }}>
+          Politique de confidentialité
+        </span>{" "}
+        <span aria-hidden="true">*</span>
       </label>
       {touched && !rgpd && (
         <p id="rgpd-error" className="field-error" role="alert">
