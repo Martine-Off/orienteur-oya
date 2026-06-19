@@ -53,14 +53,16 @@ function ResultCard({ thematique, rank, rankLabel, normalizedScores }) {
         ))}
       </ul>
 
-      <button
-        type="button"
-        className="result-card__details-btn"
-        onClick={() => setExpanded((v) => !v)}
-        aria-expanded={expanded}
-      >
-        {expanded ? "Masquer les détails" : "Voir les détails"}
-      </button>
+      {!expanded && (
+        <button
+          type="button"
+          className="result-card__details-btn"
+          onClick={() => setExpanded(true)}
+          aria-expanded={false}
+        >
+          Voir les détails
+        </button>
+      )}
 
       {expanded && (
         <div className="result-card__details">
@@ -80,6 +82,14 @@ function ResultCard({ thematique, rank, rankLabel, normalizedScores }) {
               <RadarChartMetier metier={metier} normalizedScores={normalizedScores} />
             </div>
           ))}
+          <button
+            type="button"
+            className="result-card__details-btn result-card__details-btn--close"
+            onClick={() => setExpanded(false)}
+            aria-expanded={true}
+          >
+            Masquer les détails
+          </button>
         </div>
       )}
     </article>
