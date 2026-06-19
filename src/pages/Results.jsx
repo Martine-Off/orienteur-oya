@@ -87,11 +87,10 @@ function ResultCard({ thematique, rank, rankLabel }) {
 function EmailModal({ onSubmit, onClose, submitting, hasError }) {
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
-  const [optIn, setOptIn] = useState(false);
+  const [optIn, setOptIn] = useState(true);
   const [touched, setTouched] = useState(false);
   const emailValid = isValidEmail(email);
-  // Bouton désactivé seulement si RGPD non coché ou envoi en cours (specs : "disabled until RGPD")
-  const buttonEnabled = rgpd && !submitting;
+  const buttonEnabled = emailValid && rgpd && !submitting;
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -147,15 +146,6 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
 
           <label className="checkbox-label">
             <input
-              type="checkbox"
-              checked={optIn}
-              onChange={(e) => setOptIn(e.target.checked)}
-            />
-            Être tenu·e au courant des formations OYA
-          </label>
-
-          <label className="checkbox-label">
-            <input
               id="modal-rgpd"
               type="checkbox"
               required
@@ -163,14 +153,23 @@ function EmailModal({ onSubmit, onClose, submitting, hasError }) {
               onChange={(e) => setRgpd(e.target.checked)}
               aria-describedby={touched && !rgpd ? "modal-rgpd-error" : undefined}
             />
-            J'accepte que mes réponses soient utilisées à des fins diagnostiques{" "}
-            <span aria-hidden="true">*</span>
+            J'accepte de recevoir mon diagnostic et que mes réponses soient utilisées à titre
+            statistique <span aria-hidden="true">*</span>
           </label>
           {touched && !rgpd && (
             <p id="modal-rgpd-error" className="field-error" role="alert">
               Consentement requis pour continuer.
             </p>
           )}
+
+          <label className="checkbox-label">
+            <input
+              type="checkbox"
+              checked={optIn}
+              onChange={(e) => setOptIn(e.target.checked)}
+            />
+            Être tenu·e au courant des formations OYA
+          </label>
 
           {hasError && (
             <p className="field-error" role="alert">

@@ -4,7 +4,7 @@ import { isValidEmail } from "../utils/validation";
 export default function EmailCaptureForm({ onSubmit, submitting }) {
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
-  const [etreTenuAuCourant, setEtreTenuAuCourant] = useState(false);
+  const [etreTenuAuCourant, setEtreTenuAuCourant] = useState(true);
   const [touched, setTouched] = useState(false);
 
   const emailValid = isValidEmail(email);
@@ -43,16 +43,6 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
         </p>
       )}
 
-      <label className="checkbox-label" htmlFor="etre-tenu-au-courant">
-        <input
-          id="etre-tenu-au-courant"
-          type="checkbox"
-          checked={etreTenuAuCourant}
-          onChange={(e) => setEtreTenuAuCourant(e.target.checked)}
-        />
-        Être tenu·e au courant des formations OYA
-      </label>
-
       <label className="checkbox-label" htmlFor="rgpd">
         <input
           id="rgpd"
@@ -70,6 +60,16 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
           Vous devez accepter le RGPD pour continuer.
         </p>
       )}
+
+      <label className="checkbox-label" htmlFor="etre-tenu-au-courant">
+        <input
+          id="etre-tenu-au-courant"
+          type="checkbox"
+          checked={etreTenuAuCourant}
+          onChange={(e) => setEtreTenuAuCourant(e.target.checked)}
+        />
+        Être tenu·e au courant des formations OYA
+      </label>
 
       <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
         {submitting ? "Envoi en cours..." : "Envoyer"}
