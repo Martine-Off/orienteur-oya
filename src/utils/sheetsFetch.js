@@ -14,7 +14,10 @@ export async function fetchFromSheet() {
     `${encodeURIComponent(RANGE)}?key=${apiKey}`;
 
   const res = await fetch(url);
-  if (!res.ok) throw new Error(`Sheets API ${res.status}: ${res.statusText}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Sheets API ${res.status}: ${body}`);
+  }
 
   const json = await res.json();
   if (!json.values || json.values.length === 0)
@@ -31,55 +34,104 @@ const NIVEAU_TO_MIN = {
   "Licence": 6, "Bac+5": 7, "Master": 7,
 };
 
-// Structure actuelle du Sheet (colonnes A-P, indices 0-15) :
-//   A(0)=Métier  B(1)=Bloc  C-J(2-9)=Poids_Q1-Q8
-//   K(10)=Secteur  L(11)=Autonomie/Type_métier  M(12)=Pénurie
-//   N(13)=Évolution  O(14)=Compétences  P(15)=Niveau
-//
-// Structure CIBLE après reorder Sheet (voir data/Metiers_CIBLE_clean.csv) :
-//   K(10)=Compétences  L(11)=Niveau  M(12)=Secteur  N(13)=Type_métier
-//   O(14)=Pénurie  P(15)=Évolution
-// → Mettre à jour les indices ci-dessous après avoir importé Metiers_CIBLE_clean.csv dans le Sheet.
+// Trouve l'index d'une colonne par son nom (insensible à la casse, trim).
+// Accepte plusieurs noms alternatifs pour gérer les variantes du Sheet.
+function findCol(header, ...names) {
+  for (const name of names) {
+    const idx = header.findIndex(
+      h => h?.trim().toLowerCase() === name.toLowerCase()
+    );
+    if (idx !== -1) return idx;
+  }
+  return -1;
+}
 
 export function parseMetiers(values) {
-  const [, ...rows] = values; // on ignore le header (ligne 0)
+  if (!values || values.length < 2) return [];
+
+  const [headerRow, ...rows] = values;
+
+  // Détection des colonnes par nom — fonctionne quelle que soit l'ordre du Sheet.
+  const C = {
+    metier:   findCol(headerRow, "Métier", "Metier"),
+    bloc:     findCol(headerRow, "Bloc"),
+    pQ1:      findCol(headerRow, "Poids_Q1"),
+    pQ2:      findCol(headerRow, "Poids_Q2"),
+    pQ3:      findCol(headerRow, "Poids_Q3"),
+    pQ4:      findCol(headerRow, "Poids_Q4"),
+    pQ5:      findCol(headerRow, "Poids_Q5"),
+    pQ6:      findCol(headerRow, "Poids_Q6"),
+    pQ7:      findCol(headerRow, "Poids_Q7"),
+    pQ8:      findCol(headerRow, "Poids_Q8"),
+    // Noms alternatifs selon les différentes versions du Sheet
+    typeAct:  findCol(headerRow, "Autonomie", "Type_activite", "Type_metier", "Type_métier"),
+    niveau:   findCol(headerRow, "Niveau", "Niveau_MIN"),
+    penurie:  findCol(headerRow, "Pénurie", "Penurie"),
+    evolution:findCol(headerRow, "Évolution", "Evolution"),
+    competences: findCol(headerRow, "Compétences", "Competences", "Competences_cles"),
+    secteur:  findCol(headerRow, "Secteur"),
+    statut:   findCol(headerRow, "Statut"),
+  };
+
+  console.log("[OYA] Header Sheet:", headerRow);
+  console.log("[OYA] Colonnes détectées:", C);
+
+  // Fallback sur indices hardcodés (structure Sheet_Metiers_import) si header absent/inconnu
+  const fallback = {
+    metier: 0, bloc: 1,
+    pQ1: 2, pQ2: 3, pQ3: 4, pQ4: 5, pQ5: 6, pQ6: 7, pQ7: 8, pQ8: 9,
+    secteur: 10, typeAct: 11, penurie: 12, evolution: 13, competences: 14, niveau: 15,
+  };
+  for (const key of Object.keys(C)) {
+    if (C[key] === -1) C[key] = fallback[key] ?? -1;
+  }
+
+  const g = (row, col) => (col >= 0 ? row[col] ?? "" : "");
+  // Google Sheets en locale française utilise "0,55" au lieu de "0.55"
+  const pf = (val) => parseFloat(String(val).replace(",", ".")) || 0;
 
   return rows
-    .filter(row => row[0])
-    .map((row, idx) => ({
-      id: idx,
-      metier: row[0] || "",
-      bloc: row[1] || "",
-      // thematiqueFormation = bloc (le Sheet n'a pas de colonne dédiée)
-      // Utilisé par groupByThematique() pour regrouper les résultats
-      thematiqueFormation: row[1] || "",
-      poids: {
-        Q1: parseFloat(row[2]) || 0,
-        Q2: parseFloat(row[3]) || 0,
-        Q3: parseFloat(row[4]) || 0,
-        Q4: parseFloat(row[5]) || 0,
-        Q5: parseFloat(row[6]) || 0,
-        Q6: parseFloat(row[7]) || 0,
-        Q7: parseFloat(row[8]) || 0,
-        Q8: parseFloat(row[9]) || 0,
-      },
-      // Champs dérivés pour scoreMetier()
-      typeActivite: row[11] || "",           // L = Autonomie (valeurs : Piloter/Produire/Former/Analyser/Transformer)
-      niveauMin: NIVEAU_TO_MIN[row[15]] ?? 4, // P = Niveau → entier 3-7
-      statut: row[12] === "En tension" ? "Tension"
-            : row[13] === "Émergent"   ? "Émergent"
-            : "",
-      localisation: ["Flexible"],            // absent du Sheet → neutre pour Q3
-      situation: [],                         // absent du Sheet → 0.5 neutre pour Q7
-      relationVivant: [],                    // absent du Sheet → partial match Q4
-      // Champs display
-      secteur: row[10] || "",
-      typemetier: row[11] || "",             // alias de typeActivite pour affichage
-      penurie: row[12] || "",
-      evolution: row[13] || "",
-      competencesCles: (row[14] || "").split(",").map(s => s.trim()).filter(Boolean),
-      niveau: row[15] || "",
-    }));
+    .filter(row => g(row, C.metier))
+    .map((row, idx) => {
+      const poids = {
+        Q1: pf(g(row, C.pQ1)),
+        Q2: pf(g(row, C.pQ2)),
+        Q3: pf(g(row, C.pQ3)),
+        Q4: pf(g(row, C.pQ4)),
+        Q5: pf(g(row, C.pQ5)),
+        Q6: pf(g(row, C.pQ6)),
+        Q7: pf(g(row, C.pQ7)),
+        Q8: pf(g(row, C.pQ8)),
+      };
+
+      if (idx === 0) {
+        console.log("[OYA] 1er métier:", g(row, C.metier), "→ poids:", poids);
+        const allZero = Object.values(poids).every(v => v === 0);
+        if (allZero) console.warn("[OYA] ⚠️ TOUS LES POIDS = 0 — colonnes Poids_Q1-Q8 introuvables dans le Sheet");
+      }
+
+      return {
+        id: idx,
+        metier: g(row, C.metier),
+        bloc: g(row, C.bloc),
+        thematiqueFormation: g(row, C.bloc),
+        poids,
+        typeActivite: g(row, C.typeAct),
+        niveauMin: NIVEAU_TO_MIN[g(row, C.niveau)] ?? 4,
+        statut: g(row, C.statut) === "Tension" ? "Tension"
+              : g(row, C.evolution) === "Émergent" ? "Émergent"
+              : "",
+        localisation: ["Flexible"],
+        situation: [],
+        relationVivant: [],
+        secteur: g(row, C.secteur),
+        typemetier: g(row, C.typeAct),
+        penurie: g(row, C.penurie),
+        evolution: g(row, C.evolution),
+        competencesCles: g(row, C.competences).split(",").map(s => s.trim()).filter(Boolean),
+        niveau: g(row, C.niveau),
+      };
+    });
 }
 
 export function getFromCache() {
@@ -106,5 +158,14 @@ export function saveToCache(data) {
     localStorage.setItem(CACHE_TS_KEY, String(Date.now()));
   } catch {
     // localStorage plein ou bloqué (SSR, mode privé strict) → on ignore
+  }
+}
+
+export function clearCache() {
+  try {
+    localStorage.removeItem(CACHE_KEY);
+    localStorage.removeItem(CACHE_TS_KEY);
+  } catch {
+    // ignore
   }
 }

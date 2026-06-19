@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { fetchFromSheet, parseMetiers, getFromCache, saveToCache } from "../utils/sheetsFetch";
+import { fetchFromSheet, parseMetiers, getFromCache, saveToCache, clearCache } from "../utils/sheetsFetch";
+
+// Vérifie si les données métiers ont des poids valides (au moins 1 métier avec poids > 0)
+function hasValidPoids(metiers) {
+  return metiers?.some(m => Object.values(m.poids || {}).some(v => v > 0));
+}
 
 export function useMetiers() {
   const [metiers, setMetiers] = useState(null);
@@ -12,14 +17,24 @@ export function useMetiers() {
     async function load() {
       try {
         const cached = getFromCache();
-        if (cached) {
+        // Invalide le cache si les poids sont tous à 0 (données corrompues)
+        if (cached && hasValidPoids(cached)) {
           if (!cancelled) { setMetiers(cached); setLoading(false); }
           return;
+        }
+        if (cached && !hasValidPoids(cached)) {
+          console.warn("[OYA] Cache invalide (poids=0), refetch depuis le Sheet");
+          clearCache();
         }
 
         const values = await fetchFromSheet();
         const parsed = parseMetiers(values);
-        saveToCache(parsed);
+        if (hasValidPoids(parsed)) {
+          saveToCache(parsed);
+        } else {
+          console.warn("[OYA] Sheet sans poids valides — fallback vers metiers.json");
+          throw new Error("poids invalides dans le Sheet");
+        }
         if (!cancelled) { setMetiers(parsed); setError(null); }
       } catch (err) {
         console.warn("Sheets API indisponible, fallback vers metiers.json", err);
