@@ -9,12 +9,19 @@
 
 const SHEET_NAME_REPONSES = "Réponses";
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
 
-    if (!data.email) {
-      return ContentService.createTextOutput("Invalid data")
+    if (!data.email || !EMAIL_REGEX.test(String(data.email).trim())) {
+      return ContentService.createTextOutput("Invalid email")
+        .setMimeType(ContentService.MimeType.TEXT);
+    }
+
+    if (!data.rgpd_accepte) {
+      return ContentService.createTextOutput("RGPD consent required")
         .setMimeType(ContentService.MimeType.TEXT);
     }
 

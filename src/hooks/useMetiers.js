@@ -23,7 +23,6 @@ export function useMetiers() {
           return;
         }
         if (cached && !hasValidPoids(cached)) {
-          console.warn("[OYA] Cache invalide (poids=0), refetch depuis le Sheet");
           clearCache();
         }
 
@@ -32,12 +31,10 @@ export function useMetiers() {
         if (hasValidPoids(parsed)) {
           saveToCache(parsed);
         } else {
-          console.warn("[OYA] Sheet sans poids valides — fallback vers metiers.json");
           throw new Error("poids invalides dans le Sheet");
         }
         if (!cancelled) { setMetiers(parsed); setError(null); }
       } catch (err) {
-        console.warn("Sheets API indisponible, fallback vers metiers.json", err);
         try {
           const res = await fetch("/metiers.json");
           if (!res.ok) throw new Error(`HTTP ${res.status}`);

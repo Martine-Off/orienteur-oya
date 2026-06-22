@@ -73,8 +73,10 @@ export function parseMetiers(values) {
     statut:   findCol(headerRow, "Statut"),
   };
 
-  console.log("[OYA] Header Sheet:", headerRow);
-  console.log("[OYA] Colonnes détectées:", C);
+  if (import.meta.env.DEV) {
+    console.log("[OYA] Header Sheet:", headerRow);
+    console.log("[OYA] Colonnes détectées:", C);
+  }
 
   // Fallback sur indices hardcodés (structure Sheet_Metiers_import) si header absent/inconnu
   const fallback = {
@@ -104,7 +106,7 @@ export function parseMetiers(values) {
         Q8: pf(g(row, C.pQ8)),
       };
 
-      if (idx === 0) {
+      if (idx === 0 && import.meta.env.DEV) {
         console.log("[OYA] 1er métier:", g(row, C.metier), "→ poids:", poids);
         const allZero = Object.values(poids).every(v => v === 0);
         if (allZero) console.warn("[OYA] ⚠️ TOUS LES POIDS = 0 — colonnes Poids_Q1-Q8 introuvables dans le Sheet");

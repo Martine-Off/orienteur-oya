@@ -24,8 +24,23 @@ const C = {
 const RANK_COLORS = [C.orange, C.green, '#9B7B6B'];
 const RANK_LABELS = ['⭐ Meilleure correspondance', 'Bonne correspondance', 'À explorer'];
 
+// ── Sanitisation HTML (protection injection dans les emails) ─────────────────
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 // ── Carte thématique HTML ─────────────────────────────────────────────────────
 function buildCard(rank, thematique, score, metierRows, competences, statut, niveau) {
+  thematique  = escapeHtml(thematique);
+  competences = escapeHtml(competences);
+  statut      = escapeHtml(statut);
+  niveau      = escapeHtml(niveau);
   const borderColor = rank === 1 ? C.orange : C.border;
   const rankColor   = RANK_COLORS[rank - 1];
 
@@ -33,7 +48,7 @@ function buildCard(rank, thematique, score, metierRows, competences, statut, niv
     <tr>
       <td style="padding:10px 18px;border-bottom:1px solid ${C.border};font-size:13px;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td style="color:${C.text};">${nom}</td>
+          <td style="color:${C.text};">${escapeHtml(nom)}</td>
           <td align="right">
             <span style="font-size:11px;font-weight:700;background:${C.green};color:#fff;padding:3px 8px;border-radius:999px;">${s}/100</span>
           </td>
@@ -110,8 +125,8 @@ function normalizeCards(data) {
 // ── Corps du mail complet ─────────────────────────────────────────────────────
 function buildEmailHtml(data) {
   const cardData = normalizeCards(data);
-  const peurs    = data.Q9_peurs || '';
-  const region   = data.région || data.Q10_region || '';
+  const peurs    = escapeHtml(data.Q9_peurs || '');
+  const region   = escapeHtml(data.région || data.Q10_region || '');
 
   const cards = cardData.map((c, i) =>
     buildCard(i + 1, c.thematique, c.score, c.metiers, c.competences, c.statut, c.niveau)
@@ -194,7 +209,7 @@ function sendEmailBrevo(data) {
     return;
   }
 
-  const firstThematique = data.top_3_thematiques?.[0] || data.thematique_1 || '';
+  const firstThematique = String(data.top_3_thematiques?.[0] || data.thematique_1 || '').replace(/[\r\n]/g, '');
   const subject = `Votre diagnostic OYA${firstThematique ? ` — ${firstThematique}` : ''}`;
 
   const response = UrlFetchApp.fetch('https://api.brevo.com/v3/smtp/email', {
