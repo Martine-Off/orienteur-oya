@@ -42,7 +42,7 @@ Ouvrir https://orienteur-oya.netlify.app dans un onglet privé.
 **Checklist test complet :**
 
 - [ ] La page d'accueil s'affiche (logo OYA, bouton "Démarrer le quiz")
-- [ ] Le quiz avance question par question (9 questions, barre de progression)
+- [ ] Le quiz avance question par question (10 questions, barre de progression)
 - [ ] Les résultats affichent 3 métiers avec scores
 - [ ] Cliquer "Recevoir mon diagnostic par email"
 - [ ] Saisir ton email, cocher le RGPD, cliquer "Envoyer"
