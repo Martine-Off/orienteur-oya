@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import { useMetiers } from "../hooks/useMetiers";
-import { groupByThematique, NIVEAU_ETUDES } from "../utils/scoring";
+import { groupByThematique, normalizeAnswers, NIVEAU_ETUDES } from "../utils/scoring";
 import { submitLead } from "../utils/api";
 import { isValidEmail } from "../utils/validation";
 import { PEURS } from "../data/questions";
@@ -33,7 +33,7 @@ function ScoreBar({ score, rank }) {
   );
 }
 
-function ResultCard({ thematique, rank, rankLabel, reponses }) {
+function ResultCard({ thematique, rank, rankLabel, normalizedScores, reponses }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -79,7 +79,7 @@ function ResultCard({ thematique, rank, rankLabel, reponses }) {
                   ))}
                 </ul>
               )}
-              <RadarChartMetier metier={metier} reponses={reponses} />
+              <RadarChartMetier metier={metier} normalizedScores={normalizedScores} reponses={reponses} />
             </div>
           ))}
           <button
@@ -278,6 +278,7 @@ export default function Results() {
 
   const thematiques = groupByThematique(reponses, metiers, 3);
   const peursChoisies = PEURS.filter((p) => reponses.Q9?.[p.key]);
+  const normalizedScores = normalizeAnswers(reponses);
 
   async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
     setSubmitState("submitting");
@@ -332,6 +333,7 @@ export default function Results() {
             thematique={t}
             rank={i + 1}
             rankLabel={RANK_LABELS[i] ?? `Rang ${i + 1}`}
+            normalizedScores={normalizedScores}
             reponses={reponses}
           />
         ))}
