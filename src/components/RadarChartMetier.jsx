@@ -8,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { matchScoresPerQuestion } from "../utils/scoring";
 
 const ALL_AXES = ["Q1", "Q2", "Q3", "Q4", "Q7", "Q8"];
 
@@ -59,15 +60,16 @@ const CustomTick = ({ x, y, payload }) => {
   );
 };
 
-export default function RadarChartMetier({ metier, normalizedScores, reponses }) {
+export default function RadarChartMetier({ metier, reponses }) {
   const axes = ALL_AXES.filter((key) => (metier.poids?.[key] ?? 0) > 0);
+  const matchScores = reponses ? matchScoresPerQuestion(reponses, metier) : {};
 
   const radarData = axes.map((key) => ({
     name: reponses
       ? `${PREFIXES[key]}:\n${shortAnswer(key, reponses)}`
       : PREFIXES[key],
     Métier: Math.round(metier.poids[key] * 100),
-    Vous: Math.round((normalizedScores?.[key] ?? 0) * 100),
+    Vous: Math.round((matchScores[key] ?? 0) * 100),
   }));
 
   return (

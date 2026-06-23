@@ -132,6 +132,21 @@ const MATCHERS = {
 };
 
 /**
+ * Retourne les scores de match par question (0-1) pour UN métier donné.
+ * Utilisé par le radar pour afficher "Vous" de façon spécifique à chaque métier.
+ */
+export function matchScoresPerQuestion(reponses, metier) {
+  const result = {};
+  for (const [question, matcher] of Object.entries(MATCHERS)) {
+    const reponse = reponses[question];
+    result[question] = (reponse !== undefined && reponse !== null)
+      ? matcher(reponse, metier)
+      : 0;
+  }
+  return result;
+}
+
+/**
  * Calcule le score 0-100 d'un métier pour un ensemble de réponses.
  * `reponses` : { Q1: "...", Q2: 5, Q3: "...", ... } (Q6 et Q9 ignorés du score)
  */
