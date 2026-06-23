@@ -217,7 +217,7 @@ function sendEmailBrevo(data) {
     contentType:        'application/json',
     headers:            { 'api-key': apiKey },
     payload:            JSON.stringify({
-      sender:      { name: "OYA L'Orienteur", email: 'm.desmaroux@eisf.fr' },
+      sender:      { name: "OYA L'Orienteur", email: 'martine.desmaroux@11465882.brevosend.com' },
       to:          [{ email: data.email }],
       subject,
       htmlContent: buildEmailHtml(data),
