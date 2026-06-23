@@ -3,13 +3,13 @@
  * L'endpoint est configurable via VITE_LEADS_ENDPOINT (.env) : Martine peut
  * changer le backend sans toucher au code React.
  *
- * IMPORTANT — Google Apps Script ne gère pas le préflight CORS :
- *   - mode: "no-cors" évite le préflight (sinon le POST n'est jamais envoyé)
- *   - Content-Type: "text/plain" (et non "application/json", qui déclenche
- *     un préflight) ; le corps reste un JSON.stringify classique
- *   - En mode no-cors, la réponse est opaque : on ne peut pas lire son statut.
- *     L'absence d'erreur réseau (fetch ne rejette pas) est considérée comme
- *     un succès — c'est une limite connue et acceptée du POC.
+ * CORS & Google Apps Script :
+ *   - Content-Type: "text/plain" évite le préflight OPTIONS (que Apps Script
+ *     ne gère pas) tout en restant une "simple request" CORS.
+ *   - Le corps reste un JSON.stringify classique, parsé par JSON.parse()
+ *     côté Apps Script.
+ *   - Apps Script renvoie Access-Control-Allow-Origin: * → on peut lire
+ *     la réponse et détecter les erreurs backend (Brevo, clé manquante…).
  */
 export async function submitLead(payload) {
   const endpoint = import.meta.env.VITE_LEADS_ENDPOINT;
@@ -18,12 +18,29 @@ export async function submitLead(payload) {
     throw new Error("VITE_LEADS_ENDPOINT n'est pas configuré (voir .env.example)");
   }
 
-  await fetch(endpoint, {
+  const res = await fetch(endpoint, {
     method: "POST",
-    mode: "no-cors",
     headers: { "Content-Type": "text/plain" },
     body: JSON.stringify(payload),
+    redirect: "follow",
   });
 
-  return true;
+  const text = await res.text();
+
+  if (text === "OK") {
+    return true;
+  }
+
+  // Erreurs backend explicites renvoyées par doPost
+  if (text.startsWith("EMAIL_ERROR:")) {
+    throw new Error("Erreur d'envoi de l'email : " + text.slice("EMAIL_ERROR:".length));
+  }
+  if (text === "RGPD consent required") {
+    throw new Error("Le consentement RGPD est requis.");
+  }
+  if (text === "Invalid email") {
+    throw new Error("Adresse email invalide.");
+  }
+
+  throw new Error("Erreur serveur : " + text);
 }
