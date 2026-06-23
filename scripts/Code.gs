@@ -27,18 +27,25 @@ function doPost(e) {
 
     appendReponse(data);
 
+    let emailError = null;
     try {
       sendEmailBrevo(data);
-      Logger.log("Email envoyé à " + data.email);
+      console.log("Email envoyé à " + data.email);
     } catch (emailErr) {
-      Logger.log("Erreur email (non bloquante) : " + emailErr.toString());
+      emailError = emailErr.toString();
+      console.error("Erreur email : " + emailError);
+    }
+
+    if (emailError) {
+      return ContentService.createTextOutput("EMAIL_ERROR:" + emailError)
+        .setMimeType(ContentService.MimeType.TEXT);
     }
 
     return ContentService.createTextOutput("OK")
       .setMimeType(ContentService.MimeType.TEXT);
 
   } catch (error) {
-    Logger.log("Erreur doPost : " + error.toString());
+    console.error("Erreur doPost : " + error.toString());
     return ContentService.createTextOutput("Error")
       .setMimeType(ContentService.MimeType.TEXT);
   }

@@ -33,7 +33,9 @@ export async function submitLead(payload) {
 
   // Erreurs backend explicites renvoyées par doPost
   if (text.startsWith("EMAIL_ERROR:")) {
-    throw new Error("Erreur d'envoi de l'email : " + text.slice("EMAIL_ERROR:".length));
+    const detail = text.slice("EMAIL_ERROR:".length);
+    console.error("[OYA] Brevo error:", detail);
+    throw new Error("Erreur d'envoi de l'email : " + detail);
   }
   if (text === "RGPD consent required") {
     throw new Error("Le consentement RGPD est requis.");
