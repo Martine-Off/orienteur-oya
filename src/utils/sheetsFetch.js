@@ -1,8 +1,8 @@
 // Google Sheet natif OYA POC (ID différent du xlsx Drive qui est la source éditable)
 const SHEET_ID = "1Qy1fYOnCBFZHMHwu0RZ2n5-wI8_RZDsQ3YmUuG0QF-s";
 const RANGE = "Métiers!A1:Q82";
-const CACHE_KEY = "oya_metiers";
-const CACHE_TS_KEY = "oya_metiers_timestamp";
+const CACHE_KEY = "oya_metiers_v2";
+const CACHE_TS_KEY = "oya_metiers_v2_timestamp";
 const CACHE_TTL_H = 24;
 
 export async function fetchFromSheet() {
