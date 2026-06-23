@@ -9,9 +9,10 @@ export async function fetchFromSheet() {
   const apiKey = import.meta.env.VITE_GOOGLE_SHEETS_API_KEY;
   if (!apiKey) throw new Error("VITE_GOOGLE_SHEETS_API_KEY manquant dans .env");
 
+  const [tab, range] = RANGE.split("!");
   const url =
     `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/` +
-    `${encodeURIComponent(RANGE)}?key=${apiKey}`;
+    `${encodeURIComponent(tab)}!${range}?key=${apiKey}`;
 
   const res = await fetch(url);
   if (!res.ok) {
