@@ -4,23 +4,27 @@
     "metier": "Chargé·e de projet agroécologie & AU",
     "bloc": "Production agricole",
     "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
     "niveauMin": 6,
-    "niveau": "Licence",
     "typeMetierGenerique": "Chef de projet agroécologie",
-    "thematiqueFormation": "Agroécologie & transition",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
     "competencesCles": [
       "Transition écologique",
       "impact systémique",
       "coordination"
     ],
+    "formationsPrioritaires": "Master agro + modules agroécologie Oya",
     "localisation": [
       "Flexible"
     ],
-    "situation": [],
-    "relationVivant": [],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
     "typeActivite": "Piloter",
+    "reve": "Piloter",
     "poids": {
       "Q1": 0.55,
       "Q2": 0.8,
@@ -34,26 +38,183 @@
   },
   {
     "id": 2,
-    "metier": "Maraîcher·ère / maraîcher·ère bio",
+    "metier": "Conseiller·ère technique agroécologie",
     "bloc": "Production agricole",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Producteur légumes",
-    "thematiqueFormation": "Agroécologie & transition",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Conseiller agroécologie",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
     "competencesCles": [
-      "Autonomie",
-      "circuits courts",
-      "impact local"
+      "Expertise technique",
+      "autonomie des agriculteurs",
+      "innovation"
     ],
+    "formationsPrioritaires": "BTSA + spécialisation agroécologie",
     "localisation": [
       "Flexible"
     ],
-    "situation": [],
-    "relationVivant": [],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Former",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.6,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.88,
+      "Q5": 0.25,
+      "Q6": 0.65,
+      "Q7": 0.65,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 3,
+    "metier": "Responsable logistique céréales / chef de silo",
+    "bloc": "Production agricole",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Manager logistique agricole",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Souveraineté alimentaire",
+      "responsabilité",
+      "organisation"
+    ],
+    "formationsPrioritaires": "BTS logistique + modules Oya",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.65,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 4,
+    "metier": "Chargé·e de parcours volontariat agricole",
+    "bloc": "Production agricole",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Animateur agriculture",
+    "thematiqueFormation": "Agriculture urbaine & tiers-lieux",
+    "competencesCles": [
+      "Communauté",
+      "accueil",
+      "apprentissage",
+      "inclusion"
+    ],
+    "formationsPrioritaires": "Formations animation + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Former",
+    "reve": "Former",
+    "poids": {
+      "Q1": 0.6,
+      "Q2": 0.65,
+      "Q3": 0.7,
+      "Q4": 0.88,
+      "Q5": 0.25,
+      "Q6": 0.65,
+      "Q7": 0.9,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 5,
+    "metier": "Ouvrier agricole",
+    "bloc": "Production agricole",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Producteur agricole",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Autonomie",
+      "relation au vivant",
+      "stabilité financière"
+    ],
+    "formationsPrioritaires": "CAPa + titres pro agricoles",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Plantes",
+      "Animaux"
+    ],
     "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.65,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.65,
+      "Q8": 0.95
+    }
+  },
+  {
+    "id": 6,
+    "metier": "Maraîcher / maraîcher bio",
+    "bloc": "Production agricole",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Producteur légumes",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Autonomie",
+      "circuits courts",
+      "impact local",
+      "santé"
+    ],
+    "formationsPrioritaires": "CAPa + BPREA + modules agroécologie",
+    "localisation": [
+      "Campagne",
+      "Flexible"
+    ],
+    "situation": [
+      "Terrain",
+      "Capital"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
     "poids": {
       "Q1": 0.85,
       "Q2": 0.45,
@@ -66,27 +227,108 @@
     }
   },
   {
-    "id": 3,
-    "metier": "Technicien·ne agroécologie",
+    "id": 7,
+    "metier": "Éleveur",
+    "bloc": "Production agricole",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Producteur animal",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Relation aux animaux",
+      "autonomie",
+      "pénibilité acceptée"
+    ],
+    "formationsPrioritaires": "CAPa élevage + BPREA",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Terrain",
+      "Capital"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Animaux"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.65,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.52,
+      "Q8": 0.95
+    }
+  },
+  {
+    "id": 8,
+    "metier": "Technicien agricole",
+    "bloc": "Production agricole",
+    "statut": "Tension",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Technicien agricole",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Expertise technique",
+      "coopération",
+      "stabilité"
+    ],
+    "formationsPrioritaires": "BTSA agricole",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes",
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.65,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.65,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 9,
+    "metier": "Technicien agroécologie",
     "bloc": "Production agricole",
     "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
     "niveauMin": 5,
-    "niveau": "BTS/BTSA",
     "typeMetierGenerique": "Technicien agroécologie",
-    "thematiqueFormation": "Agroécologie & transition",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
     "competencesCles": [
       "Transition écologique",
       "expertise",
       "autonomie"
     ],
+    "formationsPrioritaires": "BTSA + modules Oya",
     "localisation": [
+      "Campagne",
       "Flexible"
     ],
-    "situation": [],
-    "relationVivant": [],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes"
+    ],
     "typeActivite": "Piloter",
+    "reve": "Piloter",
     "poids": {
       "Q1": 0.55,
       "Q2": 0.65,
@@ -99,7 +341,2537 @@
     }
   },
   {
-    "id": 4,
+    "id": 10,
+    "metier": "Technicien agriculture de précision",
+    "bloc": "Production agricole",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Technicien agri-tech",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Innovation",
+      "technologie",
+      "efficacité",
+      "durabilité"
+    ],
+    "formationsPrioritaires": "BTSA + modules agri-tech",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.65,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 11,
+    "metier": "Chef de culture",
+    "bloc": "Production agricole",
+    "statut": "Tension",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Manager production",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Leadership",
+      "responsabilité",
+      "organisation",
+      "rendement"
+    ],
+    "formationsPrioritaires": "BPREA + BTSA",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.55,
+      "Q3": 0.65,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 12,
+    "metier": "Responsable d'exploitation agricole",
+    "bloc": "Production agricole",
+    "statut": "Émergent",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Entrepreneur agricole",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Autonomie",
+      "responsabilité",
+      "business",
+      "transition"
+    ],
+    "formationsPrioritaires": "BPREA",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes",
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.55,
+      "Q3": 0.65,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 13,
+    "metier": "Tractoriste / conducteur d'engins",
+    "bloc": "Production agricole",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Conducteur agricole",
+    "thematiqueFormation": "Agroécologie & gestion du sol",
+    "competencesCles": [
+      "Compétence technique",
+      "autonomie",
+      "stabilité"
+    ],
+    "formationsPrioritaires": "CAPa",
+    "localisation": [
+      "Campagne"
+    ],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.65,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.65,
+      "Q8": 0.95
+    }
+  },
+  {
+    "id": 14,
+    "metier": "Agriculteur urbain / fermier urbain",
+    "bloc": "Production agricole",
+    "statut": "Autre",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Agriculteur urbain",
+    "thematiqueFormation": "Agriculture urbaine & tiers-lieux",
+    "competencesCles": [
+      "Autonomie",
+      "innovation",
+      "communauté",
+      "impact local"
+    ],
+    "formationsPrioritaires": "CAPa + modules agriculture urbaine Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Zéro",
+      "Capital"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.7,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.65,
+      "Q8": 0.95
+    }
+  },
+  {
+    "id": 15,
+    "metier": "Animateur agriculture urbaine",
+    "bloc": "Production agricole",
+    "statut": "Émergent",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Animateur tiers-lieu",
+    "thematiqueFormation": "Agriculture urbaine & tiers-lieux",
+    "competencesCles": [
+      "Communauté",
+      "pédagogie",
+      "inclusion",
+      "transformation sociale"
+    ],
+    "formationsPrioritaires": "Formations animation + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Former",
+    "reve": "Former",
+    "poids": {
+      "Q1": 0.6,
+      "Q2": 0.55,
+      "Q3": 0.7,
+      "Q4": 0.88,
+      "Q5": 0.25,
+      "Q6": 0.65,
+      "Q7": 0.9,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 16,
+    "metier": "Responsable tiers-lieu agricole",
+    "bloc": "Production agricole",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Gestionnaire tiers-lieu",
+    "thematiqueFormation": "Agriculture urbaine & tiers-lieux",
+    "competencesCles": [
+      "Innovation",
+      "communauté",
+      "leadership",
+      "impact territorial"
+    ],
+    "formationsPrioritaires": "Gestion projet + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management",
+      "Plantes"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 17,
+    "metier": "Responsable transition durable IAA",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Responsable RSE transformation",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Transition écologique",
+      "innovation",
+      "responsabilité",
+      "impact systémique"
+    ],
+    "formationsPrioritaires": "Master RSE + modules écoconception Oya",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 18,
+    "metier": "Opérateur de production agroalimentaire",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Opérateur production",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Stabilité",
+      "compétence technique",
+      "qualité"
+    ],
+    "formationsPrioritaires": "CAP/BEP agroalimentaire + hygiène",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.85,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.9,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 19,
+    "metier": "Conducteur de ligne",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Tension",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Conducteur ligne production",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Responsabilité",
+      "qualité",
+      "stabilité",
+      "rigueur"
+    ],
+    "formationsPrioritaires": "Bac pro + titres pro",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.55,
+      "Q3": 0.85,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.65,
+      "Q7": 0.9,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 20,
+    "metier": "Maintenance industrielle agro",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Tension",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Technicien maintenance",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Expertise technique",
+      "responsabilité",
+      "stabilité"
+    ],
+    "formationsPrioritaires": "BTS maintenance industrielle",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 21,
+    "metier": "Data analyst agro/agri",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Data analyst alimentation",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Innovation",
+      "impact données",
+      "autonomie",
+      "stratégie"
+    ],
+    "formationsPrioritaires": "Master data + modules Oya",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 22,
+    "metier": "Technicien agroalimentaire",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Tension",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Technicien transformation",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Expertise technique",
+      "qualité",
+      "innovation"
+    ],
+    "formationsPrioritaires": "BTSA STA",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech",
+      "Plantes"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 23,
+    "metier": "Responsable qualité / QHSE",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Tension",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Responsable qualité",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Responsabilité",
+      "excellence",
+      "conformité",
+      "impact"
+    ],
+    "formationsPrioritaires": "BTS QHSE + Master qualité",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.9,
+      "Q5": 0.2,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 24,
+    "metier": "Responsable production agroalimentaire",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Tension",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Manager production IAA",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Leadership",
+      "responsabilité",
+      "innovation",
+      "excellence"
+    ],
+    "formationsPrioritaires": "BTSA + école ingénieur",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 25,
+    "metier": "Responsable décarbonation site",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Responsable décarbonation",
+    "thematiqueFormation": "Transition énergétique & bas-carbone",
+    "competencesCles": [
+      "Urgence climatique",
+      "innovation",
+      "leadership",
+      "impact"
+    ],
+    "formationsPrioritaires": "Master énergie + modules Oya",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 26,
+    "metier": "Responsable sécurité alimentaire",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Tension",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Responsable sécurité alimentaire",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Responsabilité",
+      "rigueur",
+      "excellence",
+      "santé publique"
+    ],
+    "formationsPrioritaires": "BTSA + QHSE",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.9,
+      "Q5": 0.2,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 27,
+    "metier": "Chargé ACV",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Analyste environnemental",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Impact environnemental",
+      "rigueur",
+      "innovation",
+      "stratégie"
+    ],
+    "formationsPrioritaires": "Master environnement + modules ACV",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.9,
+      "Q5": 0.2,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 28,
+    "metier": "Ingénieur agroalimentaire",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Autre",
+    "niveauMin": 7,
+    "typeMetierGenerique": "Ingénieur agroalimentaire",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Innovation",
+      "excellence",
+      "responsabilité",
+      "leadership"
+    ],
+    "formationsPrioritaires": "École ingénieur agro",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.85,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 29,
+    "metier": "Responsable atelier transformation local",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Autre",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Responsable petit atelier",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Autonomie",
+      "relocalisation",
+      "innovation",
+      "impact local"
+    ],
+    "formationsPrioritaires": "CAP/BTS + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Plantes",
+      "Tech"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.55,
+      "Q3": 0.75,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 30,
+    "metier": "Responsable RSE agroalimentaire",
+    "bloc": "Transformation agroalimentaire",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Responsable RSE",
+    "thematiqueFormation": "Transformation locale & écoconception",
+    "competencesCles": [
+      "Transition écologique",
+      "impact social",
+      "leadership"
+    ],
+    "formationsPrioritaires": "Master RSE + modules Oya",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 31,
+    "metier": "Chef·fe de projet circuits courts",
+    "bloc": "Logistique distribution",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Coordinateur circuits courts",
+    "thematiqueFormation": "Circuits courts & relocalisation",
+    "competencesCles": [
+      "Stratégie",
+      "coordination",
+      "impact local",
+      "résilience"
+    ],
+    "formationsPrioritaires": "Master logistique + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 32,
+    "metier": "Logisticien / agent logistique",
+    "bloc": "Logistique distribution",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Logisticien",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Compétence technique",
+      "stabilité",
+      "organisation"
+    ],
+    "formationsPrioritaires": "CAP logistique",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.85,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.9,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 33,
+    "metier": "Préparateur de commandes",
+    "bloc": "Logistique distribution",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Préparateur logistique",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Compétence",
+      "stabilité",
+      "organisation"
+    ],
+    "formationsPrioritaires": "CAP/BEP logistique",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.85,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.9,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 34,
+    "metier": "Logisticien (bac+2)",
+    "bloc": "Logistique distribution",
+    "statut": "Tension",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Manager logistique",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Leadership",
+      "organisation",
+      "responsabilité"
+    ],
+    "formationsPrioritaires": "BTS logistique",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.55,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 35,
+    "metier": "Chauffeur / livreur",
+    "bloc": "Logistique distribution",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Livreur",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Autonomie",
+      "fiabilité",
+      "relation client"
+    ],
+    "formationsPrioritaires": "Permis + CAP",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.85,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.9,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 36,
+    "metier": "Responsable entrepôt",
+    "bloc": "Logistique distribution",
+    "statut": "Tension",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Manager entrepôt",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Leadership",
+      "organisation",
+      "rigueur"
+    ],
+    "formationsPrioritaires": "BTS logistique",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 37,
+    "metier": "Responsable supply chain",
+    "bloc": "Logistique distribution",
+    "statut": "Autre",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Manager supply chain",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Stratégie",
+      "coordination",
+      "impact systémique"
+    ],
+    "formationsPrioritaires": "Master supply chain",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 38,
+    "metier": "Gestionnaire de flux",
+    "bloc": "Logistique distribution",
+    "statut": "Tension",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Gestionnaire flux",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Organisation",
+      "rigueur",
+      "responsabilité"
+    ],
+    "formationsPrioritaires": "BTS logistique",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.55,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 39,
+    "metier": "Responsable distribution",
+    "bloc": "Logistique distribution",
+    "statut": "Autre",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Manager distribution",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Leadership",
+      "stratégie",
+      "responsabilité"
+    ],
+    "formationsPrioritaires": "BTS/Master",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 40,
+    "metier": "Responsable logistique circuits courts",
+    "bloc": "Logistique distribution",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Responsable circuits courts",
+    "thematiqueFormation": "Circuits courts & relocalisation",
+    "competencesCles": [
+      "Innovation",
+      "relocalisation",
+      "impact local"
+    ],
+    "formationsPrioritaires": "BTS + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.75,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 41,
+    "metier": "Chargé logistique bas carbone",
+    "bloc": "Logistique distribution",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Spécialiste décarbonation logistique",
+    "thematiqueFormation": "Transition énergétique & bas-carbone",
+    "competencesCles": [
+      "Urgence climatique",
+      "innovation",
+      "impact"
+    ],
+    "formationsPrioritaires": "Master logistique durable + modules",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.9,
+      "Q5": 0.2,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 42,
+    "metier": "Responsable supply chain durable",
+    "bloc": "Logistique distribution",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Responsable supply chain durable",
+    "thematiqueFormation": "Logistique durable & bas-carbone",
+    "competencesCles": [
+      "Impact environnemental",
+      "stratégie",
+      "responsabilité"
+    ],
+    "formationsPrioritaires": "Master supply chain + RSE",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.85,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 43,
+    "metier": "Coordinateur plateforme alimentaire territoriale",
+    "bloc": "Logistique distribution",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Coordinateur plateforme locale",
+    "thematiqueFormation": "Circuits courts & relocalisation",
+    "competencesCles": [
+      "Coordination",
+      "impact territorial",
+      "innovation"
+    ],
+    "formationsPrioritaires": "Dev territorial + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.75,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 44,
+    "metier": "Responsable drive fermier",
+    "bloc": "Logistique distribution",
+    "statut": "Autre",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Responsable drive fermier",
+    "thematiqueFormation": "Circuits courts & relocalisation",
+    "competencesCles": [
+      "Numérique",
+      "relocalisation",
+      "innovation",
+      "client"
+    ],
+    "formationsPrioritaires": "BTS commerce/logistique + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.55,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 45,
+    "metier": "Gestionnaire flux alimentaires locaux",
+    "bloc": "Logistique distribution",
+    "statut": "Émergent",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Manager flux locaux",
+    "thematiqueFormation": "Circuits courts & relocalisation",
+    "competencesCles": [
+      "Coordination",
+      "organisation",
+      "impact local"
+    ],
+    "formationsPrioritaires": "BTS logistique",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.55,
+      "Q3": 0.75,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 46,
+    "metier": "Coordinateur circuits courts",
+    "bloc": "Logistique distribution",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Coordinateur circuits courts",
+    "thematiqueFormation": "Circuits courts & relocalisation",
+    "competencesCles": [
+      "Coordination",
+      "réseau",
+      "impact local",
+      "ESS"
+    ],
+    "formationsPrioritaires": "Formations ESS + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.75,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.4
+    }
+  },
+  {
+    "id": 47,
+    "metier": "Responsable restauration collective durable",
+    "bloc": "Restauration",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Responsable restauration collective",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Durabilité",
+      "responsabilité",
+      "qualité",
+      "impact social"
+    ],
+    "formationsPrioritaires": "BTS hôtellerie + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.65,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 48,
+    "metier": "Responsable achats durables",
+    "bloc": "Restauration",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Responsable achats responsables",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Impact",
+      "responsabilité",
+      "stratégie",
+      "relation fournisseurs"
+    ],
+    "formationsPrioritaires": "Master achats + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.7,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 49,
+    "metier": "Responsable anti-gaspillage",
+    "bloc": "Restauration",
+    "statut": "Émergent",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Responsable anti-gaspi",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Impact",
+      "innovation",
+      "économies",
+      "environnement"
+    ],
+    "formationsPrioritaires": "Formations économie circulaire + modules",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Transformer",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.55,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.2,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 50,
+    "metier": "Cuisinier / chef cuisinier",
+    "bloc": "Restauration",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Chef cuisinier",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Passion culinaire",
+      "créativité",
+      "stabilité financière"
+    ],
+    "formationsPrioritaires": "CAP cuisine + HACCP",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.45,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.85,
+      "Q7": 0.9,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 51,
+    "metier": "Responsable restauration collective",
+    "bloc": "Restauration",
+    "statut": "Tension",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Manager restauration",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Leadership",
+      "responsabilité",
+      "qualité",
+      "impact"
+    ],
+    "formationsPrioritaires": "BTS hôtellerie-restauration",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.65,
+      "Q3": 0.7,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 52,
+    "metier": "Aide cuisine",
+    "bloc": "Restauration",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Aide cuisine",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Compétence",
+      "stabilité",
+      "équipe"
+    ],
+    "formationsPrioritaires": "CAP cuisine",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 53,
+    "metier": "Serveur",
+    "bloc": "Restauration",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Serveur-hôtesse",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Compétence",
+      "relation client",
+      "stabilité"
+    ],
+    "formationsPrioritaires": "CAP restauration",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Zéro"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Produire",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.85,
+      "Q2": 0.45,
+      "Q3": 0.7,
+      "Q4": 0.95,
+      "Q5": 0.7,
+      "Q6": 0.85,
+      "Q7": 0.9,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 54,
+    "metier": "Boulanger",
+    "bloc": "Restauration",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Boulanger",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Compétence artisanale",
+      "autonomie",
+      "excellence"
+    ],
+    "formationsPrioritaires": "CAP boulangerie",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Plantes"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.45,
+      "Q3": 0.75,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.85,
+      "Q7": 0.65,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 55,
+    "metier": "Boucher",
+    "bloc": "Restauration",
+    "statut": "Tension",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Boucher",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Compétence artisanale",
+      "qualité",
+      "autonomie"
+    ],
+    "formationsPrioritaires": "CAP boucher",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Animaux"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.45,
+      "Q3": 0.75,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.85,
+      "Q7": 0.65,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 56,
+    "metier": "Chef de projet alimentation durable",
+    "bloc": "Restauration",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Chef projet restauration",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Stratégie",
+      "impact social",
+      "coordination"
+    ],
+    "formationsPrioritaires": "Master + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.55,
+      "Q2": 0.8,
+      "Q3": 0.7,
+      "Q4": 0.85,
+      "Q5": 0.3,
+      "Q6": 0.35,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 57,
+    "metier": "Artisan métiers de bouche",
+    "bloc": "Restauration",
+    "statut": "Autre",
+    "niveauMin": 3,
+    "typeMetierGenerique": "Artisan bouche",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Autonomie",
+      "créativité",
+      "excellence",
+      "transmission"
+    ],
+    "formationsPrioritaires": "CAP + BP",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "CAP",
+    "relationVivant": [
+      "Plantes",
+      "Tech"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.45,
+      "Q3": 0.75,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.85,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 58,
+    "metier": "Restaurateur engagé",
+    "bloc": "Restauration",
+    "statut": "Autre",
+    "niveauMin": 4,
+    "typeMetierGenerique": "Restaurateur",
+    "thematiqueFormation": "Restauration durable & anti-gaspillage",
+    "competencesCles": [
+      "Autonomie",
+      "créativité",
+      "impact social",
+      "business"
+    ],
+    "formationsPrioritaires": "CAP + formation business",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Transformer",
+    "reve": "Installer",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.55,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.55,
+      "Q6": 0.65,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 59,
+    "metier": "Chargé·e de projet agroécologie collective",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Chef projet transition",
+    "thematiqueFormation": "Animation & formation transversale",
+    "competencesCles": [
+      "Impact systémique",
+      "coordination",
+      "pédagogie"
+    ],
+    "formationsPrioritaires": "Master + modules Oya",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 60,
+    "metier": "Responsable politique publique alimentaire",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 7,
+    "typeMetierGenerique": "Responsable politiques",
+    "thematiqueFormation": "Gouvernance & politiques publiques",
+    "competencesCles": [
+      "Influence",
+      "stratégie",
+      "impact systémique"
+    ],
+    "formationsPrioritaires": "Master politiques publiques",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.75,
+      "Q2": 0.85,
+      "Q3": 0.65,
+      "Q4": 0.85,
+      "Q5": 0.65,
+      "Q6": 0.45,
+      "Q7": 0.35,
+      "Q8": 0.6
+    }
+  },
+  {
+    "id": 61,
+    "metier": "Chef de projet territorial",
+    "bloc": "Transversal",
+    "statut": "Autre",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Chef projet territorial",
+    "thematiqueFormation": "Pilotage territorial & PAT",
+    "competencesCles": [
+      "Leadership",
+      "coordination",
+      "impact local"
+    ],
+    "formationsPrioritaires": "Master développement territorial",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.85,
+      "Q3": 0.65,
+      "Q4": 0.85,
+      "Q5": 0.55,
+      "Q6": 0.55,
+      "Q7": 0.4,
+      "Q8": 0.5
+    }
+  },
+  {
+    "id": 62,
+    "metier": "Chargé·e d'expérimentation / transfert",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Chargé transfert innovation",
+    "thematiqueFormation": "Pilotage territorial & PAT",
+    "competencesCles": [
+      "Innovation",
+      "liaison recherche",
+      "terrain",
+      "impact"
+    ],
+    "formationsPrioritaires": "Master agro/innovation",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.75,
+      "Q2": 0.85,
+      "Q3": 0.65,
+      "Q4": 0.8,
+      "Q5": 0.5,
+      "Q6": 0.6,
+      "Q7": 0.4,
+      "Q8": 0.75
+    }
+  },
+  {
+    "id": 63,
+    "metier": "Community manager / chargé·e com'",
+    "bloc": "Transversal",
+    "statut": "Autre",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Manager communication",
+    "thematiqueFormation": "Animation & formation transversale",
+    "competencesCles": [
+      "Transparence",
+      "impact image",
+      "engagement"
+    ],
+    "formationsPrioritaires": "BTS/Master communication",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Former",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 64,
+    "metier": "Référent·e bas-carbone",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Spécialiste bas-carbone",
+    "thematiqueFormation": "Transition énergétique & bas-carbone",
+    "competencesCles": [
+      "Urgence climatique",
+      "innovation",
+      "impact"
+    ],
+    "formationsPrioritaires": "Master énergie/climat",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 65,
+    "metier": "Coordinateur centre formation",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Coordinateur formation",
+    "thematiqueFormation": "Animation & formation transversale",
+    "competencesCles": [
+      "Pédagogie",
+      "coordination",
+      "impact formation"
+    ],
+    "formationsPrioritaires": "Formations pédagogiques + gestion",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Former",
+    "reve": "Former",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 66,
+    "metier": "Chef·fe de projet conventions public-privé",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Chef projet partenariats",
+    "thematiqueFormation": "Gouvernance & politiques publiques",
+    "competencesCles": [
+      "Stratégie",
+      "collaboration",
+      "innovation",
+      "impact"
+    ],
+    "formationsPrioritaires": "Master management/partenariat",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.85,
+      "Q3": 0.6,
+      "Q4": 0.85,
+      "Q5": 0.55,
+      "Q6": 0.5,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 67,
+    "metier": "Responsable RSE",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Responsable RSE",
+    "thematiqueFormation": "Gouvernance & politiques publiques",
+    "competencesCles": [
+      "Impact social",
+      "environnemental",
+      "stratégie",
+      "responsabilité"
+    ],
+    "formationsPrioritaires": "Master RSE + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.7,
+      "Q2": 0.85,
+      "Q3": 0.6,
+      "Q4": 0.85,
+      "Q5": 0.6,
+      "Q6": 0.5,
+      "Q7": 0.4,
+      "Q8": 0.35
+    }
+  },
+  {
+    "id": 68,
+    "metier": "Diagnostic territorial",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Analyste territorial",
+    "thematiqueFormation": "Pilotage territorial & PAT",
+    "competencesCles": [
+      "Analyse systémique",
+      "impact",
+      "compréhension locale"
+    ],
+    "formationsPrioritaires": "Master développement",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 69,
+    "metier": "Formateur transition alimentaire",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Formateur métiers",
+    "thematiqueFormation": "Animation & formation transversale",
+    "competencesCles": [
+      "Pédagogie",
+      "expertise",
+      "transformation",
+      "impact"
+    ],
+    "formationsPrioritaires": "Master pédagogie + module Oya",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Former",
+    "reve": "Former",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 70,
+    "metier": "Facilitateur transition",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Facilitateur collectif",
+    "thematiqueFormation": "Coordination & facilitation transversale",
+    "competencesCles": [
+      "Dialogue",
+      "inclusion",
+      "transformation",
+      "collectif"
+    ],
+    "formationsPrioritaires": "Formations facilitation + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 71,
+    "metier": "Coordinateur ESS",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Coordinateur ESS",
+    "thematiqueFormation": "Coordination & facilitation transversale",
+    "competencesCles": [
+      "Solidarité",
+      "impact",
+      "réseau",
+      "innovation"
+    ],
+    "formationsPrioritaires": "Formations ESS + modules Oya",
+    "localisation": [
+      "Urbain",
+      "Campagne"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 72,
+    "metier": "Conseiller accompagnement agricole",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Conseiller agricole",
+    "thematiqueFormation": "Conseils & accompagnement transversal",
+    "competencesCles": [
+      "Expertise",
+      "accompagnement humain",
+      "confiance"
+    ],
+    "formationsPrioritaires": "BTSA + modules Oya",
+    "localisation": [
+      "Campagne",
+      "Flexible"
+    ],
+    "situation": [
+      "Terrain"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Former",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 73,
+    "metier": "Accompagnateur reconversion",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Coach reconversion",
+    "thematiqueFormation": "Conseils & accompagnement transversal",
+    "competencesCles": [
+      "Empathie",
+      "guidance",
+      "transformation personnelle"
+    ],
+    "formationsPrioritaires": "Master coaching + modules Oya",
+    "localisation": [
+      "Urbain"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "BTSA",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Former",
+    "reve": "Former",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 74,
+    "metier": "Consultant transition alimentaire",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Consultant transition",
+    "thematiqueFormation": "Conseils & accompagnement transversal",
+    "competencesCles": [
+      "Expertise",
+      "stratégie",
+      "impact systémique"
+    ],
+    "formationsPrioritaires": "Master + expérience",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Management"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.65,
+      "Q2": 0.85,
+      "Q3": 0.6,
+      "Q4": 0.85,
+      "Q5": 0.6,
+      "Q6": 0.5,
+      "Q7": 0.4,
+      "Q8": 0.55
+    }
+  },
+  {
+    "id": 75,
+    "metier": "Référent technique innovation",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 6,
+    "typeMetierGenerique": "Expert technique",
+    "thematiqueFormation": "Pilotage territorial & PAT",
+    "competencesCles": [
+      "Innovation",
+      "expertise",
+      "transmission"
+    ],
+    "formationsPrioritaires": "Master + modules Oya",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Piloter",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 76,
+    "metier": "Responsable collecte données",
+    "bloc": "Transversal",
+    "statut": "Émergent",
+    "niveauMin": 5,
+    "typeMetierGenerique": "Data manager",
+    "thematiqueFormation": "Conseils & accompagnement transversal",
+    "competencesCles": [
+      "Rigueur",
+      "impact données",
+      "transparence"
+    ],
+    "formationsPrioritaires": "Master data/environnement",
+    "localisation": [
+      "Flexible"
+    ],
+    "situation": [
+      "Capital"
+    ],
+    "backgroundMin": "Master",
+    "relationVivant": [
+      "Tech"
+    ],
+    "typeActivite": "Analyser",
+    "reve": "Piloter",
+    "poids": {
+      "Q1": 0.8,
+      "Q2": 0.6,
+      "Q3": 0.7,
+      "Q4": 0.9,
+      "Q5": 0.5,
+      "Q6": 0,
+      "Q7": 0.6,
+      "Q8": 0.8
+    }
+  },
+  {
+    "id": 77,
     "metier": "Conseiller·ère en alimentation durable",
     "bloc": "Nutrition santé & consommation",
     "statut": "Émergent",
@@ -130,7 +2902,7 @@
     }
   },
   {
-    "id": 5,
+    "id": 78,
     "metier": "Animateur·rice santé / alimentation",
     "bloc": "Économie circulaire & environnement",
     "statut": "Émergent",
@@ -161,7 +2933,7 @@
     }
   },
   {
-    "id": 6,
+    "id": 79,
     "metier": "Animateur·rice déchets alimentaires",
     "bloc": "Économie circulaire & environnement",
     "statut": "Émergent",
@@ -192,304 +2964,7 @@
     }
   },
   {
-    "id": 7,
-    "metier": "Éleveur·euse",
-    "bloc": "Production agricole",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Producteur animal",
-    "thematiqueFormation": "Bien-être animal & éthique",
-    "competencesCles": [
-      "Relation aux animaux",
-      "autonomie",
-      "pénibilité acceptée"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.65,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.52,
-      "Q8": 0.95
-    }
-  },
-  {
-    "id": 8,
-    "metier": "Restaurateur·rice engagé·e",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Restaurateur",
-    "thematiqueFormation": "Bien-être animal & éthique",
-    "competencesCles": [
-      "Autonomie",
-      "créativité",
-      "impact social"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.55,
-      "Q3": 0.7,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 9,
-    "metier": "Responsable d'exploitation agricole",
-    "bloc": "Production agricole",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Entrepreneur agricole",
-    "thematiqueFormation": "Circuits courts & commercialisation",
-    "competencesCles": [
-      "Autonomie",
-      "responsabilité",
-      "business"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.55,
-      "Q3": 0.65,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 10,
-    "metier": "Agriculteur·rice urbain / fermier·ère urbain",
-    "bloc": "Production agricole",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Agriculteur urbain",
-    "thematiqueFormation": "Circuits courts & commercialisation",
-    "competencesCles": [
-      "Autonomie",
-      "innovation",
-      "communauté"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.7,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.65,
-      "Q8": 0.95
-    }
-  },
-  {
-    "id": 11,
-    "metier": "Responsable atelier transformation local",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Responsable petit atelier",
-    "thematiqueFormation": "Circuits courts & commercialisation",
-    "competencesCles": [
-      "Autonomie",
-      "relocalisation",
-      "innovation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.55,
-      "Q3": 0.75,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 12,
-    "metier": "Responsable distribution",
-    "bloc": "Logistique distribution",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Manager distribution",
-    "thematiqueFormation": "Circuits courts & commercialisation",
-    "competencesCles": [
-      "Leadership",
-      "stratégie",
-      "responsabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 13,
-    "metier": "Boucher·ère",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Boucher",
-    "thematiqueFormation": "Conduites d'élevage",
-    "competencesCles": [
-      "Compétence artisanale",
-      "qualité",
-      "autonomie"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.45,
-      "Q3": 0.75,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.85,
-      "Q7": 0.65,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 14,
-    "metier": "Conseiller·ère technique agroécologie",
-    "bloc": "Production agricole",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Conseiller agroécologie",
-    "thematiqueFormation": "Conseil technique & diagnostic",
-    "competencesCles": [
-      "Expertise technique",
-      "autonomie des agriculteurs",
-      "innovation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Former",
-    "poids": {
-      "Q1": 0.6,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.88,
-      "Q5": 0.25,
-      "Q6": 0.65,
-      "Q7": 0.65,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 15,
-    "metier": "Technicien·ne agricole",
-    "bloc": "Production agricole",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Technicien agricole",
-    "thematiqueFormation": "Conseil technique & diagnostic",
-    "competencesCles": [
-      "Expertise technique",
-      "coopération",
-      "stabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.65,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.65,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 16,
+    "id": 80,
     "metier": "Conseiller·ère compostage",
     "bloc": "Économie circulaire & environnement",
     "statut": "Émergent",
@@ -520,7 +2995,7 @@
     }
   },
   {
-    "id": 17,
+    "id": 81,
     "metier": "Data analyste agro/agri",
     "bloc": "Transformation agroalimentaire",
     "statut": "Émergent",
@@ -553,73 +3028,7 @@
     }
   },
   {
-    "id": 18,
-    "metier": "Chargé·e ACV",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Analyste environnemental",
-    "thematiqueFormation": "Digitalisation & agriculture 4.0",
-    "competencesCles": [
-      "Impact environnemental",
-      "rigueur",
-      "innovation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Analyser",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.9,
-      "Q5": 0.2,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 19,
-    "metier": "Responsable achats durables",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Responsable achats responsables",
-    "thematiqueFormation": "Digitalisation & agriculture 4.0",
-    "competencesCles": [
-      "Impact",
-      "responsabilité",
-      "stratégie"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.7,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 20,
+    "id": 82,
     "metier": "Community manager / chargé·e com' & gestion de crise",
     "bloc": "Transversale",
     "statut": "Émergent",
@@ -650,38 +3059,7 @@
     }
   },
   {
-    "id": 21,
-    "metier": "Chef·fe de projet conventions public–privé",
-    "bloc": "Transversale",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 7,
-    "niveau": "Master",
-    "typeMetierGenerique": "Management partenariat",
-    "thematiqueFormation": "Digitalisation & agriculture 4.0",
-    "competencesCles": [
-      "Partenariats négociation ingénierie formation hybridation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.85,
-      "Q3": 0.6,
-      "Q4": 0.85,
-      "Q5": 0.55,
-      "Q6": 0.5,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 22,
+    "id": 83,
     "metier": "Chargé·e de mission économie circulaire",
     "bloc": "Économie circulaire & environnement",
     "statut": "Émergent",
@@ -712,304 +3090,7 @@
     }
   },
   {
-    "id": 23,
-    "metier": "Responsable décarbonation site",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Responsable décarbonation",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Urgence climatique",
-      "innovation",
-      "leadership"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 24,
-    "metier": "Préparateur·rice de commandes",
-    "bloc": "Logistique distribution",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Préparateur logistique",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Compétence",
-      "stabilité",
-      "organisation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.85,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.9,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 25,
-    "metier": "Responsable drive fermier",
-    "bloc": "Logistique distribution",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Responsable drive fermier",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Numérique",
-      "relocalisation",
-      "innovation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.55,
-      "Q3": 0.7,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 26,
-    "metier": "Responsable restauration collective durable",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Responsable restauration collective",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Durabilité",
-      "responsabilité",
-      "qualité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.65,
-      "Q3": 0.7,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 27,
-    "metier": "Responsable anti-gaspillage",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Responsable anti-gaspi",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Impact",
-      "innovation",
-      "économies"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Analyser",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.55,
-      "Q3": 0.7,
-      "Q4": 0.9,
-      "Q5": 0.2,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 28,
-    "metier": "Responsable restauration collective",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Manager restauration",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Leadership",
-      "responsabilité",
-      "qualité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.7,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 29,
-    "metier": "Boulanger·ère",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Boulanger",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Compétence artisanale",
-      "autonomie",
-      "excellence"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.45,
-      "Q3": 0.75,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.85,
-      "Q7": 0.65,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 30,
-    "metier": "Chef·fe de projet alimentation durable",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Chef projet restauration",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Stratégie",
-      "impact social",
-      "coordination"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.7,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 31,
-    "metier": "Artisan·e métiers de bouche",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Artisan bouche",
-    "thematiqueFormation": "Énergie & décarbonation",
-    "competencesCles": [
-      "Autonomie",
-      "créativité",
-      "excellence"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.45,
-      "Q3": 0.75,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.85,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 32,
+    "id": 84,
     "metier": "Chargé·e de programme nutrition",
     "bloc": "Nutrition santé & consommation",
     "statut": "Émergent",
@@ -1040,7 +3121,7 @@
     }
   },
   {
-    "id": 33,
+    "id": 85,
     "metier": "Technicien·ne compostage",
     "bloc": "Économie circulaire & environnement",
     "statut": "Émergent",
@@ -1071,7 +3152,7 @@
     }
   },
   {
-    "id": 34,
+    "id": 86,
     "metier": "Coordinateur·rice économie circulaire & anti-gaspi",
     "bloc": "Économie circulaire & environnement",
     "statut": "Émergent",
@@ -1102,7 +3183,7 @@
     }
   },
   {
-    "id": 35,
+    "id": 87,
     "metier": "Chargé·e de mission alimentation durable",
     "bloc": "Gouvernance politiques publiques & transition",
     "statut": "Émergent",
@@ -1133,7 +3214,7 @@
     }
   },
   {
-    "id": 36,
+    "id": 88,
     "metier": "Référent·e bas-carbone / énergies",
     "bloc": "Transversale",
     "statut": "Émergent",
@@ -1164,40 +3245,7 @@
     }
   },
   {
-    "id": 37,
-    "metier": "Responsable RSE agroalimentaire",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Responsable RSE",
-    "thematiqueFormation": "Gestion d'entreprise agricole",
-    "competencesCles": [
-      "Transition écologique",
-      "impact social",
-      "leadership"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 38,
+    "id": 89,
     "metier": "Responsable RSE / développement durable",
     "bloc": "Gouvernance politiques publiques & transition",
     "statut": "Émergent",
@@ -1228,498 +3276,7 @@
     }
   },
   {
-    "id": 39,
-    "metier": "Consultant·e transition alimentaire",
-    "bloc": "Gouvernance politiques publiques & transition",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 7,
-    "niveau": "Master",
-    "typeMetierGenerique": "Conseil transition",
-    "thematiqueFormation": "Gestion d'entreprise agricole",
-    "competencesCles": [
-      "Conseil stratégie vision systémique transformation alimentaire"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Conseiller",
-    "poids": {
-      "Q1": 0.65,
-      "Q2": 0.85,
-      "Q3": 0.6,
-      "Q4": 0.85,
-      "Q5": 0.6,
-      "Q6": 0.5,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 40,
-    "metier": "Responsable RSE",
-    "bloc": "Transversale",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 7,
-    "niveau": "Master",
-    "typeMetierGenerique": "Management RSE",
-    "thematiqueFormation": "Gestion d'entreprise agricole",
-    "competencesCles": [
-      "ESG CSRD stratégie durable reporting"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.85,
-      "Q3": 0.6,
-      "Q4": 0.85,
-      "Q5": 0.6,
-      "Q6": 0.5,
-      "Q7": 0.4,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 41,
-    "metier": "Chargé·e de parcours volontariat agricole",
-    "bloc": "Production agricole",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Animateur agriculture",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Communauté",
-      "accueil",
-      "apprentissage"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Former",
-    "poids": {
-      "Q1": 0.6,
-      "Q2": 0.65,
-      "Q3": 0.7,
-      "Q4": 0.88,
-      "Q5": 0.25,
-      "Q6": 0.65,
-      "Q7": 0.9,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 42,
-    "metier": "Chef·fe de culture",
-    "bloc": "Production agricole",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Manager production",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Leadership",
-      "responsabilité",
-      "organisation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.55,
-      "Q3": 0.65,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 43,
-    "metier": "Animateur·rice agriculture urbaine",
-    "bloc": "Production agricole",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Animateur tiers-lieu",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Communauté",
-      "pédagogie",
-      "inclusion"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Former",
-    "poids": {
-      "Q1": 0.6,
-      "Q2": 0.55,
-      "Q3": 0.7,
-      "Q4": 0.88,
-      "Q5": 0.25,
-      "Q6": 0.65,
-      "Q7": 0.9,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 44,
-    "metier": "Responsable tiers-lieu agricole",
-    "bloc": "Production agricole",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Gestionnaire tiers-lieu",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Innovation",
-      "communauté",
-      "leadership"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 45,
-    "metier": "Responsable production agroalimentaire",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Manager production IAA",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Leadership",
-      "responsabilité",
-      "innovation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 46,
-    "metier": "Ingénieur·e agroalimentaire",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 7,
-    "niveau": "Master",
-    "typeMetierGenerique": "Ingénieur agroalimentaire",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Innovation",
-      "excellence",
-      "responsabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.85,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 47,
-    "metier": "Chef·fe de projet circuits courts",
-    "bloc": "Logistique distribution",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Coordinateur circuits courts",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Stratégie",
-      "coordination",
-      "impact local"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 48,
-    "metier": "Responsable entrepôt",
-    "bloc": "Logistique distribution",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Manager entrepôt",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Leadership",
-      "organisation",
-      "rigueur"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 49,
-    "metier": "Gestionnaire de flux",
-    "bloc": "Logistique distribution",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Gestionnaire flux",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Organisation",
-      "rigueur",
-      "responsabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.55,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 50,
-    "metier": "Responsable logistique circuits courts",
-    "bloc": "Logistique distribution",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Responsable circuits courts",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Innovation",
-      "relocalisation",
-      "impact local"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.75,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 51,
-    "metier": "Coordinateur·rice plateforme alimentaire territoriale",
-    "bloc": "Logistique distribution",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Coordinateur plateforme locale",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Coordination",
-      "impact territorial",
-      "innovation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.75,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 52,
-    "metier": "Gestionnaire flux alimentaires locaux",
-    "bloc": "Logistique distribution",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Manager flux locaux",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Coordination",
-      "organisation",
-      "impact local"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.55,
-      "Q3": 0.75,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 53,
-    "metier": "Coordinateur·rice circuits courts",
-    "bloc": "Logistique distribution",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Coordinateur circuits courts",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Coordination",
-      "réseau",
-      "impact local"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.75,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 54,
+    "id": 90,
     "metier": "Chef·fe de projet Transition alimentaire territoriale (PAT)",
     "bloc": "Gouvernance politiques publiques & transition",
     "statut": "Émergent",
@@ -1750,69 +3307,7 @@
     }
   },
   {
-    "id": 55,
-    "metier": "Chef·fe de projet territorial",
-    "bloc": "Transversale",
-    "statut": "Structurant",
-    "penurie": "Normal",
-    "evolution": "Structurant",
-    "niveauMin": 7,
-    "niveau": "Master",
-    "typeMetierGenerique": "Développement territorial",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Gestion projet coordination acteurs politiques publiques intégration enjeux"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.85,
-      "Q3": 0.65,
-      "Q4": 0.85,
-      "Q5": 0.55,
-      "Q6": 0.55,
-      "Q7": 0.4,
-      "Q8": 0.5
-    }
-  },
-  {
-    "id": 56,
-    "metier": "Chargé·e d'expérimentation / transfert",
-    "bloc": "Transversale",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 7,
-    "niveau": "Master",
-    "typeMetierGenerique": "Recherche appliquée",
-    "thematiqueFormation": "Gestion de projet & coordination",
-    "competencesCles": [
-      "Innovation expérimentation diffusion pratiques agroécologiques"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.75,
-      "Q2": 0.85,
-      "Q3": 0.65,
-      "Q4": 0.8,
-      "Q5": 0.5,
-      "Q6": 0.6,
-      "Q7": 0.4,
-      "Q8": 0.75
-    }
-  },
-  {
-    "id": 57,
+    "id": 91,
     "metier": "Coordinateur·rice centre FC & apprentissage (EPLEFPA)",
     "bloc": "Transversale",
     "statut": "Émergent",
@@ -1843,73 +3338,7 @@
     }
   },
   {
-    "id": 58,
-    "metier": "Conducteur·rice de ligne",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Conducteur ligne production",
-    "thematiqueFormation": "Maintenance industrielle & techniques",
-    "competencesCles": [
-      "Responsabilité",
-      "qualité",
-      "stabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.55,
-      "Q3": 0.85,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.65,
-      "Q7": 0.9,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 59,
-    "metier": "Maintenance industrielle agro",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Technicien maintenance",
-    "thematiqueFormation": "Maintenance industrielle & techniques",
-    "competencesCles": [
-      "Expertise technique",
-      "responsabilité",
-      "stabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 60,
+    "id": 92,
     "metier": "Diététicien·ne / nutritionniste·e",
     "bloc": "Nutrition santé & consommation",
     "statut": "",
@@ -1940,271 +3369,7 @@
     }
   },
   {
-    "id": 61,
-    "metier": "Ouvrier·ère agricole",
-    "bloc": "Production agricole",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Producteur agricole",
-    "thematiqueFormation": "Production végétale & horticulture",
-    "competencesCles": [
-      "Autonomie",
-      "relation au vivant",
-      "stabilité financière"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.65,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.65,
-      "Q8": 0.95
-    }
-  },
-  {
-    "id": 62,
-    "metier": "Technicien·ne agriculture de précision",
-    "bloc": "Production agricole",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Technicien agri-tech",
-    "thematiqueFormation": "Production végétale & horticulture",
-    "competencesCles": [
-      "Innovation",
-      "technologie",
-      "efficacité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.65,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 63,
-    "metier": "Responsable logistique céréales / Chef·fe de silo",
-    "bloc": "Production agricole",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Manager logistique agricole",
-    "thematiqueFormation": "Qualité & sécurité alimentaire",
-    "competencesCles": [
-      "Souveraineté alimentaire",
-      "responsabilité",
-      "organisation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.65,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.8
-    }
-  },
-  {
-    "id": 64,
-    "metier": "Responsable transition durable IAA",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Responsable RSE transformation",
-    "thematiqueFormation": "Qualité & sécurité alimentaire",
-    "competencesCles": [
-      "Transition écologique",
-      "innovation",
-      "responsabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 65,
-    "metier": "Opérateur·rice de production agroalimentaire",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Opérateur production",
-    "thematiqueFormation": "Qualité & sécurité alimentaire",
-    "competencesCles": [
-      "Stabilité",
-      "compétence technique",
-      "qualité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.85,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.9,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 66,
-    "metier": "Technicien·ne agroalimentaire",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Technicien transformation",
-    "thematiqueFormation": "Qualité & sécurité alimentaire",
-    "competencesCles": [
-      "Expertise technique",
-      "qualité",
-      "innovation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 67,
-    "metier": "Responsable qualité / QHSE",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Responsable qualité",
-    "thematiqueFormation": "Qualité & sécurité alimentaire",
-    "competencesCles": [
-      "Responsabilité",
-      "excellence",
-      "conformité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Analyser",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.9,
-      "Q5": 0.2,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 68,
-    "metier": "Responsable sécurité alimentaire",
-    "bloc": "Transformation agroalimentaire",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 5,
-    "niveau": "BTS/BTSA",
-    "typeMetierGenerique": "Responsable sécurité alimentaire",
-    "thematiqueFormation": "Qualité & sécurité alimentaire",
-    "competencesCles": [
-      "Responsabilité",
-      "rigueur",
-      "excellence"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Analyser",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.65,
-      "Q3": 0.85,
-      "Q4": 0.9,
-      "Q5": 0.2,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.55
-    }
-  },
-  {
-    "id": 69,
+    "id": 93,
     "metier": "Aide-cuisinier·ère",
     "bloc": "Restauration et métiers de bouche",
     "statut": "Tension",
@@ -2237,302 +3402,7 @@
     }
   },
   {
-    "id": 70,
-    "metier": "Responsable politique publique alimentaire",
-    "bloc": "Gouvernance politiques publiques & transition",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 7,
-    "niveau": "Bac+5",
-    "typeMetierGenerique": "Gouvernance",
-    "thematiqueFormation": "Réglementation & conformité",
-    "competencesCles": [
-      "Régulation systèmes alimentaires stratégie pilotage réglementation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.75,
-      "Q2": 0.85,
-      "Q3": 0.65,
-      "Q4": 0.85,
-      "Q5": 0.65,
-      "Q6": 0.45,
-      "Q7": 0.35,
-      "Q8": 0.6
-    }
-  },
-  {
-    "id": 71,
-    "metier": "Serveur·euse",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Serveur-hôtesse",
-    "thematiqueFormation": "Restauration & accueil client",
-    "competencesCles": [
-      "Compétence",
-      "relation client",
-      "stabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.7,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.9,
-      "Q8": 0.35
-    }
-  },
-  {
-    "id": 72,
-    "metier": "Tractoriste / conducteur·rice d'engins",
-    "bloc": "Production agricole",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Conducteur agricole",
-    "thematiqueFormation": "Supply chain & logistique",
-    "competencesCles": [
-      "Compétence technique",
-      "autonomie",
-      "stabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.65,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.65,
-      "Q8": 0.95
-    }
-  },
-  {
-    "id": 73,
-    "metier": "Logisticien·ne / agent·e logistique",
-    "bloc": "Logistique distribution",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Logisticien",
-    "thematiqueFormation": "Supply chain & logistique",
-    "competencesCles": [
-      "Compétence technique",
-      "stabilité",
-      "organisation"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.85,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.9,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 74,
-    "metier": "Logisticien·ne (bac+2)",
-    "bloc": "Logistique distribution",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 4,
-    "niveau": "Bac",
-    "typeMetierGenerique": "Manager logistique",
-    "thematiqueFormation": "Supply chain & logistique",
-    "competencesCles": [
-      "Leadership",
-      "organisation",
-      "responsabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.55,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.65,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 75,
-    "metier": "Chauffeur·euse / livreur·euse",
-    "bloc": "Logistique distribution",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Livreur",
-    "thematiqueFormation": "Supply chain & logistique",
-    "competencesCles": [
-      "Autonomie",
-      "fiabilité",
-      "relation client"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Produire",
-    "poids": {
-      "Q1": 0.85,
-      "Q2": 0.45,
-      "Q3": 0.85,
-      "Q4": 0.95,
-      "Q5": 0.7,
-      "Q6": 0.85,
-      "Q7": 0.9,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 76,
-    "metier": "Responsable supply chain",
-    "bloc": "Logistique distribution",
-    "statut": "",
-    "penurie": "Normal",
-    "evolution": "Traditionnel",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Manager supply chain",
-    "thematiqueFormation": "Supply chain & logistique",
-    "competencesCles": [
-      "Stratégie",
-      "coordination",
-      "impact systémique"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 77,
-    "metier": "Chargé·e logistique bas carbone",
-    "bloc": "Logistique distribution",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Spécialiste décarbonation logistique",
-    "thematiqueFormation": "Supply chain & logistique",
-    "competencesCles": [
-      "Urgence climatique",
-      "innovation",
-      "impact"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Analyser",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.9,
-      "Q5": 0.2,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 78,
-    "metier": "Responsable supply chain durable",
-    "bloc": "Logistique distribution",
-    "statut": "Émergent",
-    "penurie": "Normal",
-    "evolution": "Émergent",
-    "niveauMin": 6,
-    "niveau": "Licence",
-    "typeMetierGenerique": "Responsable supply chain durable",
-    "thematiqueFormation": "Supply chain & logistique",
-    "competencesCles": [
-      "Impact environnemental",
-      "stratégie",
-      "responsabilité"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Piloter",
-    "poids": {
-      "Q1": 0.55,
-      "Q2": 0.8,
-      "Q3": 0.85,
-      "Q4": 0.85,
-      "Q5": 0.3,
-      "Q6": 0.35,
-      "Q7": 0.4,
-      "Q8": 0.4
-    }
-  },
-  {
-    "id": 79,
+    "id": 94,
     "metier": "Agent·e de tri / valorisation biodéchets",
     "bloc": "Économie circulaire & environnement",
     "statut": "",
@@ -2560,39 +3430,6 @@
       "Q6": 0.4,
       "Q7": 0.35,
       "Q8": 0.25
-    }
-  },
-  {
-    "id": 80,
-    "metier": "Cuisinier·ère / Chef·fe cuisinier·ère",
-    "bloc": "Restauration et métiers de bouche",
-    "statut": "Tension",
-    "penurie": "En tension",
-    "evolution": "Traditionnel",
-    "niveauMin": 3,
-    "niveau": "CAP/BEP",
-    "typeMetierGenerique": "Chef cuisinier",
-    "thematiqueFormation": "Transformation agroalimentaire & cuisine",
-    "competencesCles": [
-      "Passion culinaire",
-      "créativité",
-      "stabilité financière"
-    ],
-    "localisation": [
-      "Flexible"
-    ],
-    "situation": [],
-    "relationVivant": [],
-    "typeActivite": "Transformer",
-    "poids": {
-      "Q1": 0.7,
-      "Q2": 0.45,
-      "Q3": 0.7,
-      "Q4": 0.9,
-      "Q5": 0.55,
-      "Q6": 0.85,
-      "Q7": 0.9,
-      "Q8": 0.35
     }
   }
 ]
