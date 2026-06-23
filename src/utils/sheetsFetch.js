@@ -1,6 +1,6 @@
 // Google Sheet natif OYA POC (ID différent du xlsx Drive qui est la source éditable)
 const SHEET_ID = "1Qy1fYOnCBFZHMHwu0RZ2n5-wI8_RZDsQ3YmUuG0QF-s";
-const RANGE = "Métiers!A1:P77";
+const RANGE = "Métiers!A1:Q82";
 const CACHE_KEY = "oya_metiers";
 const CACHE_TS_KEY = "oya_metiers_timestamp";
 const CACHE_TTL_H = 24;
@@ -27,11 +27,12 @@ export async function fetchFromSheet() {
 }
 
 // Mapping colonne Niveau → niveauMin numérique attendu par scoreMetier
-// Supporte les valeurs actuelles du Sheet (BTS/BTSA) et les alias cibles (Bac+2…)
 const NIVEAU_TO_MIN = {
-  "CAP/BEP": 3, "Bac": 4,
-  "BTS/BTSA": 5, "Bac+2": 5, "Bac+3": 5,
-  "Licence": 6, "Bac+5": 7, "Master": 7,
+  "CAP": 3, "CAP/BEP": 3, "CAP/Certification": 3, "Certification RCC": 3,
+  "BPJEPS": 4, "Bac": 4,
+  "BTS/BTSA": 5, "Bac+2": 5, "Bac+3": 5, "BTS/Bac+3": 5,
+  "Licence": 6, "Bac+3/+5": 6,
+  "Bac+5": 7, "Master": 7,
 };
 
 // Trouve l'index d'une colonne par son nom (insensible à la casse, trim).
@@ -71,6 +72,7 @@ export function parseMetiers(values) {
     competences: findCol(headerRow, "Compétences", "Competences", "Competences_cles"),
     secteur:  findCol(headerRow, "Secteur"),
     statut:   findCol(headerRow, "Statut"),
+    theme:    findCol(headerRow, "Thème de formation", "Theme de formation", "Thematique"),
   };
 
   if (import.meta.env.DEV) {
@@ -82,7 +84,7 @@ export function parseMetiers(values) {
   const fallback = {
     metier: 0, bloc: 1,
     pQ1: 2, pQ2: 3, pQ3: 4, pQ4: 5, pQ5: 6, pQ6: 7, pQ7: 8, pQ8: 9,
-    secteur: 10, typeAct: 11, penurie: 12, evolution: 13, competences: 14, niveau: 15,
+    competences: 10, niveau: 11, secteur: 12, typeAct: 13, penurie: 14, evolution: 15, theme: 16,
   };
   for (const key of Object.keys(C)) {
     if (C[key] === -1) C[key] = fallback[key] ?? -1;
@@ -116,12 +118,13 @@ export function parseMetiers(values) {
         id: idx,
         metier: g(row, C.metier),
         bloc: g(row, C.bloc),
-        thematiqueFormation: g(row, C.bloc),
+        thematiqueFormation: g(row, C.theme) || g(row, C.bloc),
         poids,
         typeActivite: g(row, C.typeAct),
         niveauMin: NIVEAU_TO_MIN[g(row, C.niveau)] ?? 4,
-        statut: g(row, C.statut) === "Tension" ? "Tension"
+        statut: g(row, C.penurie) === "En tension" ? "Tension"
               : g(row, C.evolution) === "Émergent" ? "Émergent"
+              : g(row, C.evolution) === "Structurant" ? "Structurant"
               : "",
         localisation: ["Flexible"],
         situation: [],
