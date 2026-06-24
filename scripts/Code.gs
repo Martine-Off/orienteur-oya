@@ -29,7 +29,7 @@ function doPost(e) {
 
     let emailError = null;
     try {
-      sendEmailBrevo(data);
+      sendEmailMailApp(data);
       console.log("Email envoyé à " + data.email);
     } catch (emailErr) {
       emailError = emailErr.toString();
@@ -49,6 +49,18 @@ function doPost(e) {
     return ContentService.createTextOutput("Error")
       .setMimeType(ContentService.MimeType.TEXT);
   }
+}
+
+function sendEmailMailApp(data) {
+  const firstThematique = String(data.top_3_thematiques?.[0] || data.thematique_1 || '').replace(/[\r\n]/g, '');
+  const subject = "Votre diagnostic OYA" + (firstThematique ? " — " + firstThematique : "");
+  const htmlBody = buildEmailHtml(data);
+  MailApp.sendEmail({
+    to:       data.email,
+    subject:  subject,
+    htmlBody: htmlBody,
+    name:     "OYA L'Orienteur",
+  });
 }
 
 function appendReponse(data) {
