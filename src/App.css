@@ -1169,6 +1169,13 @@ select {
   font-weight: 600;
 }
 
+.results-email-status {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted, #757575);
+  margin-top: 8px;
+}
+
 /* ---------- Email modal ---------- */
 .email-modal-overlay {
   position: fixed;

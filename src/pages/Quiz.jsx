@@ -23,7 +23,7 @@ export default function Quiz() {
   function handleSubmit(e) {
     e.preventDefault();
     if (isLast) {
-      navigate("/resultats", { state: { reponses } });
+      navigate("/email-capture", { state: { reponses } });
     } else {
       goNext();
     }
@@ -52,7 +52,7 @@ export default function Quiz() {
             Précédent
           </button>
           <button type="submit" disabled={!canGoNext()} className="btn btn-primary">
-            {isLast ? "Voir mes résultats" : "Suivant"}
+            {isLast ? "Continuer" : "Suivant"}
           </button>
         </div>
       </form>

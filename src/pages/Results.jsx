@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation, Navigate, useNavigate } from "react-router-dom";
 import { useMetiers } from "../hooks/useMetiers";
 import { groupByThematique, normalizeAnswers, NIVEAU_ETUDES } from "../utils/scoring";
 import { submitLead } from "../utils/api";
-import { isValidEmail } from "../utils/validation";
 import { PEURS } from "../data/questions";
 import RadarChartMetier from "../components/RadarChartMetier";
 
@@ -135,126 +134,54 @@ function ProfilRecap({ reponses }) {
   );
 }
 
-function EmailModal({ onSubmit, onClose, submitting, hasError }) {
-  const [email, setEmail] = useState("");
-  const [rgpd, setRgpd] = useState(false);
-  const [optIn, setOptIn] = useState(false);
-  const [touched, setTouched] = useState(false);
-  const emailValid = isValidEmail(email);
-  const buttonEnabled = emailValid && rgpd && !submitting;
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setTouched(true);
-    if (!emailValid || !rgpd || submitting) return;
-    onSubmit({ email: email.trim(), rgpd, etreTenuAuCourant: optIn });
-  }
-
-  function handleOverlayClick(e) {
-    if (e.target === e.currentTarget) onClose();
-  }
-
-  function handleOverlayKeyDown(e) {
-    if (e.key === "Escape") onClose();
-  }
-
-  return (
-    <div
-      className="email-modal-overlay"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="email-modal-title"
-      onClick={handleOverlayClick}
-      onKeyDown={handleOverlayKeyDown}
-    >
-      <div className="email-modal">
-        <button
-          type="button"
-          className="email-modal__close"
-          onClick={onClose}
-          aria-label="Fermer"
-        >
-          ×
-        </button>
-
-        <h2 id="email-modal-title">Recevoir mon diagnostic</h2>
-
-        <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          <div>
-            <label htmlFor="modal-email" style={{ display: "block", fontWeight: 600, fontSize: "0.9rem", marginBottom: "6px" }}>
-              Email <span aria-hidden="true">*</span>
-            </label>
-            <input
-              id="modal-email"
-              type="email"
-              autoComplete="email"
-              autoFocus
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              aria-invalid={touched && !emailValid}
-              aria-describedby={touched && !emailValid ? "modal-email-error" : undefined}
-            />
-            {touched && !emailValid && (
-              <p id="modal-email-error" className="field-error" role="alert" style={{ marginTop: 4 }}>
-                Format email incorrect (ex&nbsp;: user@example.com)
-              </p>
-            )}
-          </div>
-
-          <label className="checkbox-label" htmlFor="modal-opt-in">
-            <input
-              id="modal-opt-in"
-              type="checkbox"
-              checked={optIn}
-              onChange={(e) => setOptIn(e.target.checked)}
-            />
-            Être tenu·e au courant des formations OYA
-          </label>
-
-          <label className="checkbox-label" htmlFor="modal-rgpd">
-            <input
-              id="modal-rgpd"
-              type="checkbox"
-              required
-              checked={rgpd}
-              onChange={(e) => setRgpd(e.target.checked)}
-              aria-describedby={touched && !rgpd ? "modal-rgpd-error" : undefined}
-            />
-            J'accepte de recevoir mon diagnostic par email et que mes données soient utilisées par OYA.{" "}
-            <span style={{ color: "#A85D08", textDecoration: "underline", cursor: "default", fontSize: "0.85rem" }}>
-              Politique de confidentialité
-            </span>{" "}
-            <span aria-hidden="true">*</span>
-          </label>
-          {touched && !rgpd && (
-            <p id="modal-rgpd-error" className="field-error" role="alert">
-              Vous devez accepter pour continuer.
-            </p>
-          )}
-
-          {hasError && (
-            <p className="field-error" role="alert">
-              Erreur lors de l'envoi. Vérifiez votre connexion et réessayez.
-            </p>
-          )}
-
-          <button type="submit" className="btn btn-primary" disabled={!buttonEnabled}>
-            {submitting ? "Envoi en cours…" : "Envoyer mon diagnostic"}
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-}
 
 export default function Results() {
   const location = useLocation();
   const reponses = location.state?.reponses;
+  const email = location.state?.email;
+  const rgpd = location.state?.rgpd;
+  const etreTenuAuCourant = location.state?.etreTenuAuCourant;
   const { metiers, loading, error } = useMetiers();
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
   const [submitState, setSubmitState] = useState("idle");
   const [confirmedEmail, setConfirmedEmail] = useState("");
+  const sendRef = useRef(false);
+
+  useEffect(() => {
+    if (loading || error || !metiers || !email || !rgpd || sendRef.current) return;
+    sendRef.current = true;
+    const th = groupByThematique(reponses, metiers, 3);
+    const pc = PEURS.filter((p) => reponses.Q9?.[p.key]);
+    const peursTexte = pc.map((p) => p.label).join(", ");
+    setSubmitState("submitting");
+    submitLead({
+      email,
+      Q1: reponses.Q1,
+      Q2: reponses.Q2,
+      Q3: reponses.Q3,
+      Q4: reponses.Q4,
+      Q5: reponses.Q5,
+      Q6: reponses.Q6,
+      Q7: reponses.Q7,
+      Q8: reponses.Q8,
+      Q9_peurs: peursTexte,
+      Q10_region: reponses.Q10,
+      top_3_thematiques: th.map((t) => t.thematique),
+      scores_thematiques: th.map((t) => t.avgScore),
+      top_3_metiers: th.map((t) => t.metiers[0]?.metier.metier),
+      scores: th.map((t) => t.metiers[0]?.score),
+      metiers_2: th.map((t) => t.metiers[1]?.metier.metier),
+      scores_2: th.map((t) => t.metiers[1]?.score),
+      metiers_3: th.map((t) => t.metiers[2]?.metier.metier),
+      scores_3: th.map((t) => t.metiers[2]?.score),
+      région: reponses.Q10,
+      bloc: th[0]?.thematique,
+      etre_tenu_au_courant: etreTenuAuCourant,
+      rgpd_accepte: rgpd,
+    })
+      .then(() => { setConfirmedEmail(email); setSubmitState("done"); })
+      .catch(() => setSubmitState("error"));
+  }, [loading, error, metiers]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!reponses) {
     return <Navigate to="/quiz" replace />;
@@ -280,43 +207,6 @@ export default function Results() {
   const peursChoisies = PEURS.filter((p) => reponses.Q9?.[p.key]);
   const normalizedScores = normalizeAnswers(reponses);
 
-  async function handleEmailSubmit({ email, rgpd, etreTenuAuCourant }) {
-    setSubmitState("submitting");
-    const peursTexte = peursChoisies.map((p) => p.label).join(", ");
-    try {
-      await submitLead({
-        email,
-        Q1: reponses.Q1,
-        Q2: reponses.Q2,
-        Q3: reponses.Q3,
-        Q4: reponses.Q4,
-        Q5: reponses.Q5,
-        Q6: reponses.Q6,
-        Q7: reponses.Q7,
-        Q8: reponses.Q8,
-        Q9_peurs: peursTexte,
-        Q10_region: reponses.Q10,
-        top_3_thematiques: thematiques.map((t) => t.thematique),
-        scores_thematiques: thematiques.map((t) => t.avgScore),
-        top_3_metiers: thematiques.map((t) => t.metiers[0]?.metier.metier),
-        scores: thematiques.map((t) => t.metiers[0]?.score),
-        metiers_2: thematiques.map((t) => t.metiers[1]?.metier.metier),
-        scores_2: thematiques.map((t) => t.metiers[1]?.score),
-        metiers_3: thematiques.map((t) => t.metiers[2]?.metier.metier),
-        scores_3: thematiques.map((t) => t.metiers[2]?.score),
-        région: reponses.Q10,
-        bloc: thematiques[0]?.thematique,
-        etre_tenu_au_courant: etreTenuAuCourant,
-        rgpd_accepte: rgpd,
-      });
-      setConfirmedEmail(email);
-      setSubmitState("done");
-      setShowModal(false);
-    } catch {
-      setSubmitState("error");
-    }
-  }
-
   return (
     <main className="page page-results">
       <div className="results-header">
@@ -341,18 +231,12 @@ export default function Results() {
 
       <ProfilRecap reponses={reponses} />
 
-      {submitState === "done" ? (
-        <p className="results-success" role="status">
-          Diagnostic envoyé à {confirmedEmail} — vérifiez votre boîte mail.
+      {email && (
+        <p className="results-email-status" role="status">
+          {submitState === "submitting" && "Envoi de votre diagnostic en cours…"}
+          {submitState === "done" && `Diagnostic envoyé à ${confirmedEmail} — vérifiez votre boîte mail.`}
+          {submitState === "error" && "Erreur lors de l'envoi. Vérifiez votre connexion et réessayez."}
         </p>
-      ) : (
-        <button
-          type="button"
-          className="btn btn-primary results-cta"
-          onClick={() => setShowModal(true)}
-        >
-          Recevoir mon diagnostic par email
-        </button>
       )}
 
       <button
@@ -362,15 +246,6 @@ export default function Results() {
       >
         Refaire le test
       </button>
-
-      {showModal && (
-        <EmailModal
-          onSubmit={handleEmailSubmit}
-          onClose={() => { setShowModal(false); setSubmitState("idle"); }}
-          submitting={submitState === "submitting"}
-          hasError={submitState === "error"}
-        />
-      )}
     </main>
   );
 }

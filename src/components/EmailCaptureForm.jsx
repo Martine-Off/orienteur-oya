@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { isValidEmail } from "../utils/validation";
 
-export default function EmailCaptureForm({ onSubmit, submitting }) {
+export default function EmailCaptureForm({ onSubmit, submitting, submitLabel = "Envoyer" }) {
   const [email, setEmail] = useState("");
   const [rgpd, setRgpd] = useState(false);
   const [etreTenuAuCourant, setEtreTenuAuCourant] = useState(false);
@@ -75,7 +75,7 @@ export default function EmailCaptureForm({ onSubmit, submitting }) {
       )}
 
       <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
-        {submitting ? "Envoi en cours..." : "Envoyer"}
+        {submitting ? "Chargement…" : submitLabel}
       </button>
     </form>
   );
