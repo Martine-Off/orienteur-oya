@@ -12,7 +12,7 @@ Quiz d'orientation métier pour [OYA](https://oya.fr) — 10 questions, 3 métie
 |---|---|
 | Frontend | React 18 + Vite, Netlify |
 | Données & leads | Google Sheets + Apps Script |
-| Email transactionnel | Brevo API v3 |
+| Email transactionnel | MailApp (POC) → Brevo API v3 (prod) |
 
 ---
 
@@ -31,7 +31,9 @@ npm run dev                  # → http://localhost:5173
 ## Déployer
 
 1. **Netlify** — connecter le repo GitHub, build command `npm run build`, publish dir `dist`, ajouter `VITE_LEADS_ENDPOINT` dans les variables d'environnement
-2. **Apps Script** — coller `scripts/Code.gs` + `scripts/SendEmailBrevo.gs` dans Extensions → Apps Script, ajouter `BREVO_API_KEY` dans Project Settings → Script properties, déployer en Application Web (accès : Tout le monde)
+2. **Apps Script** — coller `scripts/Code.gs` + `scripts/SendEmailBrevo.gs` dans Extensions → Apps Script, déployer en Application Web (accès : Tout le monde)
+   - **POC** : email envoyé via `MailApp` (natif Google, quota 100/jour) — aucune config supplémentaire
+   - **Production** : remplacer par Brevo (`sendEmailBrevo` dans Code.gs) après avoir configuré un domaine expéditeur vérifié (SPF/DKIM sur eisf.fr ou oya.fr) et ajouté `BREVO_API_KEY` dans Project Settings → Script properties
 
 ---
 
