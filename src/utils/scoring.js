@@ -236,7 +236,7 @@ export function groupByThematique(reponses, metiers, topN = 3) {
 
   const groups = {};
   for (const { metier, score } of scored) {
-    const key = metier.thematiqueFormation || "Autre";
+    const key = metier.bloc || "Autre";
     if (!groups[key]) groups[key] = [];
     groups[key].push({ metier, score });
   }
