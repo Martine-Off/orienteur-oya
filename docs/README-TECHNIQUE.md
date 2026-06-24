@@ -42,14 +42,11 @@ React : absence d'erreur réseau = succès. Limite documentée du POC.
 |---|---|
 | `Landing.jsx` | Page d'accueil — présentation + CTA "Démarrer" |
 | `Quiz.jsx` | Quiz 10 questions — utilise `useQuiz` |
-| `Results.jsx` | Top 3 métiers + scores + modal email intégré — utilise `useMetiers` + `scoring` |
-| `EmailCapture.jsx` | Page alternative : formulaire email + RGPD après quiz |
+| `Results.jsx` | Top 3 métiers + scores — utilise `useMetiers` + `scoring`, envoi auto du diagnostic dès chargement |
+| `EmailCapture.jsx` | Popup email + RGPD — intermédiaire entre Quiz et Results |
 
-**Flux principal :**
-Landing → Quiz (Q1-Q10) → Results (top 3 + modal email) → confirmation
-
-**Flux alternatif :**
-Quiz → Results → EmailCapture (page dédiée) → confirmation
+**Flux :**
+Landing → Quiz (Q1-Q10) → EmailCapture (popup email + RGPD) → Results (top 3, diagnostic envoyé automatiquement)
 
 ### Composants (`src/components/`)
 

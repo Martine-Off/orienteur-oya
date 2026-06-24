@@ -113,9 +113,27 @@ Utile pour trouver des **formations près de chez vous** + comprendre la **deman
 
 ---
 
-## Étape 3 : Vos résultats arrivent !
+## Étape 3 : Je laisse mon email pour recevoir le diagnostic
 
-Page "**Vos 3 métiers**" affiche :
+Avant d'afficher vos résultats, une fenêtre s'ouvre :
+
+1. Remplissez votre **email** (obligatoire)
+2. Cochez **"Être tenu·e au courant"** si vous voulez infos formations (optionnel)
+   - ✅ = OYA peut vous envoyer des appels à formation
+   - ❌ = on ne vous contacte pas
+3. **Cochez la case RGPD** (obligatoire) :
+   
+   *"J'accepte de recevoir mon diagnostic et que mes réponses soient utilisées par OYA à titre statistique"*
+   
+   → Ça veut dire : votre diagnostic perso vous va, mais OYA voit les patterns globaux (combien de gens par région, quels métiers ressortent)
+
+4. Cliquez **"Voir mes résultats"**
+
+---
+
+## Étape 4 : Vos résultats arrivent — et le mail est envoyé automatiquement !
+
+Page "**Votre diagnostic personnalisé**" affiche vos 3 métiers. En même temps, le diagnostic est envoyé automatiquement à l'adresse que vous avez renseignée.
 
 ```
 🥇 MARAÎCHER·ÈRE BIO
@@ -159,22 +177,6 @@ Domaine : Logistique distribution
 ```
 
 **Chaque métier** = nom, score 0-100, domaine, pourquoi c'est un match, compétences clés, formation.
-
----
-
-## Étape 4 : Je reçois mon email diagnostic
-
-1. Remplissez votre **email** (obligatoire)
-2. Cochez **"Être tenu·e au courant"** si vous voulez infos formations (optionnel)
-   - ✅ = OYA peut vous envoyer des appels à formation
-   - ❌ = on ne vous contacte pas
-3. **Cochez la case RGPD** (obligatoire) :
-   
-   *"J'accepte de recevoir mon diagnostic et que mes réponses soient utilisées par OYA à titre statistique"*
-   
-   → Ça veut dire : votre diagnostic perso vous va, mais OYA voit les patterns globaux (combien de gens par région, quels métiers ressortent)
-
-4. Cliquez **"Envoyer"**
 
 → **Email de vos résultats arrive < 30 secondes** (avec résumé des 3 métiers + compétences + formations)
 
